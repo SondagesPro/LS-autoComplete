@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+ <LimeSurveyDocType>Survey</LimeSurveyDocType>
+ <DBVersion>263</DBVersion>
+ <languages>
+  <language>fr</language>
+ </languages>
+ <answers>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>code</fieldname>
+   <fieldname>answer</fieldname>
+   <fieldname>sortorder</fieldname>
+   <fieldname>assessment_value</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[A]]></code>
+    <answer><![CDATA[Agriculture, sylviculture et pêche]]></answer>
+    <sortorder><![CDATA[1]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[B]]></code>
+    <answer><![CDATA[Industries extractives]]></answer>
+    <sortorder><![CDATA[2]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[C]]></code>
+    <answer><![CDATA[Industrie manufacturière]]></answer>
+    <sortorder><![CDATA[3]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[D]]></code>
+    <answer><![CDATA[Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné]]></answer>
+    <sortorder><![CDATA[4]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[E]]></code>
+    <answer><![CDATA[Production et distribution d'eau ; assainissement, gestion des déchets et dépollution]]></answer>
+    <sortorder><![CDATA[5]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[F]]></code>
+    <answer><![CDATA[Construction]]></answer>
+    <sortorder><![CDATA[6]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[G]]></code>
+    <answer><![CDATA[Commerce ; réparation d'automobiles et de motocycles]]></answer>
+    <sortorder><![CDATA[7]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[H]]></code>
+    <answer><![CDATA[Transports et entreposage]]></answer>
+    <sortorder><![CDATA[8]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[I]]></code>
+    <answer><![CDATA[Hébergement et restauration]]></answer>
+    <sortorder><![CDATA[9]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[J]]></code>
+    <answer><![CDATA[Information et communication]]></answer>
+    <sortorder><![CDATA[10]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[K]]></code>
+    <answer><![CDATA[Activités financières et d'assurance]]></answer>
+    <sortorder><![CDATA[11]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[L]]></code>
+    <answer><![CDATA[Activités immobilières]]></answer>
+    <sortorder><![CDATA[12]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[M]]></code>
+    <answer><![CDATA[Activités spécialisées, scientifiques et techniques]]></answer>
+    <sortorder><![CDATA[13]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[N]]></code>
+    <answer><![CDATA[Activités de services administratifs et de soutien]]></answer>
+    <sortorder><![CDATA[14]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[O]]></code>
+    <answer><![CDATA[Administration publique]]></answer>
+    <sortorder><![CDATA[15]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[P]]></code>
+    <answer><![CDATA[Enseignement]]></answer>
+    <sortorder><![CDATA[16]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[Q]]></code>
+    <answer><![CDATA[Santé humaine et action sociale]]></answer>
+    <sortorder><![CDATA[17]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[R]]></code>
+    <answer><![CDATA[Arts, spectacles et activités récréatives]]></answer>
+    <sortorder><![CDATA[18]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[S]]></code>
+    <answer><![CDATA[Autres activités de services]]></answer>
+    <sortorder><![CDATA[19]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[T]]></code>
+    <answer><![CDATA[Activités des ménages en tant qu'employeurs ; activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre]]></answer>
+    <sortorder><![CDATA[20]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <code><![CDATA[U]]></code>
+    <answer><![CDATA[Activités extra-territoriales]]></answer>
+    <sortorder><![CDATA[21]]></sortorder>
+    <assessment_value><![CDATA[0]]></assessment_value>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+   </row>
+  </rows>
+ </answers>
+ <groups>
+  <fields>
+   <fieldname>gid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>group_name</fieldname>
+   <fieldname>group_order</fieldname>
+   <fieldname>description</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>randomization_group</fieldname>
+   <fieldname>grelevance</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[794683]]></sid>
+    <group_name><![CDATA[Mon premier groupe de question]]></group_name>
+    <group_order><![CDATA[1]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance><![CDATA[1]]></grelevance>
+   </row>
+   <row>
+    <gid><![CDATA[3443]]></gid>
+    <sid><![CDATA[794683]]></sid>
+    <group_name><![CDATA[Back]]></group_name>
+    <group_order><![CDATA[2]]></group_order>
+    <description/>
+    <language><![CDATA[fr]]></language>
+    <randomization_group/>
+    <grelevance/>
+   </row>
+  </rows>
+ </groups>
+ <questions>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>parent_qid</fieldname>
+   <fieldname>sid</fieldname>
+   <fieldname>gid</fieldname>
+   <fieldname>type</fieldname>
+   <fieldname>title</fieldname>
+   <fieldname>question</fieldname>
+   <fieldname>preg</fieldname>
+   <fieldname>help</fieldname>
+   <fieldname>other</fieldname>
+   <fieldname>mandatory</fieldname>
+   <fieldname>question_order</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>scale_id</fieldname>
+   <fieldname>same_default</fieldname>
+   <fieldname>relevance</fieldname>
+   <fieldname>modulename</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[60268]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3442]]></gid>
+    <type><![CDATA[!]]></type>
+    <title><![CDATA[NAF1]]></title>
+    <question><![CDATA[Code NAF niveau 1]]></question>
+    <preg/>
+    <help><![CDATA[{NAF2.NAOK}<br>
+{NAF3.NAOK}<br>
+{NAF4.NAOK} -  {substr(NAF4.NAOK,0,6)}]]></help>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[2]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+    <modulename/>
+   </row>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3442]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[NAF2]]></title>
+    <question><![CDATA[Code NAF niveau 2]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[3]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[!is_empty(NAF1.NAOK)]]></relevance>
+    <modulename/>
+   </row>
+   <row>
+    <qid><![CDATA[60270]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3443]]></gid>
+    <type><![CDATA[T]]></type>
+    <title><![CDATA[BACK]]></title>
+    <question><![CDATA[Back]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[1]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[1]]></relevance>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3442]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[NAF3]]></title>
+    <question><![CDATA[Code NAF niveau 3]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[4]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[!is_empty(NAF2.NAOK)]]></relevance>
+    <modulename/>
+   </row>
+   <row>
+    <qid><![CDATA[60272]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3442]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[NAF4]]></title>
+    <question><![CDATA[Code NAF niveau 4 sur 1 colonne]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[5]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[!is_empty(NAF3.NAOK)]]></relevance>
+    <modulename/>
+   </row>
+   <row>
+    <qid><![CDATA[60273]]></qid>
+    <parent_qid><![CDATA[0]]></parent_qid>
+    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[3442]]></gid>
+    <type><![CDATA[S]]></type>
+    <title><![CDATA[NAF5]]></title>
+    <question><![CDATA[Code NAF niveau 5 sur 1 colonne]]></question>
+    <preg/>
+    <help/>
+    <other><![CDATA[N]]></other>
+    <mandatory><![CDATA[N]]></mandatory>
+    <question_order><![CDATA[6]]></question_order>
+    <language><![CDATA[fr]]></language>
+    <scale_id><![CDATA[0]]></scale_id>
+    <same_default><![CDATA[0]]></same_default>
+    <relevance><![CDATA[!is_empty(NAF4.NAOK)]]></relevance>
+    <modulename/>
+   </row>
+  </rows>
+ </questions>
+ <question_attributes>
+  <fields>
+   <fieldname>qid</fieldname>
+   <fieldname>attribute</fieldname>
+   <fieldname>value</fieldname>
+   <fieldname>language</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <attribute><![CDATA[autoComplete]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
+    <value><![CDATA[naf2008_liste_n2.csv]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <attribute><![CDATA[autoCompleteFilter]]></attribute>
+    <value><![CDATA[NAF1.NAOK]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <attribute><![CDATA[autoCompleteMinChar]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60269]]></qid>
+    <attribute><![CDATA[autoCompleteOneColumn]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <attribute><![CDATA[autoComplete]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
+    <value><![CDATA[naf2008_liste_n3]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <attribute><![CDATA[autoCompleteFilter]]></attribute>
+    <value><![CDATA[NAF2.NAOK]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <attribute><![CDATA[autoCompleteMinChar]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60271]]></qid>
+    <attribute><![CDATA[autoCompleteOneColumn]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60272]]></qid>
+    <attribute><![CDATA[autoComplete]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60272]]></qid>
+    <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
+    <value><![CDATA[naf2008_liste_n4-one]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60272]]></qid>
+    <attribute><![CDATA[autoCompleteFilter]]></attribute>
+    <value><![CDATA[NAF3.NAOK]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60272]]></qid>
+    <attribute><![CDATA[autoCompleteMinChar]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60273]]></qid>
+    <attribute><![CDATA[autoComplete]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60273]]></qid>
+    <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
+    <value><![CDATA[naf2008_liste_n5-one]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60273]]></qid>
+    <attribute><![CDATA[autoCompleteFilter]]></attribute>
+    <value><![CDATA[substr(NAF4.NAOK,0,6)]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[60273]]></qid>
+    <attribute><![CDATA[autoCompleteMinChar]]></attribute>
+    <value><![CDATA[0]]></value>
+   </row>
+  </rows>
+ </question_attributes>
+ <surveys>
+  <fields>
+   <fieldname>sid</fieldname>
+   <fieldname>admin</fieldname>
+   <fieldname>expires</fieldname>
+   <fieldname>startdate</fieldname>
+   <fieldname>adminemail</fieldname>
+   <fieldname>anonymized</fieldname>
+   <fieldname>faxto</fieldname>
+   <fieldname>format</fieldname>
+   <fieldname>savetimings</fieldname>
+   <fieldname>template</fieldname>
+   <fieldname>language</fieldname>
+   <fieldname>additional_languages</fieldname>
+   <fieldname>datestamp</fieldname>
+   <fieldname>usecookie</fieldname>
+   <fieldname>allowregister</fieldname>
+   <fieldname>allowsave</fieldname>
+   <fieldname>autonumber_start</fieldname>
+   <fieldname>autoredirect</fieldname>
+   <fieldname>allowprev</fieldname>
+   <fieldname>printanswers</fieldname>
+   <fieldname>ipaddr</fieldname>
+   <fieldname>refurl</fieldname>
+   <fieldname>publicstatistics</fieldname>
+   <fieldname>publicgraphs</fieldname>
+   <fieldname>listpublic</fieldname>
+   <fieldname>htmlemail</fieldname>
+   <fieldname>sendconfirmation</fieldname>
+   <fieldname>tokenanswerspersistence</fieldname>
+   <fieldname>assessments</fieldname>
+   <fieldname>usecaptcha</fieldname>
+   <fieldname>usetokens</fieldname>
+   <fieldname>bounce_email</fieldname>
+   <fieldname>attributedescriptions</fieldname>
+   <fieldname>emailresponseto</fieldname>
+   <fieldname>emailnotificationto</fieldname>
+   <fieldname>tokenlength</fieldname>
+   <fieldname>showxquestions</fieldname>
+   <fieldname>showgroupinfo</fieldname>
+   <fieldname>shownoanswer</fieldname>
+   <fieldname>showqnumcode</fieldname>
+   <fieldname>bouncetime</fieldname>
+   <fieldname>bounceprocessing</fieldname>
+   <fieldname>bounceaccounttype</fieldname>
+   <fieldname>bounceaccounthost</fieldname>
+   <fieldname>bounceaccountpass</fieldname>
+   <fieldname>bounceaccountencryption</fieldname>
+   <fieldname>bounceaccountuser</fieldname>
+   <fieldname>showwelcome</fieldname>
+   <fieldname>showprogress</fieldname>
+   <fieldname>navigationdelay</fieldname>
+   <fieldname>nokeyboard</fieldname>
+   <fieldname>alloweditaftercompletion</fieldname>
+   <fieldname>googleanalyticsstyle</fieldname>
+   <fieldname>googleanalyticsapikey</fieldname>
+   <fieldname>questionindex</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <sid><![CDATA[794683]]></sid>
+    <admin><![CDATA[]]></admin>
+    <adminemail><![CDATA[]]></adminemail>
+    <anonymized><![CDATA[N]]></anonymized>
+    <faxto/>
+    <format><![CDATA[G]]></format>
+    <savetimings><![CDATA[N]]></savetimings>
+    <template><![CDATA[default]]></template>
+    <language><![CDATA[fr]]></language>
+    <additional_languages/>
+    <datestamp><![CDATA[N]]></datestamp>
+    <usecookie><![CDATA[N]]></usecookie>
+    <allowregister><![CDATA[N]]></allowregister>
+    <allowsave><![CDATA[Y]]></allowsave>
+    <autonumber_start><![CDATA[0]]></autonumber_start>
+    <autoredirect><![CDATA[N]]></autoredirect>
+    <allowprev><![CDATA[Y]]></allowprev>
+    <printanswers><![CDATA[N]]></printanswers>
+    <ipaddr><![CDATA[N]]></ipaddr>
+    <refurl><![CDATA[N]]></refurl>
+    <publicstatistics><![CDATA[N]]></publicstatistics>
+    <publicgraphs><![CDATA[N]]></publicgraphs>
+    <listpublic><![CDATA[N]]></listpublic>
+    <htmlemail><![CDATA[Y]]></htmlemail>
+    <sendconfirmation><![CDATA[Y]]></sendconfirmation>
+    <tokenanswerspersistence><![CDATA[N]]></tokenanswerspersistence>
+    <assessments><![CDATA[N]]></assessments>
+    <usecaptcha><![CDATA[N]]></usecaptcha>
+    <usetokens><![CDATA[N]]></usetokens>
+    <bounce_email><![CDATA[denis@sondages.pro]]></bounce_email>
+    <emailresponseto/>
+    <emailnotificationto/>
+    <tokenlength><![CDATA[15]]></tokenlength>
+    <showxquestions><![CDATA[Y]]></showxquestions>
+    <showgroupinfo><![CDATA[B]]></showgroupinfo>
+    <shownoanswer><![CDATA[Y]]></shownoanswer>
+    <showqnumcode><![CDATA[X]]></showqnumcode>
+    <bounceprocessing><![CDATA[N]]></bounceprocessing>
+    <showwelcome><![CDATA[N]]></showwelcome>
+    <showprogress><![CDATA[Y]]></showprogress>
+    <navigationdelay><![CDATA[0]]></navigationdelay>
+    <nokeyboard><![CDATA[N]]></nokeyboard>
+    <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
+    <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
+    <googleanalyticsapikey/>
+    <questionindex><![CDATA[0]]></questionindex>
+   </row>
+  </rows>
+ </surveys>
+ <surveys_languagesettings>
+  <fields>
+   <fieldname>surveyls_survey_id</fieldname>
+   <fieldname>surveyls_language</fieldname>
+   <fieldname>surveyls_title</fieldname>
+   <fieldname>surveyls_description</fieldname>
+   <fieldname>surveyls_welcometext</fieldname>
+   <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_url</fieldname>
+   <fieldname>surveyls_urldescription</fieldname>
+   <fieldname>surveyls_email_invite_subj</fieldname>
+   <fieldname>surveyls_email_invite</fieldname>
+   <fieldname>surveyls_email_remind_subj</fieldname>
+   <fieldname>surveyls_email_remind</fieldname>
+   <fieldname>surveyls_email_register_subj</fieldname>
+   <fieldname>surveyls_email_register</fieldname>
+   <fieldname>surveyls_email_confirm_subj</fieldname>
+   <fieldname>surveyls_email_confirm</fieldname>
+   <fieldname>surveyls_dateformat</fieldname>
+   <fieldname>surveyls_attributecaptions</fieldname>
+   <fieldname>email_admin_notification_subj</fieldname>
+   <fieldname>email_admin_notification</fieldname>
+   <fieldname>email_admin_responses_subj</fieldname>
+   <fieldname>email_admin_responses</fieldname>
+   <fieldname>surveyls_numberformat</fieldname>
+   <fieldname>attachments</fieldname>
+  </fields>
+  <rows>
+   <row>
+    <surveyls_survey_id><![CDATA[794683]]></surveyls_survey_id>
+    <surveyls_language><![CDATA[fr]]></surveyls_language>
+    <surveyls_title><![CDATA[Test déroulant]]></surveyls_title>
+    <surveyls_description/>
+    <surveyls_welcometext/>
+    <surveyls_endtext/>
+    <surveyls_url/>
+    <surveyls_urldescription/>
+    <surveyls_email_invite_subj><![CDATA[Invitation à participer à un questionnaire]]></surveyls_email_invite_subj>
+    <surveyls_email_invite><![CDATA[Cher(e) {FIRSTNAME},<br />
+<br />
+Vous avez été invité(e) à participer à un questionnaire.<br />
+<br />
+Celui-ci est intitulé :<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Cliquez ici pour remplir ce questionnaire :<br />
+{SURVEYURL}<br />
+<br />
+Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
+{OPTOUTURL}<br />
+<br />
+Si vous êtes sur liste noire mais que vous voulez participer à ce questionnaire et recevoir les invitations, merci de cliquer sur le lien suivant :<br />
+{OPTINURL}]]></surveyls_email_invite>
+    <surveyls_email_remind_subj><![CDATA[Rappel pour participer à un questionnaire]]></surveyls_email_remind_subj>
+    <surveyls_email_remind><![CDATA[Cher(e) {FIRSTNAME},<br />
+<br />
+Vous avez été invité(e) à participer à un questionnaire récemment.<br />
+<br />
+Nous avons pris en compte que vous n'avez pas encore complété le questionnaire, et nous vous rappelons que celui-ci est toujours disponible si vous souhaitez participer.<br />
+<br />
+Le questionnaire est intitulé :<br />
+"{SURVEYNAME}"<br />
+<br />
+"{SURVEYDESCRIPTION}"<br />
+<br />
+Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME} ({ADMINEMAIL})<br />
+<br />
+----------------------------------------------<br />
+Cliquez ici pour faire le questionnaire:<br />
+{SURVEYURL}<br />
+<br />
+Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
+{OPTOUTURL}]]></surveyls_email_remind>
+    <surveyls_email_register_subj><![CDATA[Confirmation d'enregistrement au questionnaire]]></surveyls_email_register_subj>
+    <surveyls_email_register><![CDATA[Bonjour {FIRSTNAME},<br />
+<br />
+Vous (ou quelqu’un utilisant votre adresse électronique) vous êtes enregistré pour participer à un questionnaire en ligne intitulé {SURVEYNAME}.<br />
+<br />
+Pour compléter ce questionnaire, cliquez sur le lien suivant :<br />
+{SURVEYURL}<br />
+<br />
+Si vous avez des questions à propos de ce questionnaire, ou si vous ne vous êtes pas enregistré pour participer à celui-ci et croyez que ce courriel est une erreur, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}]]></surveyls_email_register>
+    <surveyls_email_confirm_subj><![CDATA[Confirmation de votre participation à notre questionnaire]]></surveyls_email_confirm_subj>
+    <surveyls_email_confirm><![CDATA[Bonjour {FIRSTNAME},<br />
+<br />
+Ce courriel vous confirme que vous avez complété le questionnaire intitulé {SURVEYNAME} et que votre réponse a été enregistrée. Merci pour votre participation.<br />
+<br />
+Si vous avez des questions à propos de ce courriel, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}.<br />
+<br />
+Cordialement,<br />
+<br />
+{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_dateformat><![CDATA[5]]></surveyls_dateformat>
+    <email_admin_notification_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME}]]></email_admin_notification_subj>
+    <email_admin_notification><![CDATA[Bonjour,<br />
+<br />
+Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
+<br />
+Cliquez sur le lien suivant pour recharger votre questionnaire :<br />
+{RELOADURL}<br />
+<br />
+Cliquez sur le lien suivant pour voir la réponse :<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Cliquez sur le lien suivant pour éditer la réponse :<br />
+{EDITRESPONSEURL}<br />
+<br />
+Visualisez les statistiques en cliquant ici :<br />
+{STATISTICSURL}<br />
+<br />
+les réponses suivantes ont été données par le participant :<br />
+{ANSWERTABLE}]]></email_admin_notification>
+    <email_admin_responses_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME} avec résultats]]></email_admin_responses_subj>
+    <email_admin_responses><![CDATA[Bonjour,<br />
+<br />
+Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
+<br />
+Cliquez sur le lien suivant pour recharger votre questionnaire :<br />
+{RELOADURL}<br />
+<br />
+Cliquez sur le lien suivant pour voir la réponse :<br />
+{VIEWRESPONSEURL}<br />
+<br />
+Cliquez sur le lien suivant pour éditer la réponse individuelle :<br />
+{EDITRESPONSEURL}<br />
+<br />
+Visualisez les statistiques en cliquant ici :<br />
+{STATISTICSURL}<br />
+<br />
+<br />
+les réponses suivantes ont été données par le participant :<br />
+{ANSWERTABLE}]]></email_admin_responses>
+    <surveyls_numberformat><![CDATA[1]]></surveyls_numberformat>
+   </row>
+  </rows>
+ </surveys_languagesettings>
+</document>

@@ -1,0 +1,616 @@
+Code,Libellé
+A01.11,"Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses"
+A01.12,Culture du riz
+A01.13,"Culture de légumes, de melons, de racines et de tubercules"
+A01.14,Culture de la canne à sucre
+A01.15,Culture du tabac
+A01.16,Culture de plantes à fibres
+A01.19,Autres cultures non permanentes
+A01.21,Culture de la vigne
+A01.22,Culture de fruits tropicaux et subtropicaux
+A01.23,Culture d'agrumes
+A01.24,Culture de fruits à pépins et à noyau
+A01.25,Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque
+A01.26,Culture de fruits oléagineux
+A01.27,Culture de plantes à boissons
+A01.28,"Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques"
+A01.29,Autres cultures permanentes
+A01.30,Reproduction de plantes
+A01.41,Élevage de vaches laitières
+A01.42,Élevage d'autres bovins et de buffles
+A01.43,Élevage de chevaux et d'autres équidés
+A01.44,Élevage de chameaux et d'autres camélidés
+A01.45,Élevage d'ovins et de caprins
+A01.46,Élevage de porcins
+A01.47,Élevage de volailles
+A01.49,Élevage d'autres animaux
+A01.50,Culture et élevage associés
+A01.61,Activités de soutien aux cultures
+A01.62,Activités de soutien à la production animale
+A01.63,Traitement primaire des récoltes
+A01.64,Traitement des semences
+A01.70,"Chasse, piégeage et services annexes"
+A02.10,Sylviculture et autres activités forestières
+A02.20,Exploitation forestière
+A02.30,Récolte de produits forestiers non ligneux poussant à l'état sauvage
+A02.40,Services de soutien à l'exploitation forestière
+A03.11,Pêche en mer
+A03.12,Pêche en eau douce
+A03.21,Aquaculture en mer
+A03.22,Aquaculture en eau douce
+B05.10,Extraction de houille
+B05.20,Extraction de lignite
+B06.10,Extraction de pétrole brut
+B06.20,Extraction de gaz naturel
+B07.10,Extraction de minerais de fer
+B07.21,Extraction de minerais d'uranium et de thorium
+B07.29,Extraction d'autres minerais de métaux non ferreux
+B08.11,"Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise"
+B08.12,"Exploitation de gravières et sablières, extraction d'argiles et de kaolin"
+B08.91,Extraction des minéraux chimiques et d'engrais minéraux
+B08.92,Extraction de tourbe
+B08.93,Production de sel
+B08.99,Autres activités extractives n.c.a.
+B09.10,Activités de soutien à l'extraction d'hydrocarbures
+B09.90,Activités de soutien aux autres industries extractives
+C10.11,Transformation et conservation de la viande de boucherie
+C10.12,Transformation et conservation de la viande de volaille
+C10.13,Préparation de produits à base de viande
+C10.20,"Transformation et conservation de poisson, de crustacés et de mollusques"
+C10.31,Transformation et conservation de pommes de terre
+C10.32,Préparation de jus de fruits et légumes
+C10.39,Autre transformation et conservation de fruits et légumes
+C10.41,Fabrication d'huiles et graisses
+C10.42,Fabrication de margarine et graisses comestibles similaires
+C10.51,Exploitation de laiteries et fabrication de fromage
+C10.52,Fabrication de glaces et sorbets
+C10.61,Travail des grains
+C10.62,Fabrication de produits amylacés
+C10.71,Fabrication de pain et de pâtisserie fraîche
+C10.72,"Fabrication de biscuits, biscottes et pâtisseries de conservation"
+C10.73,Fabrication de pâtes alimentaires
+C10.81,Fabrication de sucre
+C10.82,"Fabrication de cacao, chocolat et de produits de confiserie"
+C10.83,Transformation du thé et du café
+C10.84,Fabrication de condiments et assaisonnements
+C10.85,Fabrication de plats préparés
+C10.86,Fabrication d'aliments homogénéisés et diététiques
+C10.89,Fabrication d'autres produits alimentaires n.c.a.
+C10.91,Fabrication d'aliments pour animaux de ferme
+C10.92,Fabrication d'aliments pour animaux de compagnie
+C11.01,Production de boissons alcooliques distillées
+C11.02,Production de vin (de raisin)
+C11.03,Fabrication de cidre et de vins de fruits
+C11.04,Production d'autres boissons fermentées non distillées
+C11.05,Fabrication de bière
+C11.06,Fabrication de malt
+C11.07,Industrie des eaux minérales et autres eaux embouteillées et des boissons rafraîchissantes
+C12.00,Fabrication de produits à base de tabac
+C13.10,Préparation de fibres textiles et filature
+C13.20,Tissage
+C13.30,Ennoblissement textile
+C13.91,Fabrication d'étoffes à mailles
+C13.92,"Fabrication d'articles textiles, sauf habillement"
+C13.93,Fabrication de tapis et moquettes
+C13.94,"Fabrication de ficelles, cordes et filets"
+C13.95,"Fabrication de non-tissés, sauf habillement"
+C13.96,Fabrication d'autres textiles techniques et industriels
+C13.99,Fabrication d'autres textiles n.c.a.
+C14.11,Fabrication de vêtements en cuir
+C14.12,Fabrication de vêtements de travail
+C14.13,Fabrication de vêtements de dessus
+C14.14,Fabrication de vêtements de dessous
+C14.19,Fabrication d'autres vêtements et accessoires
+C14.20,Fabrication d'articles en fourrure
+C14.31,Fabrication d'articles chaussants à mailles
+C14.39,Fabrication d'autres articles à mailles
+C15.11,Apprêt et tannage des cuirs ; préparation et teinture des fourrures
+C15.12,"Fabrication d'articles de voyage, de maroquinerie et de sellerie"
+C15.20,Fabrication de chaussures
+C16.10,Sciage et rabotage du bois
+C16.21,Fabrication de placage et de panneaux de bois
+C16.22,Fabrication de parquets assemblés
+C16.23,Fabrication de charpentes et d'autres menuiseries
+C16.24,Fabrication d'emballages en bois
+C16.29,"Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie"
+C17.11,Fabrication de pâte à papier
+C17.12,Fabrication de papier et de carton
+C17.21,Fabrication de papier et carton ondulés et d'emballages en papier ou en carton
+C17.22,Fabrication d'articles en papier à usage sanitaire ou domestique
+C17.23,Fabrication d'articles de papeterie
+C17.24,Fabrication de papiers peints
+C17.29,Fabrication d'autres articles en papier ou en carton
+C18.11,Imprimerie de journaux
+C18.12,Autre imprimerie (labeur)
+C18.13,Activités de pré-presse
+C18.14,Reliure et activités connexes
+C18.20,Reproduction d'enregistrements
+C19.10,Cokéfaction
+C19.20,Raffinage du pétrole
+C20.11,Fabrication de gaz industriels
+C20.12,Fabrication de colorants et de pigments
+C20.13,Fabrication d'autres produits chimiques inorganiques de base
+C20.14,Fabrication d'autres produits chimiques organiques de base
+C20.15,Fabrication de produits azotés et d'engrais
+C20.16,Fabrication de matières plastiques de base
+C20.17,Fabrication de caoutchouc synthétique
+C20.20,Fabrication de pesticides et d'autres produits agrochimiques
+C20.30,"Fabrication de peintures, vernis, encres et mastics"
+C20.41,"Fabrication de savons, détergents et produits d'entretien"
+C20.42,Fabrication de parfums et de produits pour la toilette
+C20.51,Fabrication de produits explosifs
+C20.52,Fabrication de colles
+C20.53,Fabrication d'huiles essentielles
+C20.59,Fabrication d'autres produits chimiques n.c.a.
+C20.60,Fabrication de fibres artificielles ou synthétiques
+C21.10,Fabrication de produits pharmaceutiques de base
+C21.20,Fabrication de préparations pharmaceutiques
+C22.11,Fabrication et rechapage de pneumatiques
+C22.19,Fabrication d'autres articles en caoutchouc
+C22.21,"Fabrication de plaques, feuilles, tubes et profilés en matières plastiques"
+C22.22,Fabrication d'emballages en matières plastiques
+C22.23,Fabrication d'éléments en matières plastiques pour la construction
+C22.29,Fabrication d'autres articles en matières plastiques
+C23.11,Fabrication de verre plat
+C23.12,Façonnage et transformation du verre plat
+C23.13,Fabrication de verre creux
+C23.14,Fabrication de fibres de verre
+C23.19,"Fabrication et façonnage d'autres articles en verre, y compris verre technique"
+C23.20,Fabrication de produits réfractaires
+C23.31,Fabrication de carreaux en céramique
+C23.32,"Fabrication de briques, tuiles et produits de construction, en terre cuite"
+C23.41,Fabrication d'articles céramiques à usage domestique ou ornemental
+C23.42,Fabrication d'appareils sanitaires en céramique
+C23.43,Fabrication d'isolateurs et pièces isolantes en céramique
+C23.44,Fabrication d'autres produits céramiques à usage technique
+C23.49,Fabrication d'autres produits céramiques
+C23.51,Fabrication de ciment
+C23.52,Fabrication de chaux et plâtre
+C23.61,Fabrication d'éléments en béton pour la construction
+C23.62,Fabrication d'éléments en plâtre pour la construction
+C23.63,Fabrication de béton prêt à l'emploi
+C23.64,Fabrication de mortiers et bétons secs
+C23.65,Fabrication d'ouvrages en fibre-ciment
+C23.69,"Fabrication d'autres ouvrages en béton, en ciment ou en plâtre"
+C23.70,"Taille, façonnage et finissage de pierres"
+C23.91,Fabrication de produits abrasifs
+C23.99,Fabrication d'autres produits minéraux non métalliques n.c.a.
+C24.10,Sidérurgie
+C24.20,"Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier"
+C24.31,Étirage à froid de barres
+C24.32,Laminage à froid de feuillards
+C24.33,Profilage à froid par formage ou pliage
+C24.34,Tréfilage à froid
+C24.41,Production de métaux précieux
+C24.42,Métallurgie de l'aluminium
+C24.43,"Métallurgie du plomb, du zinc ou de l'étain"
+C24.44,Métallurgie du cuivre
+C24.45,Métallurgie des autres métaux non ferreux
+C24.46,Élaboration et transformation de matières nucléaires
+C24.51,Fonderie de fonte
+C24.52,Fonderie d'acier
+C24.53,Fonderie de métaux légers
+C24.54,Fonderie d'autres métaux non ferreux
+C25.11,Fabrication de structures métalliques et de parties de structures
+C25.12,Fabrication de portes et fenêtres en métal
+C25.21,Fabrication de radiateurs et de chaudières pour le chauffage central
+C25.29,"Fabrication d'autres réservoirs, citernes et conteneurs métalliques"
+C25.30,"Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central"
+C25.40,Fabrication d'armes et de munitions
+C25.50,"Forge, emboutissage, estampage ; métallurgie des poudres"
+C25.61,Traitement et revêtement des métaux
+C25.62,Usinage
+C25.71,Fabrication de coutellerie
+C25.72,Fabrication de serrures et de ferrures
+C25.73,Fabrication d'outillage
+C25.91,Fabrication de fûts et emballages métalliques similaires
+C25.92,Fabrication d'emballages métalliques légers
+C25.93,"Fabrication d'articles en fils métalliques, de chaînes et de ressorts"
+C25.94,Fabrication de vis et de boulons
+C25.99,Fabrication d'autres produits métalliques n.c.a.
+C26.11,Fabrication de composants électroniques
+C26.12,Fabrication de cartes électroniques assemblées
+C26.20,Fabrication d'ordinateurs et d'équipements périphériques
+C26.30,Fabrication d'équipements de communication
+C26.40,Fabrication de produits électroniques grand public
+C26.51,"Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation"
+C26.52,Horlogerie
+C26.60,"Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques"
+C26.70,Fabrication de matériels optique et photographique
+C26.80,Fabrication de supports magnétiques et optiques
+C27.11,"Fabrication de moteurs, génératrices et transformateurs électriques"
+C27.12,Fabrication de matériel de distribution et de commande électrique
+C27.20,Fabrication de piles et d'accumulateurs électriques
+C27.31,Fabrication de câbles de fibres optiques
+C27.32,Fabrication d'autres fils et câbles électroniques ou électriques
+C27.33,Fabrication de matériel d'installation électrique
+C27.40,Fabrication d'appareils d'éclairage électrique
+C27.51,Fabrication d'appareils électroménagers
+C27.52,Fabrication d'appareils ménagers non électriques
+C27.90,Fabrication d'autres matériels électriques
+C28.11,"Fabrication de moteurs et turbines, à l'exception des moteurs d'avions et de véhicules"
+C28.12,Fabrication d'équipements hydrauliques et pneumatiques
+C28.13,Fabrication d'autres pompes et compresseurs
+C28.14,Fabrication d'autres articles de robinetterie
+C28.15,Fabrication d'engrenages et d'organes mécaniques de transmission
+C28.21,Fabrication de fours et brûleurs
+C28.22,Fabrication de matériel de levage et de manutention
+C28.23,Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements périphériques)
+C28.24,Fabrication d'outillage portatif à moteur incorporé
+C28.25,Fabrication d'équipements aérauliques et frigorifiques industriels
+C28.29,Fabrication de machines diverses d'usage général
+C28.30,Fabrication de machines agricoles et forestières
+C28.41,Fabrication de machines de formage des métaux
+C28.49,Fabrication d'autres machines-outils
+C28.91,Fabrication de machines pour la métallurgie
+C28.92,Fabrication de machines pour l'extraction ou la construction
+C28.93,Fabrication de machines pour l'industrie agro-alimentaire
+C28.94,Fabrication de machines pour les industries textiles
+C28.95,Fabrication de machines pour les industries du papier et du carton
+C28.96,Fabrication de machines pour le travail du caoutchouc ou des plastiques
+C28.99,Fabrication d'autres machines d'usage spécifique n.c.a.
+C29.10,Construction de véhicules automobiles
+C29.20,Fabrication de carrosseries et remorques
+C29.31,Fabrication d'équipements électriques et électroniques automobiles
+C29.32,Fabrication d'autres équipements automobiles
+C30.11,Construction de navires et de structures flottantes
+C30.12,Construction de bateaux de plaisance
+C30.20,Construction de locomotives et d'autre matériel ferroviaire roulant
+C30.30,Construction aéronautique et spatiale
+C30.40,Construction de véhicules militaires de combat
+C30.91,Fabrication de motocycles
+C30.92,Fabrication de bicyclettes et de véhicules pour invalides
+C30.99,Fabrication d'autres équipements de transport n.c.a.
+C31.01,Fabrication de meubles de bureau et de magasin
+C31.02,Fabrication de meubles de cuisine
+C31.03,Fabrication de matelas
+C31.09,Fabrication d'autres meubles
+C32.11,Frappe de monnaie
+C32.12,Fabrication d'articles de joaillerie et bijouterie
+C32.13,Fabrication d'articles de bijouterie fantaisie et articles similaires
+C32.20,Fabrication d'instruments de musique
+C32.30,Fabrication d'articles de sport
+C32.40,Fabrication de jeux et jouets
+C32.50,Fabrication d'instruments et de fournitures à usage médical et dentaire
+C32.91,Fabrication d'articles de brosserie
+C32.99,Autres activités manufacturières n.c.a.
+C33.11,Réparation d'ouvrages en métaux
+C33.12,Réparation de machines et équipements mécaniques
+C33.13,Réparation de matériels électroniques et optiques
+C33.14,Réparation d'équipements électriques
+C33.15,Réparation et maintenance navale
+C33.16,Réparation et maintenance d'aéronefs et d'engins spatiaux
+C33.17,Réparation et maintenance d'autres équipements de transport
+C33.19,Réparation d'autres équipements
+C33.20,Installation de machines et d'équipements industriels
+D35.11,Production d'électricité
+D35.12,Transport d'électricité
+D35.13,Distribution d'électricité
+D35.14,Commerce d'électricité
+D35.21,Production de combustibles gazeux
+D35.22,Distribution de combustibles gazeux par conduites
+D35.23,Commerce de combustibles gazeux par conduites
+D35.30,Production et distribution de vapeur et d'air conditionné
+E36.00,"Captage, traitement et distribution d'eau"
+E37.00,Collecte et traitement des eaux usées
+E38.11,Collecte des déchets non dangereux
+E38.12,Collecte des déchets dangereux
+E38.21,Traitement et élimination des déchets non dangereux
+E38.22,Traitement et élimination des déchets dangereux
+E38.31,Démantèlement d'épaves
+E38.32,Récupération de déchets triés
+E39.00,Dépollution et autres services de gestion des déchets
+F41.10,Promotion immobilière
+F41.20,Construction de bâtiments résidentiels et non résidentiels
+F42.11,Construction de routes et autoroutes
+F42.12,Construction de voies ferrées de surface et souterraines
+F42.13,Construction de ponts et tunnels
+F42.21,Construction de réseaux pour fluides
+F42.22,Construction de réseaux électriques et de télécommunications
+F42.91,Construction d'ouvrages maritimes et fluviaux
+F42.99,Construction d'autres ouvrages de génie civil n.c.a.
+F43.11,Travaux de démolition
+F43.12,Travaux de préparation des sites
+F43.13,Forages et sondages
+F43.21,Installation électrique
+F43.22,Travaux de plomberie et installation de chauffage et de conditionnement d'air
+F43.29,Autres travaux d'installation
+F43.31,Travaux de plâtrerie
+F43.32,Travaux de menuiserie
+F43.33,Travaux de revêtement des sols et des murs
+F43.34,Travaux de peinture et vitrerie
+F43.39,Autres travaux de finition
+F43.91,Travaux de couverture
+F43.99,Autres travaux de construction spécialisés n.c.a.
+G45.11,Commerce de voitures et de véhicules automobiles légers
+G45.19,Commerce d'autres véhicules automobiles
+G45.20,Entretien et réparation de véhicules automobiles
+G45.31,Commerce de gros d'équipements automobiles
+G45.32,Commerce de détail d'équipements automobiles
+G45.40,Commerce et réparation de motocycles
+G46.11,"Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et produits semi-finis"
+G46.12,"Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques"
+G46.13,Intermédiaires du commerce en bois et matériaux de construction
+G46.14,"Intermédiaires du commerce en machines, équipements industriels, navires et avions"
+G46.15,"Intermédiaires du commerce en meubles, articles de ménage et quincaillerie"
+G46.16,"Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir"
+G46.17,"Intermédiaires du commerce en denrées, boissons et tabac"
+G46.18,Intermédiaires spécialisés dans le commerce d'autres produits spécifiques
+G46.19,Intermédiaires du commerce en produits divers
+G46.21,"Commerce de gros de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail"
+G46.22,Commerce de gros de fleurs et plantes
+G46.23,Commerce de gros d'animaux vivants
+G46.24,Commerce de gros de cuirs et peaux
+G46.31,Commerce de gros de fruits et légumes
+G46.32,Commerce de gros de viandes et de produits à base de viande
+G46.33,"Commerce de gros de produits laitiers, œufs, huiles et matières grasses comestibles"
+G46.34,Commerce de gros de boissons
+G46.35,Commerce de gros de produits à base de tabac
+G46.36,"Commerce de gros de sucre, chocolat et confiserie"
+G46.37,"Commerce de gros de café, thé, cacao et épices"
+G46.38,"Commerce de gros d'autres produits alimentaires, y compris poissons, crustacés et mollusques"
+G46.39,"Commerce de gros non spécialisé de denrées, boissons et tabac"
+G46.41,Commerce de gros de textiles
+G46.42,Commerce de gros d'habillement et de chaussures
+G46.43,Commerce de gros d'appareils électroménagers
+G46.44,"Commerce de gros de vaisselle, verrerie et produits d'entretien"
+G46.45,Commerce de gros de parfumerie et de produits de beauté
+G46.46,Commerce de gros de produits pharmaceutiques
+G46.47,"Commerce de gros de meubles, de tapis et d'appareils d'éclairage"
+G46.48,Commerce de gros d'articles d'horlogerie et de bijouterie
+G46.49,Commerce de gros d'autres biens domestiques
+G46.51,"Commerce de gros d'ordinateurs, d'équipements informatiques périphériques et de logiciels"
+G46.52,Commerce de gros de composants et d'équipements électroniques et de télécommunication
+G46.61,Commerce de gros de matériel agricole
+G46.62,Commerce de gros de machines-outils
+G46.63,"Commerce de gros de machines pour l'extraction, la construction et le génie civil"
+G46.64,Commerce de gros de machines pour l'industrie textile et l'habillement
+G46.65,Commerce de gros de mobilier de bureau
+G46.66,Commerce de gros d'autres machines et équipements de bureau
+G46.69,Commerce de gros d'autres machines et équipements
+G46.71,Commerce de gros de combustibles et de produits annexes
+G46.72,Commerce de gros de minerais et métaux
+G46.73,"Commerce de gros de bois, de matériaux de construction et d'appareils sanitaires"
+G46.74,Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage
+G46.75,Commerce de gros de produits chimiques
+G46.76,Commerce de gros d'autres produits intermédiaires
+G46.77,Commerce de gros de déchets et débris
+G46.90,Commerce de gros non spécialisé
+G47.11,Commerce de détail en magasin non spécialisé à prédominance alimentaire
+G47.19,Autre commerce de détail en magasin non spécialisé
+G47.21,Commerce de détail de fruits et légumes en magasin spécialisé
+G47.22,Commerce de détail de viandes et de produits à base de viande en magasin spécialisé
+G47.23,"Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé"
+G47.24,"Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé"
+G47.25,Commerce de détail de boissons en magasin spécialisé
+G47.26,Commerce de détail de produits à base de tabac en magasin spécialisé
+G47.29,Autres commerces de détail alimentaires en magasin spécialisé
+G47.30,Commerce de détail de carburants en magasin spécialisé
+G47.41,"Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé"
+G47.42,Commerce de détail de matériels de télécommunication en magasin spécialisé
+G47.43,Commerce de détail de matériels audio/vidéo en magasin spécialisé
+G47.51,Commerce de détail de textiles en magasin spécialisé
+G47.52,"Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé"
+G47.53,"Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé"
+G47.54,Commerce de détail d'appareils électroménagers en magasin spécialisé
+G47.59,"Commerce de détail de meubles, appareils d'éclairage et autres articles de ménage en magasin spécialisé"
+G47.61,Commerce de détail de livres en magasin spécialisé
+G47.62,Commerce de détail de journaux et papeterie en magasin spécialisé
+G47.63,Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé
+G47.64,Commerce de détail d'articles de sport en magasin spécialisé
+G47.65,Commerce de détail de jeux et jouets en magasin spécialisé
+G47.71,Commerce de détail d'habillement en magasin spécialisé
+G47.72,Commerce de détail de chaussures et d'articles en cuir en magasin spécialisé
+G47.73,Commerce de détail de produits pharmaceutiques en magasin spécialisé
+G47.74,Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé
+G47.75,Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé
+G47.76,"Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé"
+G47.77,Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé
+G47.78,Autre commerce de détail de biens neufs en magasin spécialisé
+G47.79,Commerce de détail de biens d'occasion en magasin
+G47.81,Commerce de détail alimentaire sur éventaires et marchés
+G47.82,"Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés"
+G47.89,Autres commerces de détail sur éventaires et marchés
+G47.91,Vente à distance
+G47.99,"Autres commerces de détail hors magasin, éventaires ou marchés"
+H49.10,Transport ferroviaire interurbain de voyageurs
+H49.20,Transports ferroviaires de fret
+H49.31,Transports urbains et suburbains de voyageurs
+H49.32,Transports de voyageurs par taxis
+H49.39,Autres transports terrestres de voyageurs n.c.a.
+H49.41,Transports routiers de fret
+H49.42,Services de déménagement
+H49.50,Transports par conduites
+H50.10,Transports maritimes et côtiers de passagers
+H50.20,Transports maritimes et côtiers de fret
+H50.30,Transports fluviaux de passagers
+H50.40,Transports fluviaux de fret
+H51.10,Transports aériens de passagers
+H51.21,Transports aériens de fret
+H51.22,Transports spatiaux
+H52.10,Entreposage et stockage
+H52.21,Services auxiliaires des transports terrestres
+H52.22,Services auxiliaires des transports par eau
+H52.23,Services auxiliaires des transports aériens
+H52.24,Manutention
+H52.29,Autres services auxiliaires des transports
+H53.10,Activités de poste dans le cadre d'une obligation de service universel
+H53.20,Autres activités de poste et de courrier
+I55.10,Hôtels et hébergement similaire
+I55.20,Hébergement touristique et autre hébergement de courte durée
+I55.30,Terrains de camping et parcs pour caravanes ou véhicules de loisirs
+I55.90,Autres hébergements
+I56.10,Restaurants et services de restauration mobile
+I56.21,Services des traiteurs
+I56.29,Autres services de restauration
+I56.30,Débits de boissons
+J58.11,Édition de livres
+J58.12,Édition de répertoires et de fichiers d'adresses
+J58.13,Édition de journaux
+J58.14,Édition de revues et périodiques
+J58.19,Autres activités d'édition
+J58.21,Édition de jeux électroniques
+J58.29,Édition d'autres logiciels
+J59.11,"Production de films cinématographiques, de vidéo et de programmes de télévision"
+J59.12,"Post-production de films cinématographiques, de vidéo et de programmes de télévision"
+J59.13,"Distribution de films cinématographiques, de vidéo et de programmes de télévision"
+J59.14,Projection de films cinématographiques
+J59.20,Enregistrement sonore et édition musicale
+J60.10,Édition et diffusion de programmes radio
+J60.20,Programmation de télévision et télédiffusion
+J61.10,Télécommunications filaires
+J61.20,Télécommunications sans fil
+J61.30,Télécommunications par satellite
+J61.90,Autres activités de télécommunication
+J62.01,Programmation informatique
+J62.02,Conseil informatique
+J62.03,Gestion d'installations informatiques
+J62.09,Autres activités informatiques
+J63.11,"Traitement de données, hébergement et activités connexes"
+J63.12,Portails Internet
+J63.91,Activités des agences de presse
+J63.99,Autres services d'information n.c.a.
+K64.11,Activités de banque centrale
+K64.19,Autres intermédiations monétaires
+K64.20,Activités des sociétés holding
+K64.30,Fonds de placement et entités financières similaires
+K64.91,Crédit-bail
+K64.92,Autre distribution de crédit
+K64.99,"Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a."
+K65.11,Assurance vie
+K65.12,Autres assurances
+K65.20,Réassurance
+K65.30,Caisses de retraite
+K66.11,Administration de marchés financiers
+K66.12,Courtage de valeurs mobilières et de marchandises
+K66.19,"Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite"
+K66.21,Évaluation des risques et dommages
+K66.22,Activités des agents et courtiers d'assurances
+K66.29,Autres activités auxiliaires d'assurance et de caisses de retraite
+K66.30,Gestion de fonds
+L68.10,Activités des marchands de biens immobiliers
+L68.20,Location et exploitation de biens immobiliers propres ou loués
+L68.31,Agences immobilières
+L68.32,Administration de biens immobiliers
+M69.10,Activités juridiques
+M69.20,Activités comptables
+M70.10,Activités des sièges sociaux
+M70.21,Conseil en relations publiques et communication
+M70.22,Conseil pour les affaires et autres conseils de gestion
+M71.11,Activités d'architecture
+M71.12,Activités d'ingénierie
+M71.20,Activités de contrôle et analyses techniques
+M72.11,Recherche-développement en biotechnologie
+M72.19,Recherche-développement en autres sciences physiques et naturelles
+M72.20,Recherche-développement en sciences humaines et sociales
+M73.11,Activités des agences de publicité
+M73.12,Régie publicitaire de médias
+M73.20,Études de marché et sondages
+M74.10,Activités spécialisées de design
+M74.20,Activités photographiques
+M74.30,Traduction et interprétation
+M74.90,"Autres activités spécialisées, scientifiques et techniques n.c.a."
+M75.00,Activités vétérinaires
+N77.11,Location et location-bail de voitures et de véhicules automobiles légers
+N77.12,Location et location-bail de camions
+N77.21,Location et location-bail d'articles de loisirs et de sport
+N77.22,Location de vidéocassettes et disques vidéo
+N77.29,Location et location-bail d'autres biens personnels et domestiques
+N77.31,Location et location-bail de machines et équipements agricoles
+N77.32,Location et location-bail de machines et équipements pour la construction
+N77.33,Location et location-bail de machines de bureau et de matériel informatique
+N77.34,Location et location-bail de matériels de transport par eau
+N77.35,Location et location-bail de matériels de transport aérien
+N77.39,"Location et location-bail d'autres machines, équipements et biens matériels n.c.a."
+N77.40,"Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright"
+N78.10,Activités des agences de placement de main-d'œuvre
+N78.20,Activités des agences de travail temporaire
+N78.30,Autre mise à disposition de ressources humaines
+N79.11,Activités des agences de voyage
+N79.12,Activités des voyagistes
+N79.90,Autres services de réservation et activités connexes
+N80.10,Activités de sécurité privée
+N80.20,Activités liées aux systèmes de sécurité
+N80.30,Activités d'enquête
+N81.10,Activités combinées de soutien lié aux bâtiments
+N81.21,Nettoyage courant des bâtiments
+N81.22,Autres activités de nettoyage des bâtiments et nettoyage industriel
+N81.29,Autres activités de nettoyage
+N81.30,Services d'aménagement paysager
+N82.11,Services administratifs combinés de bureau
+N82.19,"Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau"
+N82.20,Activités de centres d'appels
+N82.30,Organisation de salons professionnels et congrès
+N82.91,Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle
+N82.92,Activités de conditionnement
+N82.99,Autres activités de soutien aux entreprises n.c.a.
+O84.11,Administration publique générale
+O84.12,"Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale"
+O84.13,Administration publique (tutelle) des activités économiques
+O84.21,Affaires étrangères
+O84.22,Défense
+O84.23,Justice
+O84.24,Activités d'ordre public et de sécurité
+O84.25,Services du feu et de secours
+O84.30,Sécurité sociale obligatoire
+P85.10,Enseignement pré-primaire
+P85.20,Enseignement primaire
+P85.31,Enseignement secondaire général
+P85.32,Enseignement secondaire technique ou professionnel
+P85.41,Enseignement post-secondaire non supérieur
+P85.42,Enseignement supérieur
+P85.51,Enseignement de disciplines sportives et d'activités de loisirs
+P85.52,Enseignement culturel
+P85.53,Enseignement de la conduite
+P85.59,Enseignements divers
+P85.60,Activités de soutien à l'enseignement
+Q86.10,Activités hospitalières
+Q86.21,Activité des médecins généralistes
+Q86.22,Activité des médecins spécialistes
+Q86.23,Pratique dentaire
+Q86.90,Autres activités pour la santé humaine
+Q87.10,Hébergement médicalisé
+Q87.20,"Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes"
+Q87.30,Hébergement social pour personnes âgées ou handicapées physiques
+Q87.90,Autres activités d'hébergement social
+Q88.10,Action sociale sans hébergement pour personnes âgées et pour personnes handicapées
+Q88.91,Action sociale sans hébergement pour jeunes enfants
+Q88.99,Autre action sociale sans hébergement n.c.a.
+R90.01,Arts du spectacle vivant
+R90.02,Activités de soutien au spectacle vivant
+R90.03,Création artistique
+R90.04,Gestion de salles de spectacles
+R91.01,Gestion des bibliothèques et des archives
+R91.02,Gestion des musées
+R91.03,Gestion des sites et monuments historiques et des attractions touristiques similaires
+R91.04,Gestion des jardins botaniques et zoologiques et des réserves naturelles
+R92.00,Organisation de jeux de hasard et d'argent
+R93.11,Gestion d'installations sportives
+R93.12,Activités de clubs de sports
+R93.13,Activités des centres de culture physique
+R93.19,Autres activités liées au sport
+R93.21,Activités des parcs d'attractions et parcs à thèmes
+R93.29,Autres activités récréatives et de loisirs
+S94.11,Activités des organisations patronales et consulaires
+S94.12,Activités des organisations professionnelles
+S94.20,Activités des syndicats de salariés
+S94.91,Activités des organisations religieuses
+S94.92,Activités des organisations politiques
+S94.99,Activités des organisations associatives n.c.a.
+S95.11,Réparation d'ordinateurs et d'équipements périphériques
+S95.12,Réparation d'équipements de communication
+S95.21,Réparation de produits électroniques grand public
+S95.22,Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin
+S95.23,Réparation de chaussures et d'articles en cuir
+S95.24,Réparation de meubles et d'équipements du foyer
+S95.25,Réparation d'articles d'horlogerie et de bijouterie
+S95.29,Réparation d'autres biens personnels et domestiques
+S96.01,Blanchisserie-teinturerie
+S96.02,Coiffure et soins de beauté
+S96.03,Services funéraires
+S96.04,Entretien corporel
+S96.09,Autres services personnels n.c.a.
+T97.00,Activités des ménages en tant qu'employeurs de personnel domestique
+T98.10,Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre
+T98.20,Activités indifférenciées des ménages en tant que producteurs de services pour usage propre
+U99.00,Activités des organisations et organismes extraterritoriaux
