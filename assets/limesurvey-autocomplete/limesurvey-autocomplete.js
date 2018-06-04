@@ -2,24 +2,19 @@ function setAutoCompleteCode(sgq,options) {
     if(!$("input#answer"+sgq).length) {
         return;
     }
-    /* cache only if filter is not on same page */
-    var disableCache = true;
-    if($("#filter"+sgq).text() == $("#filter"+sgq).html()) {
-        disableCache = false;
-    }
     jQuery('<input/>', {
         id: 'autocomplete'+sgq,
         type: 'text',
         size : $('#answer'+sgq).attr('size'),
         value : $('#answer'+sgq).val(),
-        name : 'autocomplete'+sgq
+        name : 'autocomplete'+sgq,
     }).attr('class','text-autocomplete '+$('#answer'+sgq).attr('class')).insertBefore('#answer'+sgq);
-    //~ console.log($('#answer'+sgq).val());
     $('#answer'+sgq).hide();
     
     if(options.replaceValue) {
         $('#autocomplete'+sgq).val(options.replaceValue);
     }
+
     $('#autocomplete'+sgq).devbridgeAutocomplete({
         serviceUrl: options.serviceUrl,
         autoSelectFirst:true,
@@ -33,16 +28,26 @@ function setAutoCompleteCode(sgq,options) {
         onSelect: function (suggestion) {
             $("#answer"+sgq).val(suggestion.data).trigger("keyup");
         },
-        onInvalidateSelection: function () {
-            $("#autocomplete"+sgq).val("");
-            $("#answer"+sgq).val("").trigger("keyup");
-        } 
-    });
-    $('#autocomplete'+sgq).on("blur",function() {
-        if(!$("#answer"+sgq).val()) {
-            $("#autocomplete"+sgq).val("").trigger("keyup");
+        onSearchStart : function () {
+            if(options.asDropDown) {
+                $(this).prop("readonly",true);
+            }
+        },
+        onSearchComplete :  function () {
+            if(options.asDropDown) {
+                $(this).prop("readonly",false);
+            }
         }
     });
+
+    if(options.asDropDown) {
+        $('#autocomplete'+sgq).on("keyup keydown",function(e) {
+            var code = e.keyCode || e.which;
+            if (code != '9' && code != '13' && code != '9') {
+                e.preventDefault();
+            }
+        });
+    }
 }
 
 function setAutoCompleteText(sgq,options) {
@@ -63,4 +68,12 @@ function setAutoCompleteText(sgq,options) {
             $("#answer"+sgq).trigger("keyup");
         },
     });
+    //~ if(options.asDropDown) {
+        //~ $('#autocomplete'+sgq).on("keypress keyup",function(e) {
+            //~ var code = e.keyCode || e.which;
+            //~ if (code != '9') {
+                //~ e.preventDefault();
+            //~ }
+        //~ });
+    //~ }
 }

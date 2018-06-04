@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 0.1.0
+ * @version 0.2.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -42,8 +42,8 @@ class autoComplete extends PluginBase
     if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
         $this->_registerScript();
         /* This part for testing since can not reset single …*/
-        //~ App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
-        //~ App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
+        App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
+        App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
         $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
         $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
         $filterBy = CHtml::tag("div",array(
@@ -75,9 +75,11 @@ class autoComplete extends PluginBase
                 }
                 $minChar = intval($aAttributes['autoCompleteMinChar']);
                 $minChar = ($minChar >= 0) ? $minChar : 1;
+                $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
                 $options = array(
                     "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
                     "minChar" => $minChar ,
+                    "asDropDown" => $asDropDown,
                     "replaceValue" => $replaceValue,
                 );
                 $script = $function."('".$sgq."',".json_encode($options).");\n";
@@ -104,13 +106,13 @@ class autoComplete extends PluginBase
         if(empty($aAttributes['autoCompleteCsvFile'])){
             $this->_renderJson();
         }
+        
         $csvFile = trim($aAttributes['autoCompleteCsvFile']);
         if(strlen($csvFile) < 4 || strtolower(substr($csvFile, -4)) != ".csv") {
             $csvFile =  $csvFile.".csv";
         }
         $oneColumn = !empty($aAttributes['autoCompleteOneColumn']);
         $suggestion = array();
-
         $completeFile = $this->_getFileName($qid);
         if(!$completeFile) {
             /* Except with hack can not happen */
@@ -119,6 +121,10 @@ class autoComplete extends PluginBase
         }
         $filter = $this->api->getRequest()->getParam('filter');
         $search = $this->api->getRequest()->getParam('query');
+        $asDropDown = (bool) $aAttributes['autoCompleteAsDropdown'];
+        if($asDropDown) {
+            $search = null;
+        }
         $handle = fopen($completeFile, "r");
         $headerDone = false;
         while (($line = fgetcsv($handle, 10000, ",")) !== false) {
@@ -129,13 +135,12 @@ class autoComplete extends PluginBase
             $data = $line[0];
             $value = isset($line[1]) ? $line[1] : "";
             if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
-                
                 if($oneColumn) {
-                    if(!$search || strpos($data,$search)!==false) {
+                    if(!$search || strpos($data,$search)!==false || $asDropDown) {
                         $suggestion[] = $data;
                     }
                 } else {
-                    if(!$search || strpos($value,$search)!==false) {
+                    if(!$search || strpos($value,$search)!==false || $asDropDown) {
                         $suggestion[] = array(
                             'data'=>$data,
                             'value'=>$value,
@@ -206,7 +211,7 @@ class autoComplete extends PluginBase
     $autoCompleteAttributes = array(
       'autoComplete' => array(
         'types'     => 'S',//'!S', /* List radio and short text */
-        'category'  => gT('Display'),
+        'category'  => $this->gT('Display'),
         'sortorder' => 300,
         'inputtype' => 'switch',
         'default'   => 0,
@@ -237,7 +242,7 @@ class autoComplete extends PluginBase
         'inputtype'=>'text',
         'expression'=>2, // Forced expression
         'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->gT("Entere the expression manager for filtering, filter is done on first column, search the value of question code, and search at start of code."),
+        'help'=>$this->gT("Enter the expression for filtering, filter is done on first column, return only line starting with the value here."),
         'caption'=>$this->gT('Filter by (expression)'),
       ),
       'autoCompleteMinChar'=>array(
@@ -246,7 +251,17 @@ class autoComplete extends PluginBase
         'sortorder'=>303,
         'inputtype'=>'integer',
         'default'=>1,
+        'help'=>$this->gT("Entere the expression manager for filtering, filter is done on first column, search the value of question code, and search at start of code."),
         'caption'=>$this->gT('Minimum character to start search'),
+      ),
+      'autoCompleteAsDropdown'=>array(
+        'types'=>'S',
+        'category'=>gT('Display'),
+        'sortorder'=>304,
+        'inputtype' => 'switch',
+        'default' => 0,
+        'help'=>$this->gT("If you want to use autocomplete like a dropdown, user can only select value."),
+        'caption'=>$this->gT('Show autocomplete as dropdown (no user input).'),
       ),
     );
     if(method_exists($this->getEvent(),'append')) {
