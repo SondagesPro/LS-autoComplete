@@ -33,7 +33,7 @@ function setAutoCompleteCode(sgq,options) {
                 $(this).prop("readonly",true);
             }
         },
-        onSearchComplete :  function () {
+        onSearchComplete :  function (query, suggestions) {
             if(options.asDropDown) {
                 $(this).prop("readonly",false);
             }

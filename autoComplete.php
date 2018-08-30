@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 0.3.0
+ * @version 0.3.1
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -67,7 +67,7 @@ class autoComplete extends PluginBase
                     return;
                 }
                 $currentValue = $_SESSION['survey_'.$oEvent->get('surveyId')][$sgq];
-                
+
                 $replaceValue = "";
                 $function = "setAutoCompleteCode";
                 if($aAttributes['autoCompleteOneColumn']) {
@@ -81,7 +81,7 @@ class autoComplete extends PluginBase
                 $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
                 $options = array(
                     "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
-                    "minChar" => $minChar ,
+                    "minChar" => $asDropDown ? 0 : $minChar ,
                     "asDropDown" => $asDropDown,
                     "replaceValue" => $replaceValue,
                 );
@@ -126,7 +126,7 @@ class autoComplete extends PluginBase
         $search = $this->api->getRequest()->getParam('query');
         $asDropDown = (bool) $aAttributes['autoCompleteAsDropdown'];
         if($asDropDown) {
-            $search = null;
+            $search = "";
         }
         $handle = fopen($completeFile, "r");
         $headerDone = false;
@@ -236,7 +236,7 @@ class autoComplete extends PluginBase
         'inputtype'=>'switch',
         'default'=>1,
         'help'=>$this->gT("Use only the first column in the csv file."),
-        'caption'=>$this->gT('Use only one column'),
+        'caption'=>$this->gT('[WIP] Use only one column'),
       ),
       'autoCompleteFilter'=>array(
         'types'=>'S',//'!S', /* Short text */
@@ -256,6 +256,7 @@ class autoComplete extends PluginBase
         'default'=>1,
         'help'=>$this->gT("Entere the expression manager for filtering, filter is done on first column, search the value of question code, and search at start of code."),
         'caption'=>$this->gT('Minimum character to start search'),
+        'min'=>0,
       ),
       'autoCompleteAsDropdown'=>array(
         'types'=>'S',
