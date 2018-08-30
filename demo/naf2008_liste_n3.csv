@@ -1,273 +1,273 @@
 Code,Libellé
-A01.1 - Cultures non permanentes,Cultures non permanentes
-A01.2 - Cultures permanentes,Cultures permanentes
-A01.3 - Reproduction de plantes,Reproduction de plantes
-A01.4 - Production animale,Production animale
-A01.5 - Culture et élevage associés,Culture et élevage associés
-A01.6 - Activités de soutien à l'agriculture et traitement primaire des récoltes,Activités de soutien à l'agriculture et traitement primaire des récoltes
-"A01.7 - Chasse, piégeage et services annexes","Chasse, piégeage et services annexes"
-A02.1 - Sylviculture et autres activités forestières,Sylviculture et autres activités forestières
-A02.2 - Exploitation forestière,Exploitation forestière
-A02.3 - Récolte de produits forestiers non ligneux poussant à l'état sauvage,Récolte de produits forestiers non ligneux poussant à l'état sauvage
-A02.4 - Services de soutien à l'exploitation forestière,Services de soutien à l'exploitation forestière
-A03.1 - Pêche,Pêche
-A03.2 - Aquaculture,Aquaculture
-B05.1 - Extraction de houille,Extraction de houille
-B05.2 - Extraction de lignite,Extraction de lignite
-B06.1 - Extraction de pétrole brut,Extraction de pétrole brut
-B06.2 - Extraction de gaz naturel,Extraction de gaz naturel
-B07.1 - Extraction de minerais de fer,Extraction de minerais de fer
-B07.2 - Extraction de minerais de métaux non ferreux,Extraction de minerais de métaux non ferreux
-"B08.1 - Extraction de pierres, de sables et d'argiles","Extraction de pierres, de sables et d'argiles"
-B08.9 - Activités extractives n.c.a.,Activités extractives n.c.a.
-B09.1 - Activités de soutien à l'extraction d'hydrocarbures,Activités de soutien à l'extraction d'hydrocarbures
-B09.9 - Activités de soutien aux autres industries extractives,Activités de soutien aux autres industries extractives
-C10.1 - Transformation et conservation de la viande et préparation de produits à base de viande,Transformation et conservation de la viande et préparation de produits à base de viande
-"C10.2 - Transformation et conservation de poisson, de crustacés et de mollusques","Transformation et conservation de poisson, de crustacés et de mollusques"
-C10.3 - Transformation et conservation de fruits et légumes,Transformation et conservation de fruits et légumes
-C10.4 - Fabrication d'huiles et graisses végétales et animales,Fabrication d'huiles et graisses végétales et animales
-C10.5 - Fabrication de produits laitiers,Fabrication de produits laitiers
-C10.6 - Travail des grains ; fabrication de produits amylacés,Travail des grains ; fabrication de produits amylacés
-C10.7 - Fabrication de produits de boulangerie-pâtisserie et de pâtes alimentaires,Fabrication de produits de boulangerie-pâtisserie et de pâtes alimentaires
-C10.8 - Fabrication d'autres produits alimentaires,Fabrication d'autres produits alimentaires
-C10.9 - Fabrication d'aliments pour animaux,Fabrication d'aliments pour animaux
-C11.0 - Fabrication de boissons,Fabrication de boissons
-C12.0 - Fabrication de produits à base de tabac,Fabrication de produits à base de tabac
-C13.1 - Préparation de fibres textiles et filature,Préparation de fibres textiles et filature
-C13.2 - Tissage,Tissage
-C13.3 - Ennoblissement textile,Ennoblissement textile
-C13.9 - Fabrication d'autres textiles,Fabrication d'autres textiles
-"C14.1 - Fabrication de vêtements, autres qu'en fourrure","Fabrication de vêtements, autres qu'en fourrure"
-C14.2 - Fabrication d'articles en fourrure,Fabrication d'articles en fourrure
-C14.3 - Fabrication d'articles à mailles,Fabrication d'articles à mailles
-"C15.1 - Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie","Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie"
-C15.2 - Fabrication de chaussures,Fabrication de chaussures
-C16.1 - Sciage et rabotage du bois,Sciage et rabotage du bois
-"C16.2 - Fabrication d'articles en bois, liège, vannerie et sparterie","Fabrication d'articles en bois, liège, vannerie et sparterie"
-"C17.1 - Fabrication de pâte à papier, de papier et de carton","Fabrication de pâte à papier, de papier et de carton"
-C17.2 - Fabrication d'articles en papier ou en carton,Fabrication d'articles en papier ou en carton
-C18.1 - Imprimerie et services annexes,Imprimerie et services annexes
-C18.2 - Reproduction d'enregistrements,Reproduction d'enregistrements
-C19.1 - Cokéfaction,Cokéfaction
-C19.2 - Raffinage du pétrole,Raffinage du pétrole
-"C20.1 - Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique","Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique"
-C20.2 - Fabrication de pesticides et d'autres produits agrochimiques,Fabrication de pesticides et d'autres produits agrochimiques
-"C20.3 - Fabrication de peintures, vernis, encres et mastics","Fabrication de peintures, vernis, encres et mastics"
-"C20.4 - Fabrication de savons, de produits d'entretien et de parfums","Fabrication de savons, de produits d'entretien et de parfums"
-C20.5 - Fabrication d'autres produits chimiques,Fabrication d'autres produits chimiques
-C20.6 - Fabrication de fibres artificielles ou synthétiques,Fabrication de fibres artificielles ou synthétiques
-C21.1 - Fabrication de produits pharmaceutiques de base,Fabrication de produits pharmaceutiques de base
-C21.2 - Fabrication de préparations pharmaceutiques,Fabrication de préparations pharmaceutiques
-C22.1 - Fabrication de produits en caoutchouc,Fabrication de produits en caoutchouc
-C22.2 - Fabrication de produits en plastique,Fabrication de produits en plastique
-C23.1 - Fabrication de verre et d'articles en verre,Fabrication de verre et d'articles en verre
-C23.2 - Fabrication de produits réfractaires,Fabrication de produits réfractaires
-C23.3 - Fabrication de matériaux de construction en terre cuite,Fabrication de matériaux de construction en terre cuite
-C23.4 - Fabrication d'autres produits en céramique et en porcelaine,Fabrication d'autres produits en céramique et en porcelaine
-"C23.5 - Fabrication de ciment, chaux et plâtre","Fabrication de ciment, chaux et plâtre"
-"C23.6 - Fabrication d'ouvrages en béton, en ciment ou en plâtre","Fabrication d'ouvrages en béton, en ciment ou en plâtre"
-"C23.7 - Taille, façonnage et finissage de pierres","Taille, façonnage et finissage de pierres"
-C23.9 - Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a.,Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a.
-C24.1 - Sidérurgie,Sidérurgie
-"C24.2 - Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier","Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier"
-C24.3 - Fabrication d'autres produits de première transformation de l'acier,Fabrication d'autres produits de première transformation de l'acier
-C24.4 - Production de métaux précieux et d'autres métaux non ferreux,Production de métaux précieux et d'autres métaux non ferreux
-C24.5 - Fonderie,Fonderie
-C25.1 - Fabrication d'éléments en métal pour la construction,Fabrication d'éléments en métal pour la construction
-"C25.2 - Fabrication de réservoirs, citernes et conteneurs métalliques","Fabrication de réservoirs, citernes et conteneurs métalliques"
-"C25.3 - Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central","Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central"
-C25.4 - Fabrication d'armes et de munitions,Fabrication d'armes et de munitions
-"C25.5 - Forge, emboutissage, estampage ; métallurgie des poudres","Forge, emboutissage, estampage ; métallurgie des poudres"
-C25.6 - Traitement et revêtement des métaux ; usinage,Traitement et revêtement des métaux ; usinage
-"C25.7 - Fabrication de coutellerie, d'outillage et de quincaillerie","Fabrication de coutellerie, d'outillage et de quincaillerie"
-C25.9 - Fabrication d'autres ouvrages en métaux,Fabrication d'autres ouvrages en métaux
-C26.1 - Fabrication de composants et cartes électroniques,Fabrication de composants et cartes électroniques
-C26.2 - Fabrication d'ordinateurs et d'équipements périphériques,Fabrication d'ordinateurs et d'équipements périphériques
-C26.3 - Fabrication d'équipements de communication,Fabrication d'équipements de communication
-C26.4 - Fabrication de produits électroniques grand public,Fabrication de produits électroniques grand public
-"C26.5 - Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie","Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie"
-"C26.6 - Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques","Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques"
-C26.7 - Fabrication de matériels optique et photographique,Fabrication de matériels optique et photographique
-C26.8 - Fabrication de supports magnétiques et optiques,Fabrication de supports magnétiques et optiques
-"C27.1 - Fabrication de moteurs, génératrices et transformateurs électriques et de matériel de distribution et de commande électrique","Fabrication de moteurs, génératrices et transformateurs électriques et de matériel de distribution et de commande électrique"
-C27.2 - Fabrication de piles et d'accumulateurs électriques,Fabrication de piles et d'accumulateurs électriques
-C27.3 - Fabrication de fils et câbles et de matériel d'installation électrique,Fabrication de fils et câbles et de matériel d'installation électrique
-C27.4 - Fabrication d'appareils d'éclairage électrique,Fabrication d'appareils d'éclairage électrique
-C27.5 - Fabrication d'appareils ménagers,Fabrication d'appareils ménagers
-C27.9 - Fabrication d'autres matériels électriques,Fabrication d'autres matériels électriques
-C28.1 - Fabrication de machines d'usage général,Fabrication de machines d'usage général
-C28.2 - Fabrication d'autres machines d'usage général,Fabrication d'autres machines d'usage général
-C28.3 - Fabrication de machines agricoles et forestières,Fabrication de machines agricoles et forestières
-C28.4 - Fabrication de machines de formage des métaux et de machines-outils,Fabrication de machines de formage des métaux et de machines-outils
-C28.9 - Fabrication d'autres machines d'usage spécifique,Fabrication d'autres machines d'usage spécifique
-C29.1 - Construction de véhicules automobiles,Construction de véhicules automobiles
-C29.2 - Fabrication de carrosseries et remorques,Fabrication de carrosseries et remorques
-C29.3 - Fabrication d'équipements automobiles,Fabrication d'équipements automobiles
-C30.1 - Construction navale,Construction navale
-C30.2 - Construction de locomotives et d'autre matériel ferroviaire roulant,Construction de locomotives et d'autre matériel ferroviaire roulant
-C30.3 - Construction aéronautique et spatiale,Construction aéronautique et spatiale
-C30.4 - Construction de véhicules militaires de combat,Construction de véhicules militaires de combat
-C30.9 - Fabrication de matériels de transport n.c.a.,Fabrication de matériels de transport n.c.a.
-C31.0 - Fabrication de meubles,Fabrication de meubles
-"C32.1 - Fabrication d'articles de joaillerie, bijouterie et articles similaires","Fabrication d'articles de joaillerie, bijouterie et articles similaires"
-C32.2 - Fabrication d'instruments de musique,Fabrication d'instruments de musique
-C32.3 - Fabrication d'articles de sport,Fabrication d'articles de sport
-C32.4 - Fabrication de jeux et jouets,Fabrication de jeux et jouets
-C32.5 - Fabrication d'instruments et de fournitures à usage médical et dentaire,Fabrication d'instruments et de fournitures à usage médical et dentaire
-C32.9 - Activités manufacturières n.c.a.,Activités manufacturières n.c.a.
-"C33.1 - Réparation d'ouvrages en métaux, de machines et d'équipements","Réparation d'ouvrages en métaux, de machines et d'équipements"
-C33.2 - Installation de machines et d'équipements industriels,Installation de machines et d'équipements industriels
-"D35.1 - Production, transport et distribution d'électricité","Production, transport et distribution d'électricité"
-D35.2 - Production et distribution de combustibles gazeux,Production et distribution de combustibles gazeux
-D35.3 - Production et distribution de vapeur et d'air conditionné,Production et distribution de vapeur et d'air conditionné
-"E36.0 - Captage, traitement et distribution d'eau","Captage, traitement et distribution d'eau"
-E37.0 - Collecte et traitement des eaux usées,Collecte et traitement des eaux usées
-E38.1 - Collecte des déchets,Collecte des déchets
-E38.2 - Traitement et élimination des déchets,Traitement et élimination des déchets
-E38.3 - Récupération,Récupération
-E39.0 - Dépollution et autres services de gestion des déchets,Dépollution et autres services de gestion des déchets
-F41.1 - Promotion immobilière,Promotion immobilière
-F41.2 - Construction de bâtiments résidentiels et non résidentiels,Construction de bâtiments résidentiels et non résidentiels
-F42.1 - Construction de routes et de voies ferrées,Construction de routes et de voies ferrées
-F42.2 - Construction de réseaux et de lignes,Construction de réseaux et de lignes
-F42.9 - Construction d'autres ouvrages de génie civil,Construction d'autres ouvrages de génie civil
-F43.1 - Démolition et préparation des sites,Démolition et préparation des sites
-"F43.2 - Travaux d'installation électrique, plomberie et autres travaux d'installation","Travaux d'installation électrique, plomberie et autres travaux d'installation"
-F43.3 - Travaux de finition,Travaux de finition
-F43.9 - Autres travaux de construction spécialisés,Autres travaux de construction spécialisés
-G45.1 - Commerce de véhicules automobiles,Commerce de véhicules automobiles
-G45.2 - Entretien et réparation de véhicules automobiles,Entretien et réparation de véhicules automobiles
-G45.3 - Commerce d'équipements automobiles,Commerce d'équipements automobiles
-G45.4 - Commerce et réparation de motocycles,Commerce et réparation de motocycles
-G46.1 - Intermédiaires du commerce de gros,Intermédiaires du commerce de gros
-G46.2 - Commerce de gros de produits agricoles bruts et d'animaux vivants,Commerce de gros de produits agricoles bruts et d'animaux vivants
-"G46.3 - Commerce de gros de produits alimentaires, de boissons et de tabac","Commerce de gros de produits alimentaires, de boissons et de tabac"
-G46.4 - Commerce de gros de biens domestiques,Commerce de gros de biens domestiques
-G46.5 - Commerce de gros d'équipements de l'information et de la communication,Commerce de gros d'équipements de l'information et de la communication
-G46.6 - Commerce de gros d'autres équipements industriels,Commerce de gros d'autres équipements industriels
-G46.7 - Autres commerces de gros spécialisés,Autres commerces de gros spécialisés
-G46.9 - Commerce de gros non spécialisé,Commerce de gros non spécialisé
-G47.1 - Commerce de détail en magasin non spécialisé,Commerce de détail en magasin non spécialisé
-G47.2 - Commerce de détail alimentaire en magasin spécialisé,Commerce de détail alimentaire en magasin spécialisé
-G47.3 - Commerce de détail de carburants en magasin spécialisé,Commerce de détail de carburants en magasin spécialisé
-G47.4 - Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé,Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé
-G47.5 - Commerce de détail d'autres équipements du foyer en magasin spécialisé,Commerce de détail d'autres équipements du foyer en magasin spécialisé
-G47.6 - Commerce de détail de biens culturels et de loisirs en magasin spécialisé,Commerce de détail de biens culturels et de loisirs en magasin spécialisé
-G47.7 - Autres commerces de détail en magasin spécialisé,Autres commerces de détail en magasin spécialisé
-G47.8 - Commerce de détail sur éventaires et marchés,Commerce de détail sur éventaires et marchés
-"G47.9 - Commerce de détail hors magasin, éventaires ou marchés","Commerce de détail hors magasin, éventaires ou marchés"
-H49.1 - Transport ferroviaire interurbain de voyageurs,Transport ferroviaire interurbain de voyageurs
-H49.2 - Transports ferroviaires de fret,Transports ferroviaires de fret
-H49.3 - Autres transports terrestres de voyageurs,Autres transports terrestres de voyageurs
-H49.4 - Transports routiers de fret et services de déménagement,Transports routiers de fret et services de déménagement
-H49.5 - Transports par conduites,Transports par conduites
-H50.1 - Transports maritimes et côtiers de passagers,Transports maritimes et côtiers de passagers
-H50.2 - Transports maritimes et côtiers de fret,Transports maritimes et côtiers de fret
-H50.3 - Transports fluviaux de passagers,Transports fluviaux de passagers
-H50.4 - Transports fluviaux de fret,Transports fluviaux de fret
-H51.1 - Transports aériens de passagers,Transports aériens de passagers
-H51.2 - Transports aériens de fret et transports spatiaux,Transports aériens de fret et transports spatiaux
-H52.1 - Entreposage et stockage,Entreposage et stockage
-H52.2 - Services auxiliaires des transports,Services auxiliaires des transports
-H53.1 - Activités de poste dans le cadre d'une obligation de service universel,Activités de poste dans le cadre d'une obligation de service universel
-H53.2 - Autres activités de poste et de courrier,Autres activités de poste et de courrier
-I55.1 - Hôtels et hébergement similaire,Hôtels et hébergement similaire
-I55.2 - Hébergement touristique et autre hébergement de courte durée,Hébergement touristique et autre hébergement de courte durée
-I55.3 - Terrains de camping et parcs pour caravanes ou véhicules de loisirs,Terrains de camping et parcs pour caravanes ou véhicules de loisirs
-I55.9 - Autres hébergements,Autres hébergements
-I56.1 - Restaurants et services de restauration mobile,Restaurants et services de restauration mobile
-I56.2 - Traiteurs et autres services de restauration,Traiteurs et autres services de restauration
-I56.3 - Débits de boissons,Débits de boissons
-J58.1 - Édition de livres et périodiques et autres activités d'édition,Édition de livres et périodiques et autres activités d'édition
-J58.2 - Édition de logiciels,Édition de logiciels
-"J59.1 - Activités cinématographiques, vidéo et de télévision","Activités cinématographiques, vidéo et de télévision"
-J59.2 - Enregistrement sonore et édition musicale,Enregistrement sonore et édition musicale
-J60.1 - Édition et diffusion de programmes radio,Édition et diffusion de programmes radio
-J60.2 - Programmation de télévision et télédiffusion,Programmation de télévision et télédiffusion
-J61.1 - Télécommunications filaires,Télécommunications filaires
-J61.2 - Télécommunications sans fil,Télécommunications sans fil
-J61.3 - Télécommunications par satellite,Télécommunications par satellite
-J61.9 - Autres activités de télécommunication,Autres activités de télécommunication
-"J62.0 - Programmation, conseil et autres activités informatiques","Programmation, conseil et autres activités informatiques"
-"J63.1 - Traitement de données, hébergement et activités connexes ; portails Internet","Traitement de données, hébergement et activités connexes ; portails Internet"
-J63.9 - Autres services d'information,Autres services d'information
-K64.1 - Intermédiation monétaire,Intermédiation monétaire
-K64.2 - Activités des sociétés holding,Activités des sociétés holding
-K64.3 - Fonds de placement et entités financières similaires,Fonds de placement et entités financières similaires
-"K64.9 - Autres activités des services financiers, hors assurance et caisses de retraite","Autres activités des services financiers, hors assurance et caisses de retraite"
-K65.1 - Assurance,Assurance
-K65.2 - Réassurance,Réassurance
-K65.3 - Caisses de retraite,Caisses de retraite
-"K66.1 - Activités auxiliaires de services financiers, hors assurance et caisses de retraite","Activités auxiliaires de services financiers, hors assurance et caisses de retraite"
-K66.2 - Activités auxiliaires d'assurance et de caisses de retraite,Activités auxiliaires d'assurance et de caisses de retraite
-K66.3 - Gestion de fonds,Gestion de fonds
-L68.1 - Activités des marchands de biens immobiliers,Activités des marchands de biens immobiliers
-L68.2 - Location et exploitation de biens immobiliers propres ou loués,Location et exploitation de biens immobiliers propres ou loués
-L68.3 - Activités immobilières pour compte de tiers,Activités immobilières pour compte de tiers
-M69.1 - Activités juridiques,Activités juridiques
-M69.2 - Activités comptables,Activités comptables
-M70.1 - Activités des sièges sociaux,Activités des sièges sociaux
-M70.2 - Conseil de gestion,Conseil de gestion
-M71.1 - Activités d'architecture et d'ingénierie,Activités d'architecture et d'ingénierie
-M71.2 - Activités de contrôle et analyses techniques,Activités de contrôle et analyses techniques
-M72.1 - Recherche-développement en sciences physiques et naturelles,Recherche-développement en sciences physiques et naturelles
-M72.2 - Recherche-développement en sciences humaines et sociales,Recherche-développement en sciences humaines et sociales
-M73.1 - Publicité,Publicité
-M73.2 - Études de marché et sondages,Études de marché et sondages
-M74.1 - Activités spécialisées de design,Activités spécialisées de design
-M74.2 - Activités photographiques,Activités photographiques
-M74.3 - Traduction et interprétation,Traduction et interprétation
-"M74.9 - Autres activités spécialisées, scientifiques et techniques n.c.a.","Autres activités spécialisées, scientifiques et techniques n.c.a."
-M75.0 - Activités vétérinaires,Activités vétérinaires
-N77.1 - Location et location-bail de véhicules automobiles,Location et location-bail de véhicules automobiles
-N77.2 - Location et location-bail de biens personnels et domestiques,Location et location-bail de biens personnels et domestiques
-"N77.3 - Location et location-bail d'autres machines, équipements et biens","Location et location-bail d'autres machines, équipements et biens"
-"N77.4 - Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright","Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright"
-N78.1 - Activités des agences de placement de main-d'œuvre,Activités des agences de placement de main-d'œuvre
-N78.2 - Activités des agences de travail temporaire,Activités des agences de travail temporaire
-N78.3 - Autre mise à disposition de ressources humaines,Autre mise à disposition de ressources humaines
-N79.1 - Activités des agences de voyage et voyagistes,Activités des agences de voyage et voyagistes
-N79.9 - Autres services de réservation et activités connexes,Autres services de réservation et activités connexes
-N80.1 - Activités de sécurité privée,Activités de sécurité privée
-N80.2 - Activités liées aux systèmes de sécurité,Activités liées aux systèmes de sécurité
-N80.3 - Activités d'enquête,Activités d'enquête
-N81.1 - Activités combinées de soutien lié aux bâtiments,Activités combinées de soutien lié aux bâtiments
-N81.2 - Activités de nettoyage,Activités de nettoyage
-N81.3 - Services d'aménagement paysager,Services d'aménagement paysager
-N82.1 - Activités administratives,Activités administratives
-N82.2 - Activités de centres d'appels,Activités de centres d'appels
-N82.3 - Organisation de salons professionnels et congrès,Organisation de salons professionnels et congrès
-N82.9 - Activités de soutien aux entreprises n.c.a.,Activités de soutien aux entreprises n.c.a.
-"O84.1 - Administration générale, économique et sociale","Administration générale, économique et sociale"
-O84.2 - Services de prérogative publique,Services de prérogative publique
-O84.3 - Sécurité sociale obligatoire,Sécurité sociale obligatoire
-P85.1 - Enseignement pré-primaire,Enseignement pré-primaire
-P85.2 - Enseignement primaire,Enseignement primaire
-P85.3 - Enseignement secondaire,Enseignement secondaire
-P85.4 - Enseignement supérieur et post-secondaire non supérieur,Enseignement supérieur et post-secondaire non supérieur
-P85.5 - Autres activités d'enseignement,Autres activités d'enseignement
-P85.6 - Activités de soutien à l'enseignement,Activités de soutien à l'enseignement
-Q86.1 - Activités hospitalières,Activités hospitalières
-Q86.2 - Activité des médecins et des dentistes,Activité des médecins et des dentistes
-Q86.9 - Autres activités pour la santé humaine,Autres activités pour la santé humaine
-Q87.1 - Hébergement médicalisé,Hébergement médicalisé
-"Q87.2 - Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes","Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes"
-Q87.3 - Hébergement social pour personnes âgées ou handicapées physiques,Hébergement social pour personnes âgées ou handicapées physiques
-Q87.9 - Autres activités d'hébergement social,Autres activités d'hébergement social
-Q88.1 - Action sociale sans hébergement pour personnes âgées et pour personnes handicapées,Action sociale sans hébergement pour personnes âgées et pour personnes handicapées
-Q88.9 - Autre action sociale sans hébergement,Autre action sociale sans hébergement
-"R90.0 - Activités créatives, artistiques et de spectacle","Activités créatives, artistiques et de spectacle"
-"R91.0 - Bibliothèques, archives, musées et autres activités culturelles","Bibliothèques, archives, musées et autres activités culturelles"
-R92.0 - Organisation de jeux de hasard et d'argent,Organisation de jeux de hasard et d'argent
-R93.1 - Activités liées au sport,Activités liées au sport
-R93.2 - Activités récréatives et de loisirs,Activités récréatives et de loisirs
-"S94.1 - Activités des organisations économiques, patronales et professionnelles","Activités des organisations économiques, patronales et professionnelles"
-S94.2 - Activités des syndicats de salariés,Activités des syndicats de salariés
-S94.9 - Activités des autres organisations associatives,Activités des autres organisations associatives
-S95.1 - Réparation d'ordinateurs et d'équipements de communication,Réparation d'ordinateurs et d'équipements de communication
-S95.2 - Réparation de biens personnels et domestiques,Réparation de biens personnels et domestiques
-S96.0 - Autres services personnels,Autres services personnels
-T97.0 - Activités des ménages en tant qu'employeurs de personnel domestique,Activités des ménages en tant qu'employeurs de personnel domestique
-T98.1 - Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre,Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre
-T98.2 - Activités indifférenciées des ménages en tant que producteurs de services pour usage propre,Activités indifférenciées des ménages en tant que producteurs de services pour usage propre
-U99.0 - Activités des organisations et organismes extraterritoriaux,Activités des organisations et organismes extraterritoriaux
+A01.1,Cultures non permanentes
+A01.2,Cultures permanentes
+A01.3,Reproduction de plantes
+A01.4,Production animale
+A01.5,Culture et élevage associés
+A01.6,Activités de soutien à l'agriculture et traitement primaire des récoltes
+A01.7,"Chasse, piégeage et services annexes"
+A02.1,Sylviculture et autres activités forestières
+A02.2,Exploitation forestière
+A02.3,Récolte de produits forestiers non ligneux poussant à l'état sauvage
+A02.4,Services de soutien à l'exploitation forestière
+A03.1,Pêche
+A03.2,Aquaculture
+B05.1,Extraction de houille
+B05.2,Extraction de lignite
+B06.1,Extraction de pétrole brut
+B06.2,Extraction de gaz naturel
+B07.1,Extraction de minerais de fer
+B07.2,Extraction de minerais de métaux non ferreux
+B08.1,"Extraction de pierres, de sables et d'argiles"
+B08.9,Activités extractives n.c.a.
+B09.1,Activités de soutien à l'extraction d'hydrocarbures
+B09.9,Activités de soutien aux autres industries extractives
+C10.1,Transformation et conservation de la viande et préparation de produits à base de viande
+C10.2,"Transformation et conservation de poisson, de crustacés et de mollusques"
+C10.3,Transformation et conservation de fruits et légumes
+C10.4,Fabrication d'huiles et graisses végétales et animales
+C10.5,Fabrication de produits laitiers
+C10.6,Travail des grains ; fabrication de produits amylacés
+C10.7,Fabrication de produits de boulangerie-pâtisserie et de pâtes alimentaires
+C10.8,Fabrication d'autres produits alimentaires
+C10.9,Fabrication d'aliments pour animaux
+C11.0,Fabrication de boissons
+C12.0,Fabrication de produits à base de tabac
+C13.1,Préparation de fibres textiles et filature
+C13.2,Tissage
+C13.3,Ennoblissement textile
+C13.9,Fabrication d'autres textiles
+C14.1,"Fabrication de vêtements, autres qu'en fourrure"
+C14.2,Fabrication d'articles en fourrure
+C14.3,Fabrication d'articles à mailles
+C15.1,"Apprêt et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d'articles de voyage, de maroquinerie et de sellerie"
+C15.2,Fabrication de chaussures
+C16.1,Sciage et rabotage du bois
+C16.2,"Fabrication d'articles en bois, liège, vannerie et sparterie"
+C17.1,"Fabrication de pâte à papier, de papier et de carton"
+C17.2,Fabrication d'articles en papier ou en carton
+C18.1,Imprimerie et services annexes
+C18.2,Reproduction d'enregistrements
+C19.1,Cokéfaction
+C19.2,Raffinage du pétrole
+C20.1,"Fabrication de produits chimiques de base, de produits azotés et d'engrais, de matières plastiques de base et de caoutchouc synthétique"
+C20.2,Fabrication de pesticides et d'autres produits agrochimiques
+C20.3,"Fabrication de peintures, vernis, encres et mastics"
+C20.4,"Fabrication de savons, de produits d'entretien et de parfums"
+C20.5,Fabrication d'autres produits chimiques
+C20.6,Fabrication de fibres artificielles ou synthétiques
+C21.1,Fabrication de produits pharmaceutiques de base
+C21.2,Fabrication de préparations pharmaceutiques
+C22.1,Fabrication de produits en caoutchouc
+C22.2,Fabrication de produits en plastique
+C23.1,Fabrication de verre et d'articles en verre
+C23.2,Fabrication de produits réfractaires
+C23.3,Fabrication de matériaux de construction en terre cuite
+C23.4,Fabrication d'autres produits en céramique et en porcelaine
+C23.5,"Fabrication de ciment, chaux et plâtre"
+C23.6,"Fabrication d'ouvrages en béton, en ciment ou en plâtre"
+C23.7,"Taille, façonnage et finissage de pierres"
+C23.9,Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a.
+C24.1,Sidérurgie
+C24.2,"Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier"
+C24.3,Fabrication d'autres produits de première transformation de l'acier
+C24.4,Production de métaux précieux et d'autres métaux non ferreux
+C24.5,Fonderie
+C25.1,Fabrication d'éléments en métal pour la construction
+C25.2,"Fabrication de réservoirs, citernes et conteneurs métalliques"
+C25.3,"Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central"
+C25.4,Fabrication d'armes et de munitions
+C25.5,"Forge, emboutissage, estampage ; métallurgie des poudres"
+C25.6,Traitement et revêtement des métaux ; usinage
+C25.7,"Fabrication de coutellerie, d'outillage et de quincaillerie"
+C25.9,Fabrication d'autres ouvrages en métaux
+C26.1,Fabrication de composants et cartes électroniques
+C26.2,Fabrication d'ordinateurs et d'équipements périphériques
+C26.3,Fabrication d'équipements de communication
+C26.4,Fabrication de produits électroniques grand public
+C26.5,"Fabrication d'instruments et d'appareils de mesure, d'essai et de navigation ; horlogerie"
+C26.6,"Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques"
+C26.7,Fabrication de matériels optique et photographique
+C26.8,Fabrication de supports magnétiques et optiques
+C27.1,"Fabrication de moteurs, génératrices et transformateurs électriques et de matériel de distribution et de commande électrique"
+C27.2,Fabrication de piles et d'accumulateurs électriques
+C27.3,Fabrication de fils et câbles et de matériel d'installation électrique
+C27.4,Fabrication d'appareils d'éclairage électrique
+C27.5,Fabrication d'appareils ménagers
+C27.9,Fabrication d'autres matériels électriques
+C28.1,Fabrication de machines d'usage général
+C28.2,Fabrication d'autres machines d'usage général
+C28.3,Fabrication de machines agricoles et forestières
+C28.4,Fabrication de machines de formage des métaux et de machines-outils
+C28.9,Fabrication d'autres machines d'usage spécifique
+C29.1,Construction de véhicules automobiles
+C29.2,Fabrication de carrosseries et remorques
+C29.3,Fabrication d'équipements automobiles
+C30.1,Construction navale
+C30.2,Construction de locomotives et d'autre matériel ferroviaire roulant
+C30.3,Construction aéronautique et spatiale
+C30.4,Construction de véhicules militaires de combat
+C30.9,Fabrication de matériels de transport n.c.a.
+C31.0,Fabrication de meubles
+C32.1,"Fabrication d'articles de joaillerie, bijouterie et articles similaires"
+C32.2,Fabrication d'instruments de musique
+C32.3,Fabrication d'articles de sport
+C32.4,Fabrication de jeux et jouets
+C32.5,Fabrication d'instruments et de fournitures à usage médical et dentaire
+C32.9,Activités manufacturières n.c.a.
+C33.1,"Réparation d'ouvrages en métaux, de machines et d'équipements"
+C33.2,Installation de machines et d'équipements industriels
+D35.1,"Production, transport et distribution d'électricité"
+D35.2,Production et distribution de combustibles gazeux
+D35.3,Production et distribution de vapeur et d'air conditionné
+E36.0,"Captage, traitement et distribution d'eau"
+E37.0,Collecte et traitement des eaux usées
+E38.1,Collecte des déchets
+E38.2,Traitement et élimination des déchets
+E38.3,Récupération
+E39.0,Dépollution et autres services de gestion des déchets
+F41.1,Promotion immobilière
+F41.2,Construction de bâtiments résidentiels et non résidentiels
+F42.1,Construction de routes et de voies ferrées
+F42.2,Construction de réseaux et de lignes
+F42.9,Construction d'autres ouvrages de génie civil
+F43.1,Démolition et préparation des sites
+F43.2,"Travaux d'installation électrique, plomberie et autres travaux d'installation"
+F43.3,Travaux de finition
+F43.9,Autres travaux de construction spécialisés
+G45.1,Commerce de véhicules automobiles
+G45.2,Entretien et réparation de véhicules automobiles
+G45.3,Commerce d'équipements automobiles
+G45.4,Commerce et réparation de motocycles
+G46.1,Intermédiaires du commerce de gros
+G46.2,Commerce de gros de produits agricoles bruts et d'animaux vivants
+G46.3,"Commerce de gros de produits alimentaires, de boissons et de tabac"
+G46.4,Commerce de gros de biens domestiques
+G46.5,Commerce de gros d'équipements de l'information et de la communication
+G46.6,Commerce de gros d'autres équipements industriels
+G46.7,Autres commerces de gros spécialisés
+G46.9,Commerce de gros non spécialisé
+G47.1,Commerce de détail en magasin non spécialisé
+G47.2,Commerce de détail alimentaire en magasin spécialisé
+G47.3,Commerce de détail de carburants en magasin spécialisé
+G47.4,Commerce de détail d'équipements de l'information et de la communication en magasin spécialisé
+G47.5,Commerce de détail d'autres équipements du foyer en magasin spécialisé
+G47.6,Commerce de détail de biens culturels et de loisirs en magasin spécialisé
+G47.7,Autres commerces de détail en magasin spécialisé
+G47.8,Commerce de détail sur éventaires et marchés
+G47.9,"Commerce de détail hors magasin, éventaires ou marchés"
+H49.1,Transport ferroviaire interurbain de voyageurs
+H49.2,Transports ferroviaires de fret
+H49.3,Autres transports terrestres de voyageurs
+H49.4,Transports routiers de fret et services de déménagement
+H49.5,Transports par conduites
+H50.1,Transports maritimes et côtiers de passagers
+H50.2,Transports maritimes et côtiers de fret
+H50.3,Transports fluviaux de passagers
+H50.4,Transports fluviaux de fret
+H51.1,Transports aériens de passagers
+H51.2,Transports aériens de fret et transports spatiaux
+H52.1,Entreposage et stockage
+H52.2,Services auxiliaires des transports
+H53.1,Activités de poste dans le cadre d'une obligation de service universel
+H53.2,Autres activités de poste et de courrier
+I55.1,Hôtels et hébergement similaire
+I55.2,Hébergement touristique et autre hébergement de courte durée
+I55.3,Terrains de camping et parcs pour caravanes ou véhicules de loisirs
+I55.9,Autres hébergements
+I56.1,Restaurants et services de restauration mobile
+I56.2,Traiteurs et autres services de restauration
+I56.3,Débits de boissons
+J58.1,Édition de livres et périodiques et autres activités d'édition
+J58.2,Édition de logiciels
+J59.1,"Activités cinématographiques, vidéo et de télévision"
+J59.2,Enregistrement sonore et édition musicale
+J60.1,Édition et diffusion de programmes radio
+J60.2,Programmation de télévision et télédiffusion
+J61.1,Télécommunications filaires
+J61.2,Télécommunications sans fil
+J61.3,Télécommunications par satellite
+J61.9,Autres activités de télécommunication
+J62.0,"Programmation, conseil et autres activités informatiques"
+J63.1,"Traitement de données, hébergement et activités connexes ; portails Internet"
+J63.9,Autres services d'information
+K64.1,Intermédiation monétaire
+K64.2,Activités des sociétés holding
+K64.3,Fonds de placement et entités financières similaires
+K64.9,"Autres activités des services financiers, hors assurance et caisses de retraite"
+K65.1,Assurance
+K65.2,Réassurance
+K65.3,Caisses de retraite
+K66.1,"Activités auxiliaires de services financiers, hors assurance et caisses de retraite"
+K66.2,Activités auxiliaires d'assurance et de caisses de retraite
+K66.3,Gestion de fonds
+L68.1,Activités des marchands de biens immobiliers
+L68.2,Location et exploitation de biens immobiliers propres ou loués
+L68.3,Activités immobilières pour compte de tiers
+M69.1,Activités juridiques
+M69.2,Activités comptables
+M70.1,Activités des sièges sociaux
+M70.2,Conseil de gestion
+M71.1,Activités d'architecture et d'ingénierie
+M71.2,Activités de contrôle et analyses techniques
+M72.1,Recherche-développement en sciences physiques et naturelles
+M72.2,Recherche-développement en sciences humaines et sociales
+M73.1,Publicité
+M73.2,Études de marché et sondages
+M74.1,Activités spécialisées de design
+M74.2,Activités photographiques
+M74.3,Traduction et interprétation
+M74.9,"Autres activités spécialisées, scientifiques et techniques n.c.a."
+M75.0,Activités vétérinaires
+N77.1,Location et location-bail de véhicules automobiles
+N77.2,Location et location-bail de biens personnels et domestiques
+N77.3,"Location et location-bail d'autres machines, équipements et biens"
+N77.4,"Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright"
+N78.1,Activités des agences de placement de main-d'œuvre
+N78.2,Activités des agences de travail temporaire
+N78.3,Autre mise à disposition de ressources humaines
+N79.1,Activités des agences de voyage et voyagistes
+N79.9,Autres services de réservation et activités connexes
+N80.1,Activités de sécurité privée
+N80.2,Activités liées aux systèmes de sécurité
+N80.3,Activités d'enquête
+N81.1,Activités combinées de soutien lié aux bâtiments
+N81.2,Activités de nettoyage
+N81.3,Services d'aménagement paysager
+N82.1,Activités administratives
+N82.2,Activités de centres d'appels
+N82.3,Organisation de salons professionnels et congrès
+N82.9,Activités de soutien aux entreprises n.c.a.
+O84.1,"Administration générale, économique et sociale"
+O84.2,Services de prérogative publique
+O84.3,Sécurité sociale obligatoire
+P85.1,Enseignement pré-primaire
+P85.2,Enseignement primaire
+P85.3,Enseignement secondaire
+P85.4,Enseignement supérieur et post-secondaire non supérieur
+P85.5,Autres activités d'enseignement
+P85.6,Activités de soutien à l'enseignement
+Q86.1,Activités hospitalières
+Q86.2,Activité des médecins et des dentistes
+Q86.9,Autres activités pour la santé humaine
+Q87.1,Hébergement médicalisé
+Q87.2,"Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes"
+Q87.3,Hébergement social pour personnes âgées ou handicapées physiques
+Q87.9,Autres activités d'hébergement social
+Q88.1,Action sociale sans hébergement pour personnes âgées et pour personnes handicapées
+Q88.9,Autre action sociale sans hébergement
+R90.0,"Activités créatives, artistiques et de spectacle"
+R91.0,"Bibliothèques, archives, musées et autres activités culturelles"
+R92.0,Organisation de jeux de hasard et d'argent
+R93.1,Activités liées au sport
+R93.2,Activités récréatives et de loisirs
+S94.1,"Activités des organisations économiques, patronales et professionnelles"
+S94.2,Activités des syndicats de salariés
+S94.9,Activités des autres organisations associatives
+S95.1,Réparation d'ordinateurs et d'équipements de communication
+S95.2,Réparation de biens personnels et domestiques
+S96.0,Autres services personnels
+T97.0,Activités des ménages en tant qu'employeurs de personnel domestique
+T98.1,Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre
+T98.2,Activités indifférenciées des ménages en tant que producteurs de services pour usage propre
+U99.0,Activités des organisations et organismes extraterritoriaux

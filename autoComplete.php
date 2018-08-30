@@ -1,11 +1,11 @@
 <?php
 /**
- * select2package add a package select2 for public survey
+ * autocomplete via csv file for public survey
  *
  * @author Denis Chenu <denis@sondages.pro>
- * @copyright 2017 Denis Chenu <www.sondages.pro>
+ * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 0.2.0
+ * @version 0.3.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -46,6 +46,9 @@ class autoComplete extends PluginBase
         App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
         $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
         $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
+        if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
+            $filterBy = LimeExpressionManager::ProcessString($filterBy,$oEvent->get('qid'));
+        }
         $filterBy = CHtml::tag("div",array(
                 'class'=>"hidden hide",
                 'style'=>"display:none",
@@ -303,9 +306,9 @@ class autoComplete extends PluginBase
     Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
   }
 
-  public function gT($string) {
+  public function gT($string, $sEscapeMode = 'html', $sLanguage = NULL) {
     if(Yii::app()->getConfig('versionnumber') >=3) {
-        return parent::gT($string);
+        return parent::gT($string, $sEscapeMode, $sLanguage );
     }
     return gT($string);
   }
