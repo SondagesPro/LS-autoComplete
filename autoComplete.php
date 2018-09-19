@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 0.3.1
+ * @version 0.3.2
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -95,7 +95,7 @@ class autoComplete extends PluginBase
     public function newDirectRequest()
     {
         if($this->getEvent()->get('target') != get_class($this)) {
-            $this->_renderJson();
+            return;
         }
         $qid = $this->api->getRequest()->getParam('qid');
         $oQuestion = Question::model()->find("qid =:qid", array(":qid"=>$qid));
