@@ -1,0 +1,15 @@
+{
+    "name": "sondagesPro/autoComplete",
+    "description": "Autocomplete via csv file for public survey",
+    "type": "limesurvey-plugin",
+    "homepage": "https://gitlab.com/dialogs/plugins/autoComplete",
+    "license": "AGPL-3.0+",
+    "authors": [
+        {
+            "name": "Denis Chenu",
+            "email": "contact@sondages.pro"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
