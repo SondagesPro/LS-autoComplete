@@ -2,7 +2,7 @@
     "name": "sondagesPro/autoComplete",
     "description": "Autocomplete via csv file for public survey",
     "type": "limesurvey-plugin",
-    "homepage": "https://gitlab.com/dialogs/plugins/autoComplete",
+    "homepage": "https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete",
     "license": "AGPL-3.0+",
     "authors": [
         {
