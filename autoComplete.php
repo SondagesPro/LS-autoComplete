@@ -20,7 +20,7 @@
 class autoComplete extends PluginBase
 {
 
-  static protected $description = 'Use devbridgeAutocomplete for single choice and short text (with CSV), tested on 2.73 only.';
+  static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
   static protected $name = 'autoComplete';
 
 
@@ -99,6 +99,7 @@ class autoComplete extends PluginBase
         if($this->getEvent()->get('target') != get_class($this)) {
             return;
         }
+        /* Need test about $_SESSION survey ? */
         $qid = $this->api->getRequest()->getParam('qid');
         $oQuestion = Question::model()->find("qid =:qid", array(":qid"=>$qid));
         if(!$oQuestion) {
@@ -324,8 +325,8 @@ class autoComplete extends PluginBase
     Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
   }
 
-  public function gT($string, $sEscapeMode = 'html', $sLanguage = NULL) {
-    if(Yii::app()->getConfig('versionnumber') >=3) {
+  public function gT($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
+    if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
         return parent::gT($string, $sEscapeMode, $sLanguage );
     }
     return gT($string);
