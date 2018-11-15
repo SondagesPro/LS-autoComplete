@@ -33,7 +33,7 @@ You just need to activate plugin like other plugin, see [Install and activate a 
 
 Issue and pull request are welcome on [gitlab](https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete).
 
-Translation are managed on <https://translate.sondages.pro>, you must register before update string.
+Translation are managed on [translate.sondages.pro](https://translate.sondages.pro/projects/autocomplete/), you must register before update string.
 If you language is not available, open a issue on [gitlab](https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete).
 
 ## Home page & Copyright
