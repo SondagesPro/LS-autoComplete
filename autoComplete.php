@@ -50,7 +50,7 @@ class autoComplete extends PluginBase
             $filterBy = LimeExpressionManager::ProcessString($filterBy,$oEvent->get('qid'));
         }
         $filterBy = CHtml::tag("div",array(
-                'class'=>"hidden hide",
+                'class'=>"hidden",
                 'style'=>"display:none",
                 'id'=>"filter".$sgq,
             ),$filterBy
@@ -70,9 +70,9 @@ class autoComplete extends PluginBase
 
                 $replaceValue = "";
                 $function = "setAutoCompleteCode";
-                if($aAttributes['autoCompleteOneColumn']) {
-                    $function = "setAutoCompleteText";
-                }
+                //~ if($aAttributes['autoCompleteOneColumn']) {
+                    //~ $function = "setAutoCompleteText";
+                //~ }
                 if($currentValue && !$aAttributes['autoCompleteOneColumn']) {
                     $replaceValue = $this->_getCurrentString($qid,$currentValue);
                 }
@@ -81,9 +81,11 @@ class autoComplete extends PluginBase
                 $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
                 $options = array(
                     "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
-                    "minChar" => $asDropDown ? 0 : $minChar ,
-                    "asDropDown" => $asDropDown,
+                    "minChar" => $asDropDown ? 0 : intval($minChar),
+                    "asDropDown" => intval($asDropDown),
                     "replaceValue" => $replaceValue,
+                    "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
+                    "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                 );
                 $script = $function."('".$sgq."',".json_encode($options).");\n";
                 break;
@@ -109,7 +111,6 @@ class autoComplete extends PluginBase
         if(empty($aAttributes['autoCompleteCsvFile'])){
             $this->_renderJson();
         }
-        
         $csvFile = trim($aAttributes['autoCompleteCsvFile']);
         if(strlen($csvFile) < 4 || strtolower(substr($csvFile, -4)) != ".csv") {
             $csvFile =  $csvFile.".csv";
@@ -124,10 +125,12 @@ class autoComplete extends PluginBase
         }
         $filter = $this->api->getRequest()->getParam('filter');
         $search = $this->api->getRequest()->getParam('query');
-        $asDropDown = (bool) $aAttributes['autoCompleteAsDropdown'];
+        $asDropDown = intval($aAttributes['autoCompleteAsDropdown']);
         if($asDropDown) {
             $search = "";
         }
+        $search = $this->_removeSpecialCharacter($search);
+
         $handle = fopen($completeFile, "r");
         $headerDone = false;
         while (($line = fgetcsv($handle, 10000, ",")) !== false) {
@@ -137,13 +140,17 @@ class autoComplete extends PluginBase
             }
             $data = $line[0];
             $value = isset($line[1]) ? $line[1] : "";
+            $searchValue = $this->_removeSpecialCharacter($value);
+            if($oneColumn) {
+                $searchValue = $this->_removeSpecialCharacter($data);
+            }
             if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
                 if($oneColumn) {
-                    if(!$search || strpos($data,$search)!==false || $asDropDown) {
+                    if(!$search || strpos($searchValue,$search)!==false) {
                         $suggestion[] = $data;
                     }
                 } else {
-                    if(!$search || strpos($value,$search)!==false || $asDropDown) {
+                    if(!$search || strpos($searchValue,$search)!==false) {
                         $suggestion[] = array(
                             'data'=>$data,
                             'value'=>$value,
@@ -214,16 +221,16 @@ class autoComplete extends PluginBase
     $autoCompleteAttributes = array(
       'autoComplete' => array(
         'types'     => 'S',//'!S', /* List radio and short text */
-        'category'  => $this->gT('Display'),
-        'sortorder' => 300,
+        'category'  => $this->gT('AutoComplete'),
+        'sortorder' => 1,
         'inputtype' => 'switch',
         'default'   => 0,
         'caption' => $this->gT("Use autocomplete"),
       ),
       'autoCompleteCsvFile'=>array(
         'types'=>'S', /* Short text */
-        'category'=>gT('Display'),
-        'sortorder'=>301,
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>100,
         'inputtype'=>'text',
         'default'=>'', /* not needed (it's already the default) */
         'help'=>$this->gT("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
@@ -231,40 +238,50 @@ class autoComplete extends PluginBase
       ),
       'autoCompleteOneColumn'=>array(
         'types'=>'S', /* Short text */
-        'category'=>gT('Display'),
-        'sortorder'=>302,
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>110,
         'inputtype'=>'switch',
         'default'=>1,
         'help'=>$this->gT("Use only the first column in the csv file."),
-        'caption'=>$this->gT('[WIP] Use only one column'),
+        'caption'=>$this->gT('Use only one column'),
       ),
       'autoCompleteFilter'=>array(
         'types'=>'S',//'!S', /* Short text */
-        'category'=>gT('Display'),
-        'sortorder'=>302,
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>120,
         'inputtype'=>'text',
         'expression'=>2, // Forced expression
         'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->gT("Enter the expression for filtering, filter is done on first column, return only line starting with the value here."),
+        'help'=>$this->gT("Enter the expression for filtering, filter is done on first column, return only line where 1st column code start by this current value."),
         'caption'=>$this->gT('Filter by (expression)'),
       ),
       'autoCompleteMinChar'=>array(
         'types'=>'S',//'!S', /* Short text */
-        'category'=>gT('Display'),
-        'sortorder'=>303,
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>130,
         'inputtype'=>'integer',
         'default'=>1,
-        'help'=>$this->gT("Entere the expression manager for filtering, filter is done on first column, search the value of question code, and search at start of code."),
+        'help'=>"",//$this->gT("Enter the expression manager for filtering, filter is done on first column, return line where code start by this value."),
         'caption'=>$this->gT('Minimum character to start search'),
         'min'=>0,
       ),
+      /* @todo review according to https://github.com/devbridge/jQuery-Autocomplete/issues/155 */
+      'autoCompleteRemoveSpecialChar'=>array(
+        'types'=>'S',//'!S', /* Short text */
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>130,
+        'inputtype'=>'switch',
+        'default'=>1,
+        'help'=>$this->gT("When searching : line search returned was done in lowercase and without any special character."),
+        'caption'=>$this->gT('Do search with lower case and without special character.'),
+      ),
       'autoCompleteAsDropdown'=>array(
         'types'=>'S',
-        'category'=>gT('Display'),
-        'sortorder'=>304,
+        'category'=>$this->gT('AutoComplete'),
+        'sortorder'=>150,
         'inputtype' => 'switch',
-        'default' => 0,
-        'help'=>$this->gT("If you want to use autocomplete like a dropdown, user can only select value."),
+        'default' => 1,
+        'help'=>$this->gT("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
         'caption'=>$this->gT('Show autocomplete as dropdown (no user input).'),
       ),
     );
@@ -357,5 +374,45 @@ class autoComplete extends PluginBase
         }
         $filename[$qid] = $completeFile;
         return $filename[$qid];
+    }
+
+    /**
+     * return a string without any special charater
+     * @param string
+     * @return string
+     */
+    private function _removeSpecialCharacter($string)
+    {
+        if(empty($string)) {
+            return $string; 
+        }
+        if(class_exists('Transliterator')) { /* @todo : check if we really need to test */
+            /* @see https://www.matthecat.com/supprimer-les-accents-dune-chaine-en-php/ */
+            $transliterator = Transliterator::createFromRules("::Latin-ASCII; ::Lower; [^[:L:][:N:]]+ > '-';");
+            return trim($transliterator->transliterate($string),'-');
+        }
+        $string = mb_strtolower($string, 'UTF-8');
+        $string = str_replace(
+            array(
+                'à', 'â', 'ä', 'á', 'ã', 'å',
+                'î', 'ï', 'ì', 'í', 
+                'ô', 'ö', 'ò', 'ó', 'õ', 'ø', 
+                'ù', 'û', 'ü', 'ú', 
+                'é', 'è', 'ê', 'ë', 
+                'ç', 'ÿ', 'ñ',
+                'œ',
+            ),
+            array(
+                'a', 'a', 'a', 'a', 'a', 'a', 
+                'i', 'i', 'i', 'i', 
+                'o', 'o', 'o', 'o', 'o', 'o', 
+                'u', 'u', 'u', 'u', 
+                'e', 'e', 'e', 'e', 
+                'c', 'y', 'n',
+                'oe',
+            ),
+            $string
+        );
+        return $string;
     }
 }

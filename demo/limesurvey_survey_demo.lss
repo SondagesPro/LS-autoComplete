@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
  <LimeSurveyDocType>Survey</LimeSurveyDocType>
- <DBVersion>263</DBVersion>
+ <DBVersion>356</DBVersion>
  <languages>
   <language>fr</language>
  </languages>
@@ -17,7 +17,7 @@
   </fields>
   <rows>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[A]]></code>
     <answer><![CDATA[Agriculture, sylviculture et pêche]]></answer>
     <sortorder><![CDATA[1]]></sortorder>
@@ -26,7 +26,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[B]]></code>
     <answer><![CDATA[Industries extractives]]></answer>
     <sortorder><![CDATA[2]]></sortorder>
@@ -35,7 +35,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[C]]></code>
     <answer><![CDATA[Industrie manufacturière]]></answer>
     <sortorder><![CDATA[3]]></sortorder>
@@ -44,7 +44,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[D]]></code>
     <answer><![CDATA[Production et distribution d'électricité, de gaz, de vapeur et d'air conditionné]]></answer>
     <sortorder><![CDATA[4]]></sortorder>
@@ -53,7 +53,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[E]]></code>
     <answer><![CDATA[Production et distribution d'eau ; assainissement, gestion des déchets et dépollution]]></answer>
     <sortorder><![CDATA[5]]></sortorder>
@@ -62,7 +62,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[F]]></code>
     <answer><![CDATA[Construction]]></answer>
     <sortorder><![CDATA[6]]></sortorder>
@@ -71,7 +71,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[G]]></code>
     <answer><![CDATA[Commerce ; réparation d'automobiles et de motocycles]]></answer>
     <sortorder><![CDATA[7]]></sortorder>
@@ -80,7 +80,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[H]]></code>
     <answer><![CDATA[Transports et entreposage]]></answer>
     <sortorder><![CDATA[8]]></sortorder>
@@ -89,7 +89,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[I]]></code>
     <answer><![CDATA[Hébergement et restauration]]></answer>
     <sortorder><![CDATA[9]]></sortorder>
@@ -98,7 +98,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[J]]></code>
     <answer><![CDATA[Information et communication]]></answer>
     <sortorder><![CDATA[10]]></sortorder>
@@ -107,7 +107,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[K]]></code>
     <answer><![CDATA[Activités financières et d'assurance]]></answer>
     <sortorder><![CDATA[11]]></sortorder>
@@ -116,7 +116,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[L]]></code>
     <answer><![CDATA[Activités immobilières]]></answer>
     <sortorder><![CDATA[12]]></sortorder>
@@ -125,7 +125,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[M]]></code>
     <answer><![CDATA[Activités spécialisées, scientifiques et techniques]]></answer>
     <sortorder><![CDATA[13]]></sortorder>
@@ -134,7 +134,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[N]]></code>
     <answer><![CDATA[Activités de services administratifs et de soutien]]></answer>
     <sortorder><![CDATA[14]]></sortorder>
@@ -143,7 +143,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[O]]></code>
     <answer><![CDATA[Administration publique]]></answer>
     <sortorder><![CDATA[15]]></sortorder>
@@ -152,7 +152,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[P]]></code>
     <answer><![CDATA[Enseignement]]></answer>
     <sortorder><![CDATA[16]]></sortorder>
@@ -161,7 +161,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[Q]]></code>
     <answer><![CDATA[Santé humaine et action sociale]]></answer>
     <sortorder><![CDATA[17]]></sortorder>
@@ -170,7 +170,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[R]]></code>
     <answer><![CDATA[Arts, spectacles et activités récréatives]]></answer>
     <sortorder><![CDATA[18]]></sortorder>
@@ -179,7 +179,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[S]]></code>
     <answer><![CDATA[Autres activités de services]]></answer>
     <sortorder><![CDATA[19]]></sortorder>
@@ -188,7 +188,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[T]]></code>
     <answer><![CDATA[Activités des ménages en tant qu'employeurs ; activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre]]></answer>
     <sortorder><![CDATA[20]]></sortorder>
@@ -197,7 +197,7 @@
     <scale_id><![CDATA[0]]></scale_id>
    </row>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <code><![CDATA[U]]></code>
     <answer><![CDATA[Activités extra-territoriales]]></answer>
     <sortorder><![CDATA[21]]></sortorder>
@@ -220,8 +220,8 @@
   </fields>
   <rows>
    <row>
-    <gid><![CDATA[3442]]></gid>
-    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[85]]></gid>
+    <sid><![CDATA[522519]]></sid>
     <group_name><![CDATA[Mon premier groupe de question]]></group_name>
     <group_order><![CDATA[1]]></group_order>
     <description/>
@@ -230,8 +230,8 @@
     <grelevance><![CDATA[1]]></grelevance>
    </row>
    <row>
-    <gid><![CDATA[3443]]></gid>
-    <sid><![CDATA[794683]]></sid>
+    <gid><![CDATA[86]]></gid>
+    <sid><![CDATA[522519]]></sid>
     <group_name><![CDATA[Back]]></group_name>
     <group_order><![CDATA[2]]></group_order>
     <description/>
@@ -263,17 +263,20 @@
   </fields>
   <rows>
    <row>
-    <qid><![CDATA[60268]]></qid>
+    <qid><![CDATA[957]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[85]]></gid>
     <type><![CDATA[!]]></type>
     <title><![CDATA[NAF1]]></title>
     <question><![CDATA[Code NAF niveau 1]]></question>
     <preg/>
-    <help><![CDATA[{NAF2.NAOK}<br>
-{NAF3.NAOK}<br>
-{NAF4.NAOK} -  {substr(NAF4.NAOK,0,6)}]]></help>
+    <help><![CDATA[Result : <br>
+NAF1.NAOK : {NAF1.NAOK}<br>
+NAF2.NAOK : {NAF2.NAOK}<br>
+NAF3.NAOK : {NAF3.NAOK}<br>
+NAF4.NAOK : {NAF4.NAOK}<br>
+NAF5.NAOK : {NAF5.NAOK}<br>]]></help>
     <other><![CDATA[N]]></other>
     <mandatory><![CDATA[N]]></mandatory>
     <question_order><![CDATA[2]]></question_order>
@@ -284,10 +287,10 @@
     <modulename/>
    </row>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[85]]></gid>
     <type><![CDATA[S]]></type>
     <title><![CDATA[NAF2]]></title>
     <question><![CDATA[Code NAF niveau 2]]></question>
@@ -299,17 +302,17 @@
     <language><![CDATA[fr]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[!is_empty(NAF1.NAOK)]]></relevance>
+    <relevance><![CDATA[NAF1.NAOK]]></relevance>
     <modulename/>
    </row>
    <row>
-    <qid><![CDATA[60270]]></qid>
+    <qid><![CDATA[959]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3443]]></gid>
-    <type><![CDATA[T]]></type>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[86]]></gid>
+    <type><![CDATA[X]]></type>
     <title><![CDATA[BACK]]></title>
-    <question><![CDATA[Back]]></question>
+    <question><![CDATA[Test restour]]></question>
     <preg/>
     <help/>
     <other><![CDATA[N]]></other>
@@ -319,12 +322,13 @@
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
     <relevance><![CDATA[1]]></relevance>
+    <modulename/>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[85]]></gid>
     <type><![CDATA[S]]></type>
     <title><![CDATA[NAF3]]></title>
     <question><![CDATA[Code NAF niveau 3]]></question>
@@ -336,14 +340,14 @@
     <language><![CDATA[fr]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[!is_empty(NAF2.NAOK)]]></relevance>
+    <relevance><![CDATA[NAF1.NAOK]]></relevance>
     <modulename/>
    </row>
    <row>
-    <qid><![CDATA[60272]]></qid>
+    <qid><![CDATA[961]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[85]]></gid>
     <type><![CDATA[S]]></type>
     <title><![CDATA[NAF4]]></title>
     <question><![CDATA[Code NAF niveau 4 sur 1 colonne]]></question>
@@ -355,14 +359,14 @@
     <language><![CDATA[fr]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[!is_empty(NAF3.NAOK)]]></relevance>
+    <relevance><![CDATA[NAF1.NAOK]]></relevance>
     <modulename/>
    </row>
    <row>
-    <qid><![CDATA[60273]]></qid>
+    <qid><![CDATA[962]]></qid>
     <parent_qid><![CDATA[0]]></parent_qid>
-    <sid><![CDATA[794683]]></sid>
-    <gid><![CDATA[3442]]></gid>
+    <sid><![CDATA[522519]]></sid>
+    <gid><![CDATA[85]]></gid>
     <type><![CDATA[S]]></type>
     <title><![CDATA[NAF5]]></title>
     <question><![CDATA[Code NAF niveau 5 sur 1 colonne]]></question>
@@ -374,7 +378,7 @@
     <language><![CDATA[fr]]></language>
     <scale_id><![CDATA[0]]></scale_id>
     <same_default><![CDATA[0]]></same_default>
-    <relevance><![CDATA[!is_empty(NAF4.NAOK)]]></relevance>
+    <relevance><![CDATA[NAF1.NAOK]]></relevance>
     <modulename/>
    </row>
   </rows>
@@ -388,92 +392,107 @@
   </fields>
   <rows>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
     <attribute><![CDATA[autoComplete]]></attribute>
     <value><![CDATA[1]]></value>
    </row>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
+    <attribute><![CDATA[autoCompleteAsDropdown]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[958]]></qid>
     <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
     <value><![CDATA[naf2008_liste_n2.csv]]></value>
    </row>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
     <attribute><![CDATA[autoCompleteFilter]]></attribute>
     <value><![CDATA[NAF1.NAOK]]></value>
    </row>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
     <attribute><![CDATA[autoCompleteMinChar]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
    <row>
-    <qid><![CDATA[60269]]></qid>
+    <qid><![CDATA[958]]></qid>
     <attribute><![CDATA[autoCompleteOneColumn]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
     <attribute><![CDATA[autoComplete]]></attribute>
     <value><![CDATA[1]]></value>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
+    <attribute><![CDATA[autoCompleteAsDropdown]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[960]]></qid>
     <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
     <value><![CDATA[naf2008_liste_n3]]></value>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
     <attribute><![CDATA[autoCompleteFilter]]></attribute>
     <value><![CDATA[NAF2.NAOK]]></value>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
     <attribute><![CDATA[autoCompleteMinChar]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
    <row>
-    <qid><![CDATA[60271]]></qid>
+    <qid><![CDATA[960]]></qid>
     <attribute><![CDATA[autoCompleteOneColumn]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
    <row>
-    <qid><![CDATA[60272]]></qid>
+    <qid><![CDATA[961]]></qid>
     <attribute><![CDATA[autoComplete]]></attribute>
     <value><![CDATA[1]]></value>
    </row>
    <row>
-    <qid><![CDATA[60272]]></qid>
+    <qid><![CDATA[961]]></qid>
+    <attribute><![CDATA[autoCompleteAsDropdown]]></attribute>
+    <value><![CDATA[1]]></value>
+   </row>
+   <row>
+    <qid><![CDATA[961]]></qid>
     <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
     <value><![CDATA[naf2008_liste_n4-one]]></value>
    </row>
    <row>
-    <qid><![CDATA[60272]]></qid>
+    <qid><![CDATA[961]]></qid>
     <attribute><![CDATA[autoCompleteFilter]]></attribute>
     <value><![CDATA[NAF3.NAOK]]></value>
    </row>
    <row>
-    <qid><![CDATA[60272]]></qid>
+    <qid><![CDATA[961]]></qid>
     <attribute><![CDATA[autoCompleteMinChar]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
    <row>
-    <qid><![CDATA[60273]]></qid>
+    <qid><![CDATA[962]]></qid>
     <attribute><![CDATA[autoComplete]]></attribute>
     <value><![CDATA[1]]></value>
    </row>
    <row>
-    <qid><![CDATA[60273]]></qid>
+    <qid><![CDATA[962]]></qid>
     <attribute><![CDATA[autoCompleteCsvFile]]></attribute>
     <value><![CDATA[naf2008_liste_n5-one]]></value>
    </row>
    <row>
-    <qid><![CDATA[60273]]></qid>
+    <qid><![CDATA[962]]></qid>
     <attribute><![CDATA[autoCompleteFilter]]></attribute>
     <value><![CDATA[substr(NAF4.NAOK,0,6)]]></value>
    </row>
    <row>
-    <qid><![CDATA[60273]]></qid>
+    <qid><![CDATA[962]]></qid>
     <attribute><![CDATA[autoCompleteMinChar]]></attribute>
     <value><![CDATA[0]]></value>
    </row>
@@ -482,6 +501,7 @@
  <surveys>
   <fields>
    <fieldname>sid</fieldname>
+   <fieldname>gsid</fieldname>
    <fieldname>admin</fieldname>
    <fieldname>expires</fieldname>
    <fieldname>startdate</fieldname>
@@ -503,6 +523,7 @@
    <fieldname>printanswers</fieldname>
    <fieldname>ipaddr</fieldname>
    <fieldname>refurl</fieldname>
+   <fieldname>showsurveypolicynotice</fieldname>
    <fieldname>publicstatistics</fieldname>
    <fieldname>publicgraphs</fieldname>
    <fieldname>listpublic</fieldname>
@@ -530,35 +551,37 @@
    <fieldname>bounceaccountuser</fieldname>
    <fieldname>showwelcome</fieldname>
    <fieldname>showprogress</fieldname>
+   <fieldname>questionindex</fieldname>
    <fieldname>navigationdelay</fieldname>
    <fieldname>nokeyboard</fieldname>
    <fieldname>alloweditaftercompletion</fieldname>
    <fieldname>googleanalyticsstyle</fieldname>
    <fieldname>googleanalyticsapikey</fieldname>
-   <fieldname>questionindex</fieldname>
   </fields>
   <rows>
    <row>
-    <sid><![CDATA[794683]]></sid>
-    <admin><![CDATA[]]></admin>
-    <adminemail><![CDATA[]]></adminemail>
+    <sid><![CDATA[522519]]></sid>
+    <gsid><![CDATA[1]]></gsid>
+    <admin/>
+    <adminemail/>
     <anonymized><![CDATA[N]]></anonymized>
     <faxto/>
     <format><![CDATA[G]]></format>
     <savetimings><![CDATA[N]]></savetimings>
-    <template><![CDATA[default]]></template>
+    <template><![CDATA[fruity]]></template>
     <language><![CDATA[fr]]></language>
     <additional_languages/>
     <datestamp><![CDATA[N]]></datestamp>
     <usecookie><![CDATA[N]]></usecookie>
     <allowregister><![CDATA[N]]></allowregister>
     <allowsave><![CDATA[Y]]></allowsave>
-    <autonumber_start><![CDATA[0]]></autonumber_start>
+    <autonumber_start><![CDATA[37]]></autonumber_start>
     <autoredirect><![CDATA[N]]></autoredirect>
     <allowprev><![CDATA[Y]]></allowprev>
     <printanswers><![CDATA[N]]></printanswers>
     <ipaddr><![CDATA[N]]></ipaddr>
     <refurl><![CDATA[N]]></refurl>
+    <showsurveypolicynotice><![CDATA[0]]></showsurveypolicynotice>
     <publicstatistics><![CDATA[N]]></publicstatistics>
     <publicgraphs><![CDATA[N]]></publicgraphs>
     <listpublic><![CDATA[N]]></listpublic>
@@ -579,12 +602,12 @@
     <bounceprocessing><![CDATA[N]]></bounceprocessing>
     <showwelcome><![CDATA[N]]></showwelcome>
     <showprogress><![CDATA[Y]]></showprogress>
+    <questionindex><![CDATA[0]]></questionindex>
     <navigationdelay><![CDATA[0]]></navigationdelay>
     <nokeyboard><![CDATA[N]]></nokeyboard>
     <alloweditaftercompletion><![CDATA[N]]></alloweditaftercompletion>
     <googleanalyticsstyle><![CDATA[0]]></googleanalyticsstyle>
     <googleanalyticsapikey/>
-    <questionindex><![CDATA[0]]></questionindex>
    </row>
   </rows>
  </surveys>
@@ -596,6 +619,9 @@
    <fieldname>surveyls_description</fieldname>
    <fieldname>surveyls_welcometext</fieldname>
    <fieldname>surveyls_endtext</fieldname>
+   <fieldname>surveyls_policy_notice</fieldname>
+   <fieldname>surveyls_policy_error</fieldname>
+   <fieldname>surveyls_policy_notice_label</fieldname>
    <fieldname>surveyls_url</fieldname>
    <fieldname>surveyls_urldescription</fieldname>
    <fieldname>surveyls_email_invite_subj</fieldname>
@@ -617,7 +643,7 @@
   </fields>
   <rows>
    <row>
-    <surveyls_survey_id><![CDATA[794683]]></surveyls_survey_id>
+    <surveyls_survey_id><![CDATA[522519]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[Test déroulant]]></surveyls_title>
     <surveyls_description/>
@@ -737,4 +763,57 @@ les réponses suivantes ont été données par le participant :<br />
    </row>
   </rows>
  </surveys_languagesettings>
+ <themes>
+  <theme>
+   <sid>522519</sid>
+   <template_name>fruity</template_name>
+   <config>
+    <options>inherit</options>
+   </config>
+  </theme>
+ </themes>
+ <themes_inherited>
+  <theme>
+   <sid>522519</sid>
+   <template_name>fruity</template_name>
+   <config>
+    <options>
+     <ajaxmode>off</ajaxmode>
+     <brandlogo>on</brandlogo>
+     <brandlogofile>themes/survey/fruity/files/survey_list_header.png</brandlogofile>
+     <container>on</container>
+     <backgroundimage>off</backgroundimage>
+     <backgroundimagefile>upload/themes/survey/generalfiles/chloe-bann.UyBeelxOJaVl.jpg</backgroundimagefile>
+     <animatebody>off</animatebody>
+     <bodyanimation>fadeInRight</bodyanimation>
+     <bodyanimationduration>500</bodyanimationduration>
+     <animatequestion>off</animatequestion>
+     <questionanimation>flipInX</questionanimation>
+     <questionanimationduration>500</questionanimationduration>
+     <animatealert>off</animatealert>
+     <alertanimation>shake</alertanimation>
+     <alertanimationduration>500</alertanimationduration>
+     <font>noto</font>
+     <bodybackgroundcolor>#ffffff</bodybackgroundcolor>
+     <fontcolor>#444444</fontcolor>
+     <questionbackgroundcolor>#ffffff</questionbackgroundcolor>
+     <questionborder>on</questionborder>
+     <questioncontainershadow>on</questioncontainershadow>
+     <checkicon>f00c</checkicon>
+     <animatecheckbox>on</animatecheckbox>
+     <checkboxanimation>rubberBand</checkboxanimation>
+     <checkboxanimationduration>500</checkboxanimationduration>
+     <animateradio>on</animateradio>
+     <radioanimation>zoomIn</radioanimation>
+     <radioanimationduration>500</radioanimationduration>
+     <zebrastriping>off</zebrastriping>
+     <stickymatrixheaders>off</stickymatrixheaders>
+     <greyoutselected>off</greyoutselected>
+     <hideprivacyinfo>off</hideprivacyinfo>
+     <crosshover>off</crosshover>
+     <showpopups>1</showpopups>
+    </options>
+   </config>
+  </theme>
+ </themes_inherited>
 </document>
