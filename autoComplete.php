@@ -222,68 +222,68 @@ class autoComplete extends PluginBase
     $autoCompleteAttributes = array(
       'autoComplete' => array(
         'types'     => 'S',//'!S', /* List radio and short text */
-        'category'  => $this->gT('AutoComplete'),
+        'category'  => $this->_translate('AutoComplete'),
         'sortorder' => 1,
         'inputtype' => 'switch',
         'default'   => 0,
-        'caption' => $this->gT("Use autocomplete"),
+        'caption' => $this->_translate("Use autocomplete"),
       ),
       'autoCompleteCsvFile'=>array(
         'types'=>'S', /* Short text */
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>100,
         'inputtype'=>'text',
         'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->gT("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
-        'caption'=>$this->gT('CSV file to be used'),
+        'help'=>$this->_translate("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
+        'caption'=>$this->_translate('CSV file to be used'),
       ),
       'autoCompleteOneColumn'=>array(
         'types'=>'S', /* Short text */
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>110,
         'inputtype'=>'switch',
         'default'=>1,
-        'help'=>$this->gT("Use only the first column in the csv file."),
-        'caption'=>$this->gT('Use only one column'),
+        'help'=>$this->_translate("Use only the first column in the csv file."),
+        'caption'=>$this->_translate('Use only one column'),
       ),
       'autoCompleteFilter'=>array(
         'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>120,
         'inputtype'=>'text',
         'expression'=>2, // Forced expression
         'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->gT("Enter the expression for filtering, filter is done on first column, return only line where 1st column code start by this current value."),
-        'caption'=>$this->gT('Filter by (expression)'),
+        'help'=>$this->_translate("Enter the expression for filtering, filter is done on first column, return only line where 1st column code start by this current value."),
+        'caption'=>$this->_translate('Filter by (expression)'),
       ),
       'autoCompleteMinChar'=>array(
         'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>130,
         'inputtype'=>'integer',
         'default'=>1,
-        'help'=>"",//$this->gT("Enter the expression manager for filtering, filter is done on first column, return line where code start by this value."),
-        'caption'=>$this->gT('Minimum character to start search'),
+        'help'=>"",//$this->_translate("Enter the expression manager for filtering, filter is done on first column, return line where code start by this value."),
+        'caption'=>$this->_translate('Minimum character to start search'),
         'min'=>0,
       ),
       /* @todo review according to https://github.com/devbridge/jQuery-Autocomplete/issues/155 */
       'autoCompleteRemoveSpecialChar'=>array(
         'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>130,
         'inputtype'=>'switch',
         'default'=>1,
-        'help'=>$this->gT("When searching : line search returned was done in lowercase and without any special character."),
-        'caption'=>$this->gT('Do search with lower case and without special character.'),
+        'help'=>$this->_translate("When searching : line search returned was done in lowercase and without any special character."),
+        'caption'=>$this->_translate('Do search with lower case and without special character.'),
       ),
       'autoCompleteAsDropdown'=>array(
         'types'=>'S',
-        'category'=>$this->gT('AutoComplete'),
+        'category'=>$this->_translate('AutoComplete'),
         'sortorder'=>150,
         'inputtype' => 'switch',
         'default' => 1,
-        'help'=>$this->gT("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
-        'caption'=>$this->gT('Show autocomplete as dropdown (no user input).'),
+        'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
+        'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
       ),
     );
     if(method_exists($this->getEvent(),'append')) {
@@ -325,11 +325,11 @@ class autoComplete extends PluginBase
     Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
   }
 
-  public function gT($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
+  public function _translate($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
     if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
         return parent::gT($string, $sEscapeMode, $sLanguage );
     }
-    return gT($string);
+    return $string;
   }
 
     /**
@@ -338,8 +338,13 @@ class autoComplete extends PluginBase
      */
     public function log($message, $level = \CLogger::LEVEL_TRACE)
     {
-        // parent::log($message, $level); (LimeSurvey version API)
+        if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
+            parent::log($message, $level);
+        }
+        /* To be in web log with debug */
         Yii::log("[".get_class($this)."] ".$message, $level, 'vardump');
+        /* SP system */
+        Yii::log($message, $level,'application.plugins.'.get_class($this));
     }
 
     /**
