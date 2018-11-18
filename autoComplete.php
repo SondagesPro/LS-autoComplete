@@ -20,79 +20,75 @@
 class autoComplete extends PluginBase
 {
 
-  static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
-  static protected $name = 'autoComplete';
+    static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
+    static protected $name = 'autoComplete';
 
 
-  public function init()
-  {
-    $this->subscribe('beforeQuestionRender','launchAutoComplete');
-    $this->subscribe('newQuestionAttributes','addAutoCompleteAttribute');
-    $this->subscribe('newDirectRequest');
-  }
 
-  /**
-   * Launch autocmplete for question
-   */
-  public function launchAutoComplete()
-  {
-    $oEvent=$this->getEvent();
-    $qid = $oEvent->get('qid');
-    $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
-    if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
-        $this->_registerScript();
-        /* This part for testing since can not reset single …*/
-        App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
-        App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
-        $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
-        $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
-        if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
-            $filterBy = LimeExpressionManager::ProcessString($filterBy,$oEvent->get('qid'));
-        }
-        $filterBy = CHtml::tag("div",array(
-                'class'=>"hidden",
-                'style'=>"display:none",
-                'id'=>"filter".$sgq,
-            ),$filterBy
-        );
-        $oEvent->set("answers",$oEvent->get("answers").$filterBy);
-        switch ($oEvent->get('type')) {
-            case '!':
-                // @TODO
-                $script = "";
-                break;
-            case "S":
-            default:
-                if(!$this->_getFileName($qid)) {
-                    return;
-                }
-                $currentValue = $_SESSION['survey_'.$oEvent->get('surveyId')][$sgq];
-
-                $replaceValue = "";
-                $function = "setAutoCompleteCode";
-                //~ if($aAttributes['autoCompleteOneColumn']) {
-                    //~ $function = "setAutoCompleteText";
-                //~ }
-                if($currentValue && !$aAttributes['autoCompleteOneColumn']) {
-                    $replaceValue = $this->_getCurrentString($qid,$currentValue);
-                }
-                $minChar = intval($aAttributes['autoCompleteMinChar']);
-                $minChar = ($minChar >= 0) ? $minChar : 1;
-                $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
-                $options = array(
-                    "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
-                    "minChar" => $asDropDown ? 0 : intval($minChar),
-                    "asDropDown" => intval($asDropDown),
-                    "replaceValue" => $replaceValue,
-                    "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
-                    "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
-                );
-                $script = $function."('".$sgq."',".json_encode($options).");\n";
-                break;
-        }
-        App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script,CClientScript::POS_END);
+    public function init()
+    {
+        $this->subscribe('beforeQuestionRender','launchAutoComplete');
+        $this->subscribe('newQuestionAttributes','addAutoCompleteAttribute');
+        $this->subscribe('newDirectRequest');
     }
-  }
+
+    /**
+    * Launch autocmplete for question
+    */
+    public function launchAutoComplete()
+    {
+        $oEvent=$this->getEvent();
+        $qid = $oEvent->get('qid');
+        $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
+        if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
+            $this->_registerScript();
+            /* This part for testing since can not reset single …*/
+            App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
+            App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
+            $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
+            $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
+            if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
+                $filterBy = LimeExpressionManager::ProcessString($filterBy,$oEvent->get('qid'));
+            }
+            $filterBy = CHtml::tag("div",array(
+                    'class'=>"hidden",
+                    'style'=>"display:none",
+                    'id'=>"filter".$sgq,
+                ),$filterBy
+            );
+            $oEvent->set("answers",$oEvent->get("answers").$filterBy);
+            switch ($oEvent->get('type')) {
+                case '!':
+                    // @TODO
+                    $script = "";
+                    break;
+                case "S":
+                default:
+                    if(!$this->_getFileName($qid)) {
+                        return;
+                    }
+                    $currentValue = $_SESSION['survey_'.$oEvent->get('surveyId')][$sgq]; // This can not broke : it's set in EM::_validateQuestion
+                    $replaceValue = "";
+                    if($currentValue && !$aAttributes['autoCompleteOneColumn']) {
+                        $replaceValue = $this->_getCurrentString($qid,$currentValue);
+                    }
+                    $minChar = intval($aAttributes['autoCompleteMinChar']);
+                    $minChar = ($minChar >= 0) ? $minChar : 1;
+                    $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
+                    $options = array(
+                        "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
+                        "minChar" => $asDropDown ? 0 : intval($minChar),
+                        "asDropDown" => intval($asDropDown),
+                        "replaceValue" => $replaceValue,
+                        "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
+                        "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
+                    );
+                    $script = "setAutoCompleteCode('".$sgq."',".json_encode($options).");\n";
+                    break;
+            }
+            App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script,CClientScript::POS_END);
+        }
+    }
 
     public function newDirectRequest()
     {
@@ -214,123 +210,123 @@ class autoComplete extends PluginBase
         fclose($handle);
         return $string;
     }
-  /**
-   * The attribute, use readonly for 3.X version
-   */
-  public function addAutoCompleteAttribute()
-  {
-    $autoCompleteAttributes = array(
-      'autoComplete' => array(
-        'types'     => 'S',//'!S', /* List radio and short text */
-        'category'  => $this->_translate('AutoComplete'),
-        'sortorder' => 1,
-        'inputtype' => 'switch',
-        'default'   => 0,
-        'caption' => $this->_translate("Use autocomplete"),
-      ),
-      'autoCompleteCsvFile'=>array(
-        'types'=>'S', /* Short text */
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>100,
-        'inputtype'=>'text',
-        'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->_translate("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
-        'caption'=>$this->_translate('CSV file to be used'),
-      ),
-      'autoCompleteOneColumn'=>array(
-        'types'=>'S', /* Short text */
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>110,
-        'inputtype'=>'switch',
-        'default'=>1,
-        'help'=>$this->_translate("Use only the first column in the csv file."),
-        'caption'=>$this->_translate('Use only one column'),
-      ),
-      'autoCompleteFilter'=>array(
-        'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>120,
-        'inputtype'=>'text',
-        'expression'=>2, // Forced expression
-        'default'=>'', /* not needed (it's already the default) */
-        'help'=>$this->_translate("Enter the expression for filtering, filter is done on first column, return only line where 1st column code start by this current value."),
-        'caption'=>$this->_translate('Filter by (expression)'),
-      ),
-      'autoCompleteMinChar'=>array(
-        'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>130,
-        'inputtype'=>'integer',
-        'default'=>1,
-        'help'=>"",//$this->_translate("Enter the expression manager for filtering, filter is done on first column, return line where code start by this value."),
-        'caption'=>$this->_translate('Minimum character to start search'),
-        'min'=>0,
-      ),
-      /* @todo review according to https://github.com/devbridge/jQuery-Autocomplete/issues/155 */
-      'autoCompleteRemoveSpecialChar'=>array(
-        'types'=>'S',//'!S', /* Short text */
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>130,
-        'inputtype'=>'switch',
-        'default'=>1,
-        'help'=>$this->_translate("When searching : line search returned was done in lowercase and without any special character."),
-        'caption'=>$this->_translate('Do search with lower case and without special character.'),
-      ),
-      'autoCompleteAsDropdown'=>array(
-        'types'=>'S',
-        'category'=>$this->_translate('AutoComplete'),
-        'sortorder'=>150,
-        'inputtype' => 'switch',
-        'default' => 1,
-        'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
-        'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
-      ),
-    );
-    if(method_exists($this->getEvent(),'append')) {
-      $this->getEvent()->append('questionAttributes', $autoCompleteAttributes);
-    } else {
-      $questionAttributes=(array)$this->event->get('questionAttributes');
-      $questionAttributes=array_merge($questionAttributes,$autoCompleteAttributes);
-      $this->event->set('questionAttributes',$questionAttributes);
+    /**
+    * The attribute, use readonly for 3.X version
+    */
+    public function addAutoCompleteAttribute()
+    {
+        $autoCompleteAttributes = array(
+            'autoComplete' => array(
+                'types'     => 'S',//'!S', /* List radio and short text */
+                'category'  => $this->_translate('AutoComplete'),
+                'sortorder' => 1,
+                'inputtype' => 'switch',
+                'default'   => 0,
+                'caption' => $this->_translate("Use autocomplete"),
+            ),
+            'autoCompleteCsvFile'=>array(
+                'types'=>'S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>100,
+                'inputtype'=>'text',
+                'default'=>'', /* not needed (it's already the default) */
+                'help'=>$this->_translate("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
+                'caption'=>$this->_translate('CSV file to be used'),
+            ),
+            'autoCompleteOneColumn'=>array(
+                'types'=>'S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>110,
+                'inputtype'=>'switch',
+                'default'=>1,
+                'help'=>$this->_translate("Use only the first column in the csv file."),
+                'caption'=>$this->_translate('Use only one column'),
+            ),
+            'autoCompleteFilter'=>array(
+                'types'=>'S',//'!S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>120,
+                'inputtype'=>'text',
+                'expression'=>2, // Forced expression
+                'default'=>'', /* not needed (it's already the default) */
+                'help'=>$this->_translate("Enter the expression for filtering, filter is done on first column, return only line where 1st column code start by this current value."),
+                'caption'=>$this->_translate('Filter by (expression)'),
+            ),
+            'autoCompleteMinChar'=>array(
+                'types'=>'S',//'!S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>130,
+                'inputtype'=>'integer',
+                'default'=>1,
+                'help'=>"",//$this->_translate("Enter the expression manager for filtering, filter is done on first column, return line where code start by this value."),
+                'caption'=>$this->_translate('Minimum character to start search'),
+                'min'=>0,
+            ),
+            /* @todo review according to https://github.com/devbridge/jQuery-Autocomplete/issues/155 */
+            'autoCompleteRemoveSpecialChar'=>array(
+                'types'=>'S',//'!S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>130,
+                'inputtype'=>'switch',
+                'default'=>1,
+                'help'=>$this->_translate("When searching : line search returned was done in lowercase and without any special character."),
+                'caption'=>$this->_translate('Do search with lower case and without special character.'),
+            ),
+            'autoCompleteAsDropdown'=>array(
+                'types'=>'S',
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>150,
+                'inputtype' => 'switch',
+                'default' => 1,
+                'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
+                'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
+            ),
+        );
+        if(method_exists($this->getEvent(),'append')) {
+          $this->getEvent()->append('questionAttributes', $autoCompleteAttributes);
+        } else {
+          $questionAttributes=(array)$this->event->get('questionAttributes');
+          $questionAttributes=array_merge($questionAttributes,$autoCompleteAttributes);
+          $this->event->set('questionAttributes',$questionAttributes);
+        }
     }
-  }
 
-  private function _registerScript()
-  {
-    Yii::setPathOfAlias('autoComplete', dirname(__FILE__));
-    /* Quit if is done */
-    if(array_key_exists('devbridge-autocomplete-limesurvey',Yii::app()->getClientScript()->packages)) {
-        return;
-    }
-    Yii::setPathOfAlias(get_class($this),dirname(__FILE__));
-    $min = (App()->getConfig('debug')) ? '.min' : '';
+    private function _registerScript()
+    {
+        Yii::setPathOfAlias('autoComplete', dirname(__FILE__));
+        /* Quit if is done */
+        if(array_key_exists('devbridge-autocomplete-limesurvey',Yii::app()->getClientScript()->packages)) {
+            return;
+        }
+        Yii::setPathOfAlias(get_class($this),dirname(__FILE__));
+        $min = (App()->getConfig('debug')) ? '.min' : '';
 
-    /* Add package if not exist (LimeSurvey 3 have own devbridge-autocomplete) */
-    if(!Yii::app()->clientScript->hasPackage('devbridge-autocomplete')) { // Not tested with 3 and older devbridge-autocomplete
-        Yii::app()->clientScript->addPackage('devbridge-autocomplete', array(
-            'basePath'    => get_class($this).'.assets.devbridge-autocomplete',
-            'js'          => array('jquery.autocomplete'.$min.'.js'),
-            'depends'      =>array('jquery'),
-        ));
+        /* Add package if not exist (LimeSurvey 3 have own devbridge-autocomplete) */
+        if(!Yii::app()->clientScript->hasPackage('devbridge-autocomplete')) { // Not tested with 3 and older devbridge-autocomplete
+            Yii::app()->clientScript->addPackage('devbridge-autocomplete', array(
+                'basePath'    => get_class($this).'.assets.devbridge-autocomplete',
+                'js'          => array('jquery.autocomplete'.$min.'.js'),
+                'depends'      =>array('jquery'),
+            ));
+        }
+        if(!Yii::app()->clientScript->hasPackage('limesurvey-autocomplete')) {
+            Yii::app()->clientScript->addPackage('limesurvey-autocomplete', array(
+                'basePath'    => get_class($this).'.assets.limesurvey-autocomplete',
+                'js'          => array('limesurvey-autocomplete.js'),
+                'css'          => array('limesurvey-autocomplete.css'),
+                'depends'      =>array('devbridge-autocomplete'),
+            ));
+        }
+        /* Registering the package */
+        Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
     }
-    if(!Yii::app()->clientScript->hasPackage('limesurvey-autocomplete')) {
-        Yii::app()->clientScript->addPackage('limesurvey-autocomplete', array(
-            'basePath'    => get_class($this).'.assets.limesurvey-autocomplete',
-            'js'          => array('limesurvey-autocomplete.js'),
-            'css'          => array('limesurvey-autocomplete.css'),
-            'depends'      =>array('devbridge-autocomplete'),
-        ));
-    }
-    /* Registering the package */
-    Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
-  }
 
-  public function _translate($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
-    if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
-        return parent::gT($string, $sEscapeMode, $sLanguage );
+    public function _translate($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
+        if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
+            return parent::gT($string, $sEscapeMode, $sLanguage );
+        }
+        return $string;
     }
-    return $string;
-  }
 
     /**
      * @inheritdoc
