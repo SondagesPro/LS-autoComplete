@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.0.0
+ * @version 1.1.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -23,13 +23,13 @@ class autoComplete extends PluginBase
     static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
     static protected $name = 'autoComplete';
 
-
-
     public function init()
     {
         $this->subscribe('beforeQuestionRender','launchAutoComplete');
         $this->subscribe('newQuestionAttributes','addAutoCompleteAttribute');
         $this->subscribe('newDirectRequest');
+        /* for ajax mode : need registering js file in all page … */
+        $this->subscribe('beforeSurveyPage');
     }
 
     /**
@@ -41,10 +41,6 @@ class autoComplete extends PluginBase
         $qid = $oEvent->get('qid');
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
         if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
-            $this->_registerScript();
-            /* This part for testing since can not reset single …*/
-            App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
-            App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
             $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
             $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
             if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
@@ -160,6 +156,28 @@ class autoComplete extends PluginBase
         $this->_renderSuggestion($suggestion);
     }
 
+    public function beforeSurveyPage()
+    {
+        $aQuestionShorttextInSurvey = CHtml::listData(
+            Question::model()->findAll(
+                array(
+                    'condition'=>"sid=:sid and type =:type",
+                    'params'=>array(":sid"=>$this->getEvent()->get('surveyId'),":type"=>'S'),
+                )
+            ),
+            'qid',
+            'qid'
+        );
+        if(!empty($aQuestionShorttextInSurvey)) {
+            $attributeCriteria = new CDbCriteria;
+            $attributeCriteria->compare('attribute','autoComplete');
+            $attributeCriteria->compare('value','1');
+            $attributeCriteria->addInCondition('qid',$aQuestionShorttextInSurvey);
+            if(QuestionAttribute::model()->count($attributeCriteria)) {
+                $this->_registerPackage();
+            }
+        }
+    }
     /**
      * render json for autocomplete
      * @param string[][]
@@ -291,13 +309,9 @@ class autoComplete extends PluginBase
         }
     }
 
-    private function _registerScript()
+    private function _registerPackage()
     {
         Yii::setPathOfAlias('autoComplete', dirname(__FILE__));
-        /* Quit if is done */
-        if(array_key_exists('devbridge-autocomplete-limesurvey',Yii::app()->getClientScript()->packages)) {
-            return;
-        }
         Yii::setPathOfAlias(get_class($this),dirname(__FILE__));
         $min = (App()->getConfig('debug')) ? '.min' : '';
 
