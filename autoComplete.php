@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.1.0
+ * @version 1.2.1
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -79,6 +79,33 @@ class autoComplete extends PluginBase
                         "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
                         "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                     );
+                    if($aAttributes['autoCompleteShowDefaultTip']) {
+                        switch ($minChar) {
+                            case 0:
+                                $tipText = gT("Choose one of the following answers");
+                                break;
+                            case 1:
+                                $tipText = $this->_translate("Type a caracter");
+                                break;
+                            default:
+                                $tipText = sprintf($this->_translate("Type %s characters"),$minChar);
+                                break;
+                        }
+                        $questionStatus = LimeExpressionManager::GetQuestionStatus($qid);
+                        $tipsDatas = array(
+                            'qid'       =>$qid,
+                            'coreId'    =>"vmsg_{$qid}_autocomplete",
+                            'coreClass' =>"ls-em-tip em_autocomplete",
+                            'vclass'    =>'autocomplete',
+                            'vtip'      =>$tipText,
+                            'hideTip'   =>false,
+                        );
+                        $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
+                        $tip = LimeExpressionManager::ProcessString($tip,$qid);
+                        $validTip = $questionStatus['validTip'] . $tip;
+                        $class = empty($aAttributes['hide_tip']) ? "" : " hide-tip";
+                        $oEvent->set("valid_message",doRender('/survey/questions/question_help/help', array('message'=>$validTip, 'classes'=>$class, 'id'=>"vmsg_{$qid}"), true));
+                    }
                     $script = "setAutoCompleteCode('".$sgq."',".json_encode($options).");\n";
                     break;
             }
@@ -298,6 +325,15 @@ class autoComplete extends PluginBase
                 'default' => 1,
                 'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
                 'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
+            ),
+            'autoCompleteShowDefaultTip'=>array(
+                'types'=>'S',
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>150,
+                'inputtype' => 'switch',
+                'default' => 0,
+                'help'=>sprintf($this->_translate("For show as dropddow : default is same than limesurvey dropdown. Else can be translated at %s."),"<a href='https://translate.sondages.pro/projects/'>translate.sondages.pro</a>."),
+                'caption'=>$this->_translate('Show the default tip.'),
             ),
         );
         if(method_exists($this->getEvent(),'append')) {
