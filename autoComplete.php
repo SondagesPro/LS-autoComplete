@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.0.0
+ * @version 1.2.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -23,7 +23,17 @@ class autoComplete extends PluginBase
     static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
     static protected $name = 'autoComplete';
 
+    static private $dbVersion = 1;
 
+    /**
+    * @var array[] the settings
+    */
+    protected $settings = array(
+        'linkManage' => array(
+            'type' => 'info',
+            'content' => 'Sorry, for managing database you need LimSurvey version 2.50 and up.',
+        ),
+    );
 
     public function init()
     {
@@ -32,6 +42,84 @@ class autoComplete extends PluginBase
         $this->subscribe('newDirectRequest');
     }
 
+    /**
+     * @see parent:getPluginSettings
+     */
+    public function getPluginSettings($getValues=true)
+    {
+        $pluginSettings= parent::getPluginSettings($getValues);
+        if(version_compare(App()->getConfig('versionnumber'),"2.50",">=")) {
+            $pluginSettings['linkManage']['content'] = "<div class='well'>".CHtml::link("Manage the Database for autoComplete.",
+                array('admin/pluginhelper','sa' => 'sidebody','plugin' => get_class($this),'method' => 'actionSettings','surveyId' => 0)
+            );
+        }
+        return $pluginSettings;
+    }
+    /**
+     * Main function
+     * @param int $surveyId Survey id
+     *
+     * @return string
+     */
+    public function actionSettings($surveyId)
+    {
+        if(!Permission::model()->hasGlobalPermission('settings','update')){
+            throw new CHttpException(403);
+        }
+        $this->_setDb();
+        /* Manage upload file */
+        /* Manage delete existing */
+        /* Construct form */
+        $lang = array(
+            "Create or update a new dataset." => $this->_translate("Create or update a new dataset."),
+            "Simple name for the auto complete questions." => $this->_translate("Simple name for the auto complete questions."),
+            "Select your csv file name." => $this->_translate("Select your csv file name."),
+            "Upload and add." => $this->_translate("Upload and add."),
+        );
+        $aData = array();
+        $aData['pluginClass']=get_class($this);
+        $aData['title']=$this->_translate("Data for autoComplete");
+        $aData['lang'] = $lang;
+        $content = $this->renderPartial('settings', $aData, true);
+        return $content;
+    }
+
+    /**
+     * Set the DB needed for plugin
+     */
+    private function _setDb()
+    {
+        if($this->get("dbVersion") == self::$dbVersion) {
+            return;
+        }
+        // Specify case sensitive collations for value
+        $sCollation = '';
+        if (Yii::app()->db->driverName == 'mysql' || Yii::app()->db->driverName == 'mysqli') {
+            $sCollation = "COLLATE 'utf8mb4_bin'";
+        }
+        if (Yii::app()->db->driverName == 'sqlsrv'
+            || Yii::app()->db->driverName == 'dblib'
+            || Yii::app()->db->driverName == 'mssql') {
+            $sCollation = "COLLATE SQL_Latin1_General_CP1_CS_AS";
+        }
+
+        /* Table creation : only when activate */
+        if (!$this->api->tableExists($this, 'dataComplete'))
+        {
+            $this->api->createTable($this, 'dataComplete', array(
+                'id' => 'pk',
+                'data' => "string(100) {$sCollation} NOT NULL",
+                'value' => "text {$sCollation}",
+                'value_simple' => "text", // LS 3.15.0 is string(35)
+            ));
+            $tableName = $this->api->getTable($this,'dataComplete')->tableName();
+            Yii::app()->getDb()->createCommand()->createIndex('datacomplete_data',$tableName,'data');
+            //~ Yii::app()->getDb()->createCommand()->createIndex('datacomplete_value',$tableName,'value');
+            //~ Yii::app()->getDb()->createCommand()->createIndex('datacomplete_value_simple',$tableName,'value_simple');
+            $this->set("dbVersion",self::$dbVersion);
+            return;
+        }
+    }
     /**
     * Launch autocmplete for question
     */
@@ -42,9 +130,7 @@ class autoComplete extends PluginBase
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
         if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
             $this->_registerScript();
-            /* This part for testing since can not reset single …*/
-            App()->getClientScript()->registerScriptFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.js");
-            App()->getClientScript()->registerCssFile(Yii::app()->request->getBaseUrl()."/plugins/autoComplete/assets/limesurvey-autocomplete/limesurvey-autocomplete.css");
+            $qid = $oEvent->get('qid');
             $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
             $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
             if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
@@ -57,6 +143,23 @@ class autoComplete extends PluginBase
                 ),$filterBy
             );
             $oEvent->set("answers",$oEvent->get("answers").$filterBy);
+            $autoCompleteAsDropdownTip = $aAttributes['autoCompleteAsDropdownTip'];
+            if( !empty($aAttributes['autoCompleteAsDropdownTip'][Yii::app()->getLanguage()]) ) {
+                $questionStatus = LimeExpressionManager::GetQuestionStatus($qid);
+                $tipsDatas = array(
+                    'qid'       =>$qid,
+                    'coreId'    =>"vmsg_{$qid}_autocomplete",
+                    'coreClass' =>"ls-em-tip em_autocomplete",
+                    'vclass'    =>'autocomplete',
+                    'vtip'      =>$aAttributes['autoCompleteAsDropdownTip'][Yii::app()->getLanguage()],
+                    'hideTip'   =>false,
+                );
+                $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
+                $tip = LimeExpressionManager::ProcessString($tip,$qid);
+                $validTip = $questionStatus['validTip'] . $tip;
+                $class = empty($aAttributes['hide_tip']) ? "" : " hide-tip";
+                $oEvent->set("valid_message",doRender('/survey/questions/question_help/help', array('message'=>$validTip, 'classes'=>$class, 'id'=>"vmsg_{$qid}"), true));
+            }
             switch ($oEvent->get('type')) {
                 case '!':
                     // @TODO
@@ -81,12 +184,13 @@ class autoComplete extends PluginBase
                         "asDropDown" => intval($asDropDown),
                         "replaceValue" => $replaceValue,
                         "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
-                        "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
+                        "useCache" => intval(version_compare(App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                     );
                     $script = "setAutoCompleteCode('".$sgq."',".json_encode($options).");\n";
                     break;
             }
-            App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script,CClientScript::POS_END);
+            $position = version_compare("3",Yii::app()->getConfig('versionnumber'),">=") ? LSYii_ClientScript::POS_POSTSCRIPT : CClientScript::POS_END;
+            App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script, $position);
         }
     }
 
@@ -281,7 +385,21 @@ class autoComplete extends PluginBase
                 'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
                 'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
             ),
+            'autoCompleteAsDropdownTip'=>array(
+                'types'=>'S',
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>200,
+                'inputtype' => 'textarea',
+                'default' => "",
+                'expression'=>1,
+                'i18n'=>true,
+                'caption'=>$this->_translate('Tip for help.'),
+            ),
         );
+        if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0","<")) {
+            // Disable autoCompleteAsDropdownTip for pre 3.X version (@todo)
+            unset($autoCompleteAttributes['autoCompleteAsDropdownTip']);
+        }
         if(method_exists($this->getEvent(),'append')) {
           $this->getEvent()->append('questionAttributes', $autoCompleteAttributes);
         } else {
@@ -295,27 +413,31 @@ class autoComplete extends PluginBase
     {
         Yii::setPathOfAlias('autoComplete', dirname(__FILE__));
         /* Quit if is done */
-        if(array_key_exists('devbridge-autocomplete-limesurvey',Yii::app()->getClientScript()->packages)) {
+        if(array_key_exists('limesurvey-autocomplete',Yii::app()->getClientScript()->packages)) {
+            Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
             return;
         }
         Yii::setPathOfAlias(get_class($this),dirname(__FILE__));
         $min = (App()->getConfig('debug')) ? '.min' : '';
-
         /* Add package if not exist (LimeSurvey 3 have own devbridge-autocomplete) */
-        if(!Yii::app()->clientScript->hasPackage('devbridge-autocomplete')) { // Not tested with 3 and older devbridge-autocomplete
+        if(!Yii::app()->clientScript->hasPackage('devbridge-autocomplete')) {
             Yii::app()->clientScript->addPackage('devbridge-autocomplete', array(
-                'basePath'    => get_class($this).'.assets.devbridge-autocomplete',
-                'js'          => array('jquery.autocomplete'.$min.'.js'),
+                'basePath'     => get_class($this).'.assets.devbridge-autocomplete',
+                'js'           => array('jquery.autocomplete'.$min.'.js'),
                 'depends'      =>array('jquery'),
             ));
         }
         if(!Yii::app()->clientScript->hasPackage('limesurvey-autocomplete')) {
-            Yii::app()->clientScript->addPackage('limesurvey-autocomplete', array(
-                'basePath'    => get_class($this).'.assets.limesurvey-autocomplete',
-                'js'          => array('limesurvey-autocomplete.js'),
+            $package = array(
+                'basePath'     => get_class($this).'.assets.limesurvey-autocomplete',
+                'js'           => array('limesurvey-autocomplete.js'),
                 'css'          => array('limesurvey-autocomplete.css'),
                 'depends'      =>array('devbridge-autocomplete'),
-            ));
+            );
+            if(version_compare("3",Yii::app()->getConfig('versionnumber'),">=")) {
+                $package['position'] =  CClientScript::POS_BEGIN;
+            }
+            Yii::app()->clientScript->addPackage('limesurvey-autocomplete',$package);
         }
         /* Registering the package */
         Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
