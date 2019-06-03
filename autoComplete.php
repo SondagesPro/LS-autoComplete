@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.2.1
+ * @version 1.2.0-alpha
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -20,16 +20,120 @@
 class autoComplete extends PluginBase
 {
 
+    protected $storage = 'DbStorage';
+
     static protected $description = 'Use devbridgeAutocomplete for short text question with CSV.';
     static protected $name = 'autoComplete';
+    static private $dbVersion = 2;
+
+    /**
+    * @var array[] the settings
+    */
+    protected $settings = array(
+        'linkManage' => array(
+            'type' => 'info',
+            'content' => 'Sorry, for managing database you need LimSurvey version 3.0 and up.',
+        ),
+    );
 
     public function init()
     {
+        $oPlugin = Plugin::model()->find("name = :name",array("name"=>get_class($this)));
+        if($oPlugin && $oPlugin->active) {
+          $this->_setDb();
+        }
         $this->subscribe('beforeQuestionRender','launchAutoComplete');
         $this->subscribe('newQuestionAttributes','addAutoCompleteAttribute');
         $this->subscribe('newDirectRequest');
         /* for ajax mode : need registering js file in all page … */
         $this->subscribe('beforeSurveyPage');
+    }
+
+    /**
+     * @see parent:getPluginSettings
+     */
+    public function getPluginSettings($getValues=true)
+    {
+        $pluginSettings= parent::getPluginSettings($getValues);
+        if(version_compare(App()->getConfig('versionnumber'),"2.50",">=")) {
+            $pluginSettings['linkManage']['content'] = "<div class='well'>".CHtml::link("Manage the Database for autoComplete.",
+                array('admin/pluginhelper','sa' => 'sidebody','plugin' => get_class($this),'method' => 'actionSettings','surveyId' => 0)
+            );
+        }
+        return $pluginSettings;
+    }
+
+    /**
+     * Main function
+     * @param int $surveyId Survey id
+     *
+     * @return string
+     */
+    public function actionSettings($surveyId)
+    {
+        if(!Permission::model()->hasGlobalPermission('settings','update')){
+            throw new CHttpException(403);
+        }
+        $this->_setDb();
+        /* Manage upload file */
+        /* Manage delete existing */
+        /* Construct form */
+        $lang = array(
+            "Create or update a new dataset." => $this->_translate("Create or update a new dataset."),
+            "Simple name for the auto complete questions." => $this->_translate("Simple name for the auto complete questions."),
+            "Select your csv file name." => $this->_translate("Select your csv file name."),
+            "Upload and add." => $this->_translate("Upload and add."),
+        );
+        $aData = array();
+        $aData['pluginClass']=get_class($this);
+        $aData['title']=$this->_translate("Data for autoComplete");
+        $aData['lang'] = $lang;
+        $content = $this->renderPartial('settings', $aData, true);
+        return $content;
+    }
+
+    /**
+     * Set the DB needed for plugin
+     */
+    private function _setDb()
+    {
+        if($this->get("dbVersion") == self::$dbVersion) {
+            return;
+        }
+        // Specify case sensitive collations for value
+        $sCollation = '';
+        if (Yii::app()->db->driverName == 'mysql' || Yii::app()->db->driverName == 'mysqli') {
+            $sCollation = "COLLATE 'utf8mb4_bin'";
+        }
+        if (Yii::app()->db->driverName == 'sqlsrv'
+            || Yii::app()->db->driverName == 'dblib'
+            || Yii::app()->db->driverName == 'mssql') {
+            $sCollation = "COLLATE SQL_Latin1_General_CP1_CS_AS";
+        }
+
+        /* Table creation : only when activate */
+        if (!$this->api->tableExists($this, 'dataComplete'))
+        {
+            $this->api->createTable($this, 'dataComplete', array(
+                'id' => 'pk',
+                'data' => "string(100) {$sCollation} NOT NULL",
+                'value' => "text {$sCollation}",
+                'value_simple' => "text", // LS 3.15.0 is string(35)
+                'language' => "string(50)",
+            ));
+            $tableName = $this->api->getTable($this,'dataComplete')->tableName();
+            Yii::app()->getDb()->createCommand()->createIndex('datacomplete_data',$tableName,'data');
+            $this->set("dbVersion",self::$dbVersion);
+            return;
+        }
+        if($this->get("dbVersion") < 2) {
+            $tableName = $this->api->getTable($this,'dataComplete')->tableName();
+            $tableSchema = App()->getDb()->getSchema()->getTable($tableName);
+            if(!array_key_exists('language',$tableSchema['columns'])) {
+                Yii::app()->getDb()->createCommand()->addColumn($tableName,'language','string(50)');
+            }
+            $this->set("dbVersion",2);
+        }
     }
 
     /**
