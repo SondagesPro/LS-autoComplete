@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.2.1
+ * @version 1.2.2
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -25,6 +25,9 @@ class autoComplete extends PluginBase
 
     public function init()
     {
+        if (Yii::app() instanceof CConsoleApplication) {
+            return;
+        }
         $this->subscribe('beforeQuestionRender','launchAutoComplete');
         $this->subscribe('newQuestionAttributes','addAutoCompleteAttribute');
         $this->subscribe('newDirectRequest');
