@@ -3,7 +3,7 @@
  * autocomplete via csv file for public survey
  *
  * @author Denis Chenu <denis@sondages.pro>
- * @copyright 2017-2018 Denis Chenu <www.sondages.pro>
+ * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
  * @version 1.2.2
  *
@@ -75,7 +75,7 @@ class autoComplete extends PluginBase
                     $minChar = ($minChar >= 0) ? $minChar : 1;
                     $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
                     $options = array(
-                        "serviceUrl" => $this->api->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
+                        "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
                         "minChar" => $asDropDown ? 0 : intval($minChar),
                         "asDropDown" => intval($asDropDown),
                         "replaceValue" => $replaceValue,
