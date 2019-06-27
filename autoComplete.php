@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.2.2
+ * @version 1.3.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -44,73 +44,92 @@ class autoComplete extends PluginBase
         $qid = $oEvent->get('qid');
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
         if(isset($aAttributes['autoComplete']) && $aAttributes['autoComplete']){
-            $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
+            if(!$this->_getFileName($qid)) {
+                return;
+            }
             $filterBy = (isset($aAttributes['autoCompleteFilter']) && $aAttributes['autoCompleteFilter']) ? "{".trim($aAttributes['autoCompleteFilter'])."}" : "";
             if(version_compare(Yii::app()->getConfig("versionnumber"),"3.0.0",">=")) {
                 $filterBy = LimeExpressionManager::ProcessString($filterBy,$oEvent->get('qid'));
             }
-            $filterBy = CHtml::tag("div",array(
-                    'class'=>"hidden",
-                    'style'=>"display:none",
-                    'id'=>"filter".$sgq,
-                ),$filterBy
-            );
-            $oEvent->set("answers",$oEvent->get("answers").$filterBy);
+            if(!empty($filterBy)) {
+                $filterBy = CHtml::tag("div",array(
+                        'class'=>"hidden",
+                        'style'=>"display:none",
+                        'id'=>"AutoCompleteFilter".$qid,
+                    ),$filterBy
+                );
+            }
             switch ($oEvent->get('type')) {
-                case '!':
-                    // @TODO
-                    $script = "";
-                    break;
                 case "S":
-                default:
-                    if(!$this->_getFileName($qid)) {
-                        return;
-                    }
+                    $sgq = $oEvent->get('surveyId')."X".$oEvent->get('gid')."X".$oEvent->get('qid');
                     $currentValue = $_SESSION['survey_'.$oEvent->get('surveyId')][$sgq]; // This can not broke : it's set in EM::_validateQuestion
                     $replaceValue = "";
                     if($currentValue && !$aAttributes['autoCompleteOneColumn']) {
                         $replaceValue = $this->_getCurrentString($qid,$currentValue);
                     }
-                    $minChar = intval($aAttributes['autoCompleteMinChar']);
-                    $minChar = ($minChar >= 0) ? $minChar : 1;
-                    $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
-                    $options = array(
-                        "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
-                        "minChar" => $asDropDown ? 0 : intval($minChar),
-                        "asDropDown" => intval($asDropDown),
-                        "replaceValue" => $replaceValue,
-                        "oneColumn" => intval($aAttributes['autoCompleteOneColumn']),
-                        "useCache" => intval(version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
-                    );
-                    if($aAttributes['autoCompleteShowDefaultTip']) {
-                        switch ($minChar) {
-                            case 0:
-                                $tipText = gT("Choose one of the following answers");
-                                break;
-                            case 1:
-                                $tipText = $this->_translate("Type a caracter");
-                                break;
-                            default:
-                                $tipText = sprintf($this->_translate("Type %s characters"),$minChar);
-                                break;
-                        }
-                        $questionStatus = LimeExpressionManager::GetQuestionStatus($qid);
-                        $tipsDatas = array(
-                            'qid'       =>$qid,
-                            'coreId'    =>"vmsg_{$qid}_autocomplete",
-                            'coreClass' =>"ls-em-tip em_autocomplete",
-                            'vclass'    =>'autocomplete',
-                            'vtip'      =>$tipText,
-                            'hideTip'   =>false,
-                        );
-                        $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
-                        $tip = LimeExpressionManager::ProcessString($tip,$qid);
-                        $validTip = $questionStatus['validTip'] . $tip;
-                        $class = empty($aAttributes['hide_tip']) ? "" : " hide-tip";
-                        $oEvent->set("valid_message",doRender('/survey/questions/question_help/help', array('message'=>$validTip, 'classes'=>$class, 'id'=>"vmsg_{$qid}"), true));
-                    }
-                    $script = "setAutoCompleteCode('".$sgq."',".json_encode($options).");\n";
+                    $oneColumn = intval($aAttributes['autoCompleteOneColumn']);
                     break;
+                case "Q":
+                case ";":
+                    $replaceValue = '';
+                    $oneColumn = 1;
+                    break;
+                default:
+                    return; // Not needed, can not be here
+            };
+            $oEvent->set("answers",$oEvent->get("answers").$filterBy);
+
+            $minChar = intval($aAttributes['autoCompleteMinChar']);
+            $minChar = ($minChar >= 0) ? $minChar : 1;
+            $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
+            $options = array(
+                "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
+                "minChar" => $asDropDown ? 0 : intval($minChar),
+                "asDropDown" => intval($asDropDown),
+                "replaceValue" => $replaceValue,
+                "oneColumn" => $oneColumn,
+                "useCache" => intval(empty($filterBy) || version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
+                "filterBy" => "AutoCompleteFilter".$qid,
+            );
+
+            if($aAttributes['autoCompleteShowDefaultTip']) {
+                switch ($minChar) {
+                    case 0:
+                        $tipText = gT("Choose one of the following answers");
+                        break;
+                    case 1:
+                        $tipText = $this->_translate("Type a caracter");
+                        break;
+                    default:
+                        $tipText = sprintf($this->_translate("Type %s characters"),$minChar);
+                        break;
+                }
+                $questionStatus = LimeExpressionManager::GetQuestionStatus($qid);
+                $tipsDatas = array(
+                    'qid'       =>$qid,
+                    'coreId'    =>"vmsg_{$qid}_autocomplete",
+                    'coreClass' =>"ls-em-tip em_autocomplete",
+                    'vclass'    =>'autocomplete',
+                    'vtip'      =>$tipText,
+                    'hideTip'   =>false,
+                );
+                $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
+                $tip = LimeExpressionManager::ProcessString($tip,$qid);
+                $validTip = $questionStatus['validTip'] . $tip;
+                $class = empty($aAttributes['hide_tip']) ? "" : " hide-tip";
+                $oEvent->set("valid_message",doRender('/survey/questions/question_help/help', array('message'=>$validTip, 'classes'=>$class, 'id'=>"vmsg_{$qid}"), true));
+            }
+
+            switch ($oEvent->get('type')) {
+                case "Q":
+                case ";":
+                    $script = "setAutoCompleteCodeWholeQuestion('".$qid."',".json_encode($options).");\n";
+                    break;
+                case "S":
+                    $script = "setAutoCompleteCode('answer".$sgq."',".json_encode($options).");\n";
+                    break;
+                default:
+                    return; // Not needed, already quit
             }
             App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script,CClientScript::POS_END);
         }
@@ -125,7 +144,7 @@ class autoComplete extends PluginBase
         $qid = $this->api->getRequest()->getParam('qid');
         $oQuestion = Question::model()->find("qid =:qid", array(":qid"=>$qid));
         if(!$oQuestion) {
-            $this->_renderJson("no question $qid");
+            $this->_renderJson();
         }
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
         if(empty($aAttributes['autoComplete'])){
@@ -134,11 +153,16 @@ class autoComplete extends PluginBase
         if(empty($aAttributes['autoCompleteCsvFile'])){
             $this->_renderJson();
         }
+        $oQuestion = Question::model()->find("qid = :qid",array(":qid"=>$qid));
+
         $csvFile = trim($aAttributes['autoCompleteCsvFile']);
         if(strlen($csvFile) < 4 || strtolower(substr($csvFile, -4)) != ".csv") {
             $csvFile =  $csvFile.".csv";
         }
-        $oneColumn = !empty($aAttributes['autoCompleteOneColumn']);
+        $oneColumn = 1;
+        if($oQuestion->type == "S") {
+            $oneColumn = !empty($aAttributes['autoCompleteOneColumn']);
+        }
         $suggestion = array();
         $completeFile = $this->_getFileName($qid);
         if(!$completeFile) {
@@ -191,8 +215,13 @@ class autoComplete extends PluginBase
         $aQuestionShorttextInSurvey = CHtml::listData(
             Question::model()->findAll(
                 array(
-                    'condition'=>"sid=:sid and type =:type",
-                    'params'=>array(":sid"=>$this->getEvent()->get('surveyId'),":type"=>'S'),
+                    'condition'=>"sid=:sid and (type =:type2 or type = :type2 or type = :type3)",
+                    'params'=>array(
+                        ":sid"=>$this->getEvent()->get('surveyId'),
+                        ":type1"=>'S',
+                        ":type2"=>'M',
+                        ":type3"=>';',
+                        ),
                 )
             ),
             'qid',
@@ -265,15 +294,16 @@ class autoComplete extends PluginBase
     {
         $autoCompleteAttributes = array(
             'autoComplete' => array(
-                'types'     => 'S',//'!S', /* List radio and short text */
+                'types'     => 'SQ;',//'!S', /* List radio and short text */
                 'category'  => $this->_translate('AutoComplete'),
                 'sortorder' => 1,
                 'inputtype' => 'switch',
                 'default'   => 0,
                 'caption' => $this->_translate("Use autocomplete"),
             ),
+            /* @todo : add more source : 1. label (easy) , 2. plugin table : need a GUI for table update */
             'autoCompleteCsvFile'=>array(
-                'types'=>'S', /* Short text */
+                'types'=>'SQ;', /* Short text */
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>100,
                 'inputtype'=>'text',
@@ -291,7 +321,7 @@ class autoComplete extends PluginBase
                 'caption'=>$this->_translate('Use only one column'),
             ),
             'autoCompleteFilter'=>array(
-                'types'=>'S',//'!S', /* Short text */
+                'types'=>'SQ;',//'!S', /* Short text */
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>120,
                 'inputtype'=>'text',
@@ -301,7 +331,7 @@ class autoComplete extends PluginBase
                 'caption'=>$this->_translate('Filter by (expression)'),
             ),
             'autoCompleteMinChar'=>array(
-                'types'=>'S',//'!S', /* Short text */
+                'types'=>'SQ;',//'!S', /* Short text */
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>130,
                 'inputtype'=>'integer',
@@ -312,7 +342,7 @@ class autoComplete extends PluginBase
             ),
             /* @todo review according to https://github.com/devbridge/jQuery-Autocomplete/issues/155 */
             'autoCompleteRemoveSpecialChar'=>array(
-                'types'=>'S',//'!S', /* Short text */
+                'types'=>'SQ;',//'!S', /* Short text */
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>130,
                 'inputtype'=>'switch',
@@ -321,7 +351,7 @@ class autoComplete extends PluginBase
                 'caption'=>$this->_translate('Do search with lower case and without special character.'),
             ),
             'autoCompleteAsDropdown'=>array(
-                'types'=>'S',
+                'types'=>'SQ;',
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>150,
                 'inputtype' => 'switch',
@@ -330,7 +360,7 @@ class autoComplete extends PluginBase
                 'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
             ),
             'autoCompleteShowDefaultTip'=>array(
-                'types'=>'S',
+                'types'=>'SQ;',
                 'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>150,
                 'inputtype' => 'switch',

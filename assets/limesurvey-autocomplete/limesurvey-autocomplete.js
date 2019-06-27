@@ -1,16 +1,25 @@
-function setAutoCompleteCode(sgq,options) {
-    if(!$('input#answer'+sgq).length) {
+/**
+ * This file is part of autocomplete (plugin for LimeSurvey)
+ * @version 1.1.0
+ */
+function setAutoCompleteCode(elementid,options) {
+    if(!$('input#'+elementid).length) {
         return;
     }
+    var sgq = elementid.replace("answer","");
     jQuery('<input/>', {
         id: 'autocomplete'+sgq,
         type: 'text',
-        size : $('#answer'+sgq).attr('size'),
-        value : $('#answer'+sgq).val(),
+        size : $('#'+elementid).attr('size'),
+        value : $('#'+elementid).val(),
         name : 'autocomplete'+sgq,
         onkeyup : '' // Disable default em action
     }).attr('class','text-autocomplete '+$('#answer'+sgq).attr('class')).insertBefore('#answer'+sgq);
-    $('#answer'+sgq).data('filtered',$('#filter'+sgq).text());
+    if(options.filterBy) {
+        $('#answer'+sgq).data('filtered',$('#'+options.filterBy).text());
+    } else {
+        $('#answer'+sgq).data('filtered',"");
+    }
     $('#answer'+sgq).hide();
 
     /* Set the current value if needed */
@@ -66,4 +75,14 @@ function setAutoCompleteCode(sgq,options) {
             }
         });
     }
+}
+
+function setAutoCompleteCodeWholeQuestion(qid,options) {
+    if(!$('#question'+qid).length) {
+        return;
+    }
+    $('#question'+qid+" .ls-answers .answer-item.text-item input:text").each(function() {
+        setAutoCompleteCode($(this).attr('id'),options);
+    });
+
 }

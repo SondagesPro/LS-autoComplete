@@ -18,10 +18,11 @@ This plugin was tested on LimeSurvey 2.73 and 3.15 version, must work on all ver
 You just need to activate plugin like other plugin, see [Install and activate a plugin for LimeSurvey](https://extensions.sondages.pro/install-and-activate-a-plugin-for-limesurvey.html).
 
 ## Usage
-- Create a short text question, look at advanced settings and open AutoComplete panel
+- Create a short text, multiple text or array text question, look at advanced settings and open AutoComplete panel
 - _autoComplete_: Activate this plugin for this question
 - _autoCompleteCsvFile_: CSV file to be used, **attention** this csv file must be uploaded in ressources files of the survey. You can use default [_Survey menu_ / _Resources_](https://manual.limesurvey.org/Resources) or the HTML editor : _Insert link_ / _Browse server_.
-- _autoCompleteOneColumn_: If you use only the 1st column of the csv file : data and value are in this column. If you use 2 column : data fill the answer, but value are shown to the user.
+- _autoCompleteOneColumn_: (only for short text) If you use only the 1st column of the csv file : data and value are in this column. If you use 2 column : data fill the answer, but value are shown to the user.
+   - multiple text or array text question use only one column
 - _autoCompleteFilter_: Adding an extra filter to the returned value. Returned value are filtered by the current value : data (code) must start by this value. The value use [Expression Manager](https://manual.limesurvey.org/Expression_Manager).
 - _autoCompleteMinChar_: Minimum character to start search.
 - _autoCompleteRemoveSpecialChar_: Remove special character and do the search in lower case (for value) (this function need testing).
