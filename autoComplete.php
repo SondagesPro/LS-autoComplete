@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.3.0
+ * @version 1.5.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -78,7 +78,10 @@ class autoComplete extends PluginBase
                     return; // Not needed, can not be here
             };
             $oEvent->set("answers",$oEvent->get("answers").$filterBy);
-
+            $placeholder = "";
+            if(!empty($aAttributes['autoCompletePlaceholder'][Yii::app()->getLanguage()])) {
+                $placeholder = $aAttributes['autoCompletePlaceholder'][Yii::app()->getLanguage()];
+            }
             $minChar = intval($aAttributes['autoCompleteMinChar']);
             $minChar = ($minChar >= 0) ? $minChar : 1;
             $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
@@ -90,6 +93,7 @@ class autoComplete extends PluginBase
                 "oneColumn" => $oneColumn,
                 "useCache" => intval(empty($filterBy) || version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                 "filterBy" => "AutoCompleteFilter".$qid,
+                "placeholder" => $placeholder,
             );
 
             if($aAttributes['autoCompleteShowDefaultTip']) {
@@ -362,11 +366,21 @@ class autoComplete extends PluginBase
             'autoCompleteShowDefaultTip'=>array(
                 'types'=>'SQ;',
                 'category'=>$this->_translate('AutoComplete'),
-                'sortorder'=>150,
+                'sortorder'=>200,
                 'inputtype' => 'switch',
                 'default' => 0,
                 'help'=>sprintf($this->_translate("For show as dropddow : default is same than limesurvey dropdown. Else can be translated at %s."),"<a href='https://translate.sondages.pro/projects/'>translate.sondages.pro</a>."),
                 'caption'=>$this->_translate('Show the default tip.'),
+            ),
+            'autoCompletePlaceholder'=>array(
+                'types'=>'SQ;',
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>210,
+                'inputtype' => 'text',
+                'i18n'=>true,
+                'default' => "",
+                'help'=>sprintf($this->_translate("Add this string as placeholder to the input HTML, this placeholder are shown when input is empty.")),
+                'caption'=>$this->_translate('Place holder.'),
             ),
         );
         if(method_exists($this->getEvent(),'append')) {

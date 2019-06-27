@@ -1,6 +1,6 @@
 /**
  * This file is part of autocomplete (plugin for LimeSurvey)
- * @version 1.1.0
+ * @version 1.2.0
  */
 function setAutoCompleteCode(elementid,options) {
     if(!$('input#'+elementid).length) {
@@ -26,7 +26,10 @@ function setAutoCompleteCode(elementid,options) {
     if(options.replaceValue) {
         $('#autocomplete'+sgq).val(options.replaceValue);
     }
-
+    /* Add the placeholder */
+    if(options.placeholder) {
+        $('#autocomplete'+sgq).attr("placeholder",options.placeholder);
+    }
     /* Launch autocomplete to the new input */
     $('#autocomplete'+sgq).devbridgeAutocomplete({
         serviceUrl: options.serviceUrl,
