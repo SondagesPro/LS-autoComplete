@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.5.0
+ * @version 1.5.2
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -216,18 +216,12 @@ class autoComplete extends PluginBase
 
     public function beforeSurveyPage()
     {
+        $criteria = new CDbCriteria;
+        $criteria->compare('sid',$this->getEvent()->get('surveyId'));
+        $criteria->addInCondition('type',array('S','M',';'));
+
         $aQuestionShorttextInSurvey = CHtml::listData(
-            Question::model()->findAll(
-                array(
-                    'condition'=>"sid=:sid and (type =:type2 or type = :type2 or type = :type3)",
-                    'params'=>array(
-                        ":sid"=>$this->getEvent()->get('surveyId'),
-                        ":type1"=>'S',
-                        ":type2"=>'M',
-                        ":type3"=>';',
-                        ),
-                )
-            ),
+            Question::model()->findAll($criteria),
             'qid',
             'qid'
         );
