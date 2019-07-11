@@ -1,6 +1,6 @@
 /**
  * This file is part of autocomplete (plugin for LimeSurvey)
- * @version 1.2.1
+ * @version 1.2.2
  */
 function setAutoCompleteCode(elementid,options) {
     if(!$('input#'+elementid).length) {
@@ -34,11 +34,13 @@ function setAutoCompleteCode(elementid,options) {
     $('#autocomplete'+sgq).devbridgeAutocomplete({
         serviceUrl: options.serviceUrl,
         autoSelectFirst:true,
-        noCache : options.useCache && $('#filter'+sgq).text() != $('#filter'+sgq).html(),
+        noCache : options.useCache && options.filterBy && $('#'+options.filterBy).text() != $('#'+options.filterBy).html(),
         minChars : options.minChar,
         ajaxSettings:{
             beforeSend : function(jqXHR, settings) {
-                settings.url += "&filter="+$('#filter'+sgq).text();
+                if(options.filterBy) {
+                    settings.url += "&filter="+$('#'+options.filterBy).text();
+                }
             }
         },
         onSelect: function (suggestion) {
@@ -47,7 +49,7 @@ function setAutoCompleteCode(elementid,options) {
             } else {
                 $('#answer'+sgq).val(suggestion.data).trigger("keyup");
             }
-            $('#answer'+sgq).data('filtered',$("#filter"+sgq).text());
+            $('#answer'+sgq).data('filtered',$("#"+options.filterBy).text());
         },
         onSearchStart : function () {
             if(options.asDropDown) {
@@ -61,16 +63,17 @@ function setAutoCompleteCode(elementid,options) {
         }
     });
 
-    /* Action if filter are update : only for 3.X version */
-    $('#filter'+sgq).on("html:updated",function() {
-        console.warn("html:updated");
-        if($('#answer'+sgq).data('filtered') != $(this).text()) {
-            $('#autocomplete'+sgq).devbridgeAutocomplete().clear();
-            $('#autocomplete'+sgq).val(""); // clear didn't really clear
-            $('#answer'+sgq).data('filtered',$(this).text());
-            $('#answer'+sgq).val("").trigger("keyup"); // Can have issue with multiple action in EM (example : relevance + filter)
-        }
-    });
+    if(options.filterBy) {
+        /* Action if filter are update : only for 3.X version */
+        $('#'+options.filterBy).on("html:updated",function(e) {
+            if($('#answer'+sgq).data('filtered') != $(this).text()) {
+                $('#autocomplete'+sgq).devbridgeAutocomplete().clear();
+                $('#autocomplete'+sgq).val(""); // clear didn't really clear
+                $('#answer'+sgq).data('filtered',$(this).text());
+                $('#answer'+sgq).val("").trigger("keyup"); // Can have issue with multiple action in EM (example : relevance + filter)
+            }
+        });
+    }
     if(options.asDropDown) {
         $('#autocomplete'+sgq).on("keyup keydown",function(e) {
             var code = e.keyCode || e.which;

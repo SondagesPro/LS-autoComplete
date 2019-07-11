@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.5.3
+ * @version 1.5.4
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -86,14 +86,13 @@ class autoComplete extends PluginBase
             $minChar = ($minChar >= 0) ? $minChar : 1;
             $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
             $options = array(
-                "qid" => $qid,
                 "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
                 "minChar" => $asDropDown ? 0 : intval($minChar),
                 "asDropDown" => intval($asDropDown),
                 "replaceValue" => $replaceValue,
                 "oneColumn" => $oneColumn,
                 "useCache" => intval(empty($filterBy) || version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
-                "filterBy" => "AutoCompleteFilter".$qid,
+                "filterBy" => !empty($filterBy) ? "AutoCompleteFilter".$qid : false,
                 "placeholder" => $placeholder,
             );
 
