@@ -651,114 +651,19 @@ NAF5.NAOK : {NAF5.NAOK}<br>]]></help>
     <surveyls_endtext/>
     <surveyls_url/>
     <surveyls_urldescription/>
-    <surveyls_email_invite_subj><![CDATA[Invitation à participer à un questionnaire]]></surveyls_email_invite_subj>
-    <surveyls_email_invite><![CDATA[Cher(e) {FIRSTNAME},<br />
-<br />
-Vous avez été invité(e) à participer à un questionnaire.<br />
-<br />
-Celui-ci est intitulé :<br />
-"{SURVEYNAME}"<br />
-<br />
-"{SURVEYDESCRIPTION}"<br />
-<br />
-Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
-<br />
-Cordialement,<br />
-<br />
-{ADMINNAME} ({ADMINEMAIL})<br />
-<br />
-----------------------------------------------<br />
-Cliquez ici pour remplir ce questionnaire :<br />
-{SURVEYURL}<br />
-<br />
-Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
-{OPTOUTURL}<br />
-<br />
-Si vous êtes sur liste noire mais que vous voulez participer à ce questionnaire et recevoir les invitations, merci de cliquer sur le lien suivant :<br />
-{OPTINURL}]]></surveyls_email_invite>
-    <surveyls_email_remind_subj><![CDATA[Rappel pour participer à un questionnaire]]></surveyls_email_remind_subj>
-    <surveyls_email_remind><![CDATA[Cher(e) {FIRSTNAME},<br />
-<br />
-Vous avez été invité(e) à participer à un questionnaire récemment.<br />
-<br />
-Nous avons pris en compte que vous n'avez pas encore complété le questionnaire, et nous vous rappelons que celui-ci est toujours disponible si vous souhaitez participer.<br />
-<br />
-Le questionnaire est intitulé :<br />
-"{SURVEYNAME}"<br />
-<br />
-"{SURVEYDESCRIPTION}"<br />
-<br />
-Pour participer, veuillez cliquer sur le lien ci-dessous.<br />
-<br />
-Cordialement,<br />
-<br />
-{ADMINNAME} ({ADMINEMAIL})<br />
-<br />
-----------------------------------------------<br />
-Cliquez ici pour faire le questionnaire:<br />
-{SURVEYURL}<br />
-<br />
-Si vous ne souhaitez pas participer à ce questionnaire et ne souhaitez plus recevoir aucune invitation, veuillez cliquer sur le lien suivant :<br />
-{OPTOUTURL}]]></surveyls_email_remind>
-    <surveyls_email_register_subj><![CDATA[Confirmation d'enregistrement au questionnaire]]></surveyls_email_register_subj>
-    <surveyls_email_register><![CDATA[Bonjour {FIRSTNAME},<br />
-<br />
-Vous (ou quelqu’un utilisant votre adresse électronique) vous êtes enregistré pour participer à un questionnaire en ligne intitulé {SURVEYNAME}.<br />
-<br />
-Pour compléter ce questionnaire, cliquez sur le lien suivant :<br />
-{SURVEYURL}<br />
-<br />
-Si vous avez des questions à propos de ce questionnaire, ou si vous ne vous êtes pas enregistré pour participer à celui-ci et croyez que ce courriel est une erreur, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}]]></surveyls_email_register>
-    <surveyls_email_confirm_subj><![CDATA[Confirmation de votre participation à notre questionnaire]]></surveyls_email_confirm_subj>
-    <surveyls_email_confirm><![CDATA[Bonjour {FIRSTNAME},<br />
-<br />
-Ce courriel vous confirme que vous avez complété le questionnaire intitulé {SURVEYNAME} et que votre réponse a été enregistrée. Merci pour votre participation.<br />
-<br />
-Si vous avez des questions à propos de ce courriel, veuillez contacter {ADMINNAME} à l’adresse {ADMINEMAIL}.<br />
-<br />
-Cordialement,<br />
-<br />
-{ADMINNAME}]]></surveyls_email_confirm>
+    <surveyls_email_invite_subj/>
+    <surveyls_email_invite/>
+    <surveyls_email_remind_subj/>
+    <surveyls_email_remind/>
+    <surveyls_email_register_subj/>
+    <surveyls_email_register/>
+    <surveyls_email_confirm_subj/>
+    <surveyls_email_confirm/>
     <surveyls_dateformat><![CDATA[5]]></surveyls_dateformat>
-    <email_admin_notification_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME}]]></email_admin_notification_subj>
-    <email_admin_notification><![CDATA[Bonjour,<br />
-<br />
-Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
-<br />
-Cliquez sur le lien suivant pour recharger votre questionnaire :<br />
-{RELOADURL}<br />
-<br />
-Cliquez sur le lien suivant pour voir la réponse :<br />
-{VIEWRESPONSEURL}<br />
-<br />
-Cliquez sur le lien suivant pour éditer la réponse :<br />
-{EDITRESPONSEURL}<br />
-<br />
-Visualisez les statistiques en cliquant ici :<br />
-{STATISTICSURL}<br />
-<br />
-les réponses suivantes ont été données par le participant :<br />
-{ANSWERTABLE}]]></email_admin_notification>
-    <email_admin_responses_subj><![CDATA[Soumission de réponse pour le questionnaire {SURVEYNAME} avec résultats]]></email_admin_responses_subj>
-    <email_admin_responses><![CDATA[Bonjour,<br />
-<br />
-Une nouvelle réponse a été soumise pour votre questionnaire '{SURVEYNAME}'.<br />
-<br />
-Cliquez sur le lien suivant pour recharger votre questionnaire :<br />
-{RELOADURL}<br />
-<br />
-Cliquez sur le lien suivant pour voir la réponse :<br />
-{VIEWRESPONSEURL}<br />
-<br />
-Cliquez sur le lien suivant pour éditer la réponse individuelle :<br />
-{EDITRESPONSEURL}<br />
-<br />
-Visualisez les statistiques en cliquant ici :<br />
-{STATISTICSURL}<br />
-<br />
-<br />
-les réponses suivantes ont été données par le participant :<br />
-{ANSWERTABLE}]]></email_admin_responses>
+    <email_admin_notification_subj/>
+    <email_admin_notification/>
+    <email_admin_responses_subj/>
+    <email_admin_responses/>
     <surveyls_numberformat><![CDATA[1]]></surveyls_numberformat>
    </row>
   </rows>
