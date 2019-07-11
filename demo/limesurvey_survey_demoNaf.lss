@@ -224,7 +224,7 @@
     <sid><![CDATA[522519]]></sid>
     <group_name><![CDATA[Mon premier groupe de question]]></group_name>
     <group_order><![CDATA[1]]></group_order>
-    <description/>
+    <description><![CDATA[Vous devez envoyer les fichiers naf2008*.csv dans les ressources du questionnaire.]]></description>
     <language><![CDATA[fr]]></language>
     <randomization_group/>
     <grelevance><![CDATA[1]]></grelevance>
@@ -568,7 +568,7 @@ NAF5.NAOK : {NAF5.NAOK}<br>]]></help>
     <faxto/>
     <format><![CDATA[G]]></format>
     <savetimings><![CDATA[N]]></savetimings>
-    <template><![CDATA[fruity]]></template>
+    <template><![CDATA[vanilla]]></template>
     <language><![CDATA[fr]]></language>
     <additional_languages/>
     <datestamp><![CDATA[N]]></datestamp>
@@ -591,7 +591,7 @@ NAF5.NAOK : {NAF5.NAOK}<br>]]></help>
     <assessments><![CDATA[N]]></assessments>
     <usecaptcha><![CDATA[N]]></usecaptcha>
     <usetokens><![CDATA[N]]></usetokens>
-    <bounce_email><![CDATA[denis@sondages.pro]]></bounce_email>
+    <bounce_email/>
     <emailresponseto/>
     <emailnotificationto/>
     <tokenlength><![CDATA[15]]></tokenlength>
@@ -646,7 +646,7 @@ NAF5.NAOK : {NAF5.NAOK}<br>]]></help>
     <surveyls_survey_id><![CDATA[522519]]></surveyls_survey_id>
     <surveyls_language><![CDATA[fr]]></surveyls_language>
     <surveyls_title><![CDATA[Test déroulant]]></surveyls_title>
-    <surveyls_description/>
+    <surveyls_description><![CDATA[Vous devez envoyer les fichiers naf2008*.csv dans les ressources du questionnaire.]]></surveyls_description>
     <surveyls_welcometext/>
     <surveyls_endtext/>
     <surveyls_url/>
@@ -763,57 +763,4 @@ les réponses suivantes ont été données par le participant :<br />
    </row>
   </rows>
  </surveys_languagesettings>
- <themes>
-  <theme>
-   <sid>522519</sid>
-   <template_name>fruity</template_name>
-   <config>
-    <options>inherit</options>
-   </config>
-  </theme>
- </themes>
- <themes_inherited>
-  <theme>
-   <sid>522519</sid>
-   <template_name>fruity</template_name>
-   <config>
-    <options>
-     <ajaxmode>off</ajaxmode>
-     <brandlogo>on</brandlogo>
-     <brandlogofile>themes/survey/fruity/files/survey_list_header.png</brandlogofile>
-     <container>on</container>
-     <backgroundimage>off</backgroundimage>
-     <backgroundimagefile>upload/themes/survey/generalfiles/chloe-bann.UyBeelxOJaVl.jpg</backgroundimagefile>
-     <animatebody>off</animatebody>
-     <bodyanimation>fadeInRight</bodyanimation>
-     <bodyanimationduration>500</bodyanimationduration>
-     <animatequestion>off</animatequestion>
-     <questionanimation>flipInX</questionanimation>
-     <questionanimationduration>500</questionanimationduration>
-     <animatealert>off</animatealert>
-     <alertanimation>shake</alertanimation>
-     <alertanimationduration>500</alertanimationduration>
-     <font>noto</font>
-     <bodybackgroundcolor>#ffffff</bodybackgroundcolor>
-     <fontcolor>#444444</fontcolor>
-     <questionbackgroundcolor>#ffffff</questionbackgroundcolor>
-     <questionborder>on</questionborder>
-     <questioncontainershadow>on</questioncontainershadow>
-     <checkicon>f00c</checkicon>
-     <animatecheckbox>on</animatecheckbox>
-     <checkboxanimation>rubberBand</checkboxanimation>
-     <checkboxanimationduration>500</checkboxanimationduration>
-     <animateradio>on</animateradio>
-     <radioanimation>zoomIn</radioanimation>
-     <radioanimationduration>500</radioanimationduration>
-     <zebrastriping>off</zebrastriping>
-     <stickymatrixheaders>off</stickymatrixheaders>
-     <greyoutselected>off</greyoutselected>
-     <hideprivacyinfo>off</hideprivacyinfo>
-     <crosshover>off</crosshover>
-     <showpopups>1</showpopups>
-    </options>
-   </config>
-  </theme>
- </themes_inherited>
 </document>

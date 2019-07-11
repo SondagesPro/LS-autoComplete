@@ -1,6 +1,6 @@
 /**
  * This file is part of autocomplete (plugin for LimeSurvey)
- * @version 1.2.0
+ * @version 1.2.1
  */
 function setAutoCompleteCode(elementid,options) {
     if(!$('input#'+elementid).length) {
@@ -63,6 +63,7 @@ function setAutoCompleteCode(elementid,options) {
 
     /* Action if filter are update : only for 3.X version */
     $('#filter'+sgq).on("html:updated",function() {
+        console.warn("html:updated");
         if($('#answer'+sgq).data('filtered') != $(this).text()) {
             $('#autocomplete'+sgq).devbridgeAutocomplete().clear();
             $('#autocomplete'+sgq).val(""); // clear didn't really clear
@@ -76,6 +77,11 @@ function setAutoCompleteCode(elementid,options) {
             if (code != '9' && code != '13' && code != '9') {
                 e.preventDefault();
             }
+        });
+    }
+    if(!options.asDropDown) {
+        $('#autocomplete'+sgq).on("keyup",function(e) {
+            $('#answer'+sgq).val($('#autocomplete'+sgq).val()).trigger("keyup");
         });
     }
 }
