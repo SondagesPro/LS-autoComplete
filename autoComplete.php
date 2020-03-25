@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.5.4
+ * @version 1.5.5-beta
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
