@@ -3,9 +3,9 @@
  * autocomplete via csv file for public survey
  *
  * @author Denis Chenu <denis@sondages.pro>
- * @copyright 2017-2019 Denis Chenu <www.sondages.pro>
+ * @copyright 2017-2020 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.5.4
+ * @version 1.5.6
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -135,6 +135,7 @@ class autoComplete extends PluginBase
                 default:
                     return; // Not needed, already quit
             }
+            $this->_registerPackage();
             App()->getClientScript()->registerScript("autoComplete{$oEvent->get('qid')}",$script,CClientScript::POS_END);
         }
     }
@@ -214,6 +215,9 @@ class autoComplete extends PluginBase
         $this->_renderSuggestion($suggestion);
     }
 
+    /**
+     * Just to load package when ajax is set : @todo : deprecate
+     */
     public function beforeSurveyPage()
     {
         $criteria = new CDbCriteria;
