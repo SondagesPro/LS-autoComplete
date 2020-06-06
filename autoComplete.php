@@ -124,7 +124,7 @@ class autoComplete extends PluginBase
                         $tipText = gT("Choose one of the following answers");
                         break;
                     case 1:
-                        $tipText = $this->_translate("Type a caracter");
+                        $tipText = $this->_translate("Type a character");
                         break;
                     default:
                         $tipText = sprintf($this->_translate("Type %s characters"),$minChar);
@@ -221,7 +221,11 @@ class autoComplete extends PluginBase
             if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
                 if($oneColumn) {
                     if(!$search || strpos($searchValue,$search)!==false) {
-                        $suggestion[] = $data;
+                        $suggestion[] = array(
+                            'data'=>$data,
+                            'value'=>$data,
+                            'line'=>$line,
+                        );
                     }
                 } else {
                     if(!$search || strpos($searchValue,$search)!==false) {
@@ -333,7 +337,7 @@ class autoComplete extends PluginBase
                 'sortorder'=>100,
                 'inputtype'=>'text',
                 'default'=>'', /* not needed (it's already the default) */
-                'help'=>$this->_translate("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
+                'help'=>$this->_translate("The CSV file must be in this survey files directory (ex: upload/surveys/123456). It will be read in UTF8 with comma \",\" as separator."),
                 'caption'=>$this->_translate('CSV file to be used'),
             ),
             'autoCompleteOneColumn'=>array(
@@ -342,7 +346,7 @@ class autoComplete extends PluginBase
                 'sortorder'=>110,
                 'inputtype'=>'switch',
                 'default'=>1,
-                'help'=>$this->_translate("Use only the first column in the csv file."),
+                'help'=>$this->_translate("Complete from first column in the csv file or from the second one."),
                 'caption'=>$this->_translate('Use only one column'),
             ),
             'autoCompleteFilter'=>array(
@@ -391,7 +395,7 @@ class autoComplete extends PluginBase
                 'inputtype' => 'switch',
                 'default' => 0,
                 'help'=>sprintf($this->_translate("For show as dropddow : default is same than limesurvey dropdown. Else can be translated at %s."),"<a href='https://translate.sondages.pro/projects/'>translate.sondages.pro</a>."),
-                'caption'=>$this->_translate('Show the default tip.'),
+                'caption'=>$this->_translate('Show thed efault tip.'),
             ),
             'autoCompletePlaceholder'=>array(
                 'types'=>'SQ;',
@@ -405,7 +409,7 @@ class autoComplete extends PluginBase
             ),
             'autoCompleteDependents'=>array(
                 'types'=>'S', /* Short text */
-                'category'=>gT('Display'),
+                'category'=>$this->_translate('AutoComplete'),
                 'sortorder'=>305,
                 'inputtype'=>'text',
                 'default'=>'', /* not needed (it's already the default) */

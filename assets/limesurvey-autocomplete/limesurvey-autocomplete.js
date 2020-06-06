@@ -114,6 +114,6 @@ function setAutoComplete_Dependants(suggestion, options) {
         // index: the ordinal position of the key within the object
 
         var col = depSGQs[sgq];
-        $('#answer'+sgq).val(suggestion.line[col]);
+        $('#answer'+sgq).val(suggestion.line[col-1]);
     });
 }
