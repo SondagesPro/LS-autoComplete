@@ -85,6 +85,26 @@ class autoComplete extends PluginBase
             $minChar = intval($aAttributes['autoCompleteMinChar']);
             $minChar = ($minChar >= 0) ? $minChar : 1;
             $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
+
+            $dependentsString = $aAttributes['autoCompleteDependents'];
+            $dependents = [];
+            $depSGQs = [];
+            if (!empty($dependentsString))
+            {
+              $auxD = preg_split ('/(\s*,\s*)*,+(\s*,\s*)*/', $dependentsString);
+              while (count($auxD)) {
+                  list($key,$value) = array_splice($auxD, 0, 2);
+                  $dependents[trim($key)] = trim($value);
+              }
+
+              $LSApi = $this->pluginManager->getApi();
+              foreach ($dependents as $QC => $col)
+              {
+                $SGQ = $LSApi->EMevaluateExpression('{'. $QC . '.sgqa}');
+                $depSGQs[ $SGQ ] = $col;
+              }
+            }
+
             $options = array(
                 "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
                 "minChar" => $asDropDown ? 0 : intval($minChar),
@@ -94,6 +114,8 @@ class autoComplete extends PluginBase
                 "useCache" => intval(empty($filterBy) || version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                 "filterBy" => !empty($filterBy) ? "AutoCompleteFilter".$qid : false,
                 "placeholder" => $placeholder,
+                // "dependents" => $dependents,
+                "depSGQs" => $depSGQs,
             );
 
             if($aAttributes['autoCompleteShowDefaultTip']) {
@@ -206,6 +228,7 @@ class autoComplete extends PluginBase
                         $suggestion[] = array(
                             'data'=>$data,
                             'value'=>$value,
+                            'line'=>$line,
                         );
                     }
                 }
@@ -380,6 +403,15 @@ class autoComplete extends PluginBase
                 'help'=>sprintf($this->_translate("Add this string as placeholder to the input HTML, this placeholder are shown when input is empty.")),
                 'caption'=>$this->_translate('Place holder.'),
             ),
+            'autoCompleteDependents'=>array(
+                'types'=>'S', /* Short text */
+                'category'=>gT('Display'),
+                'sortorder'=>305,
+                'inputtype'=>'text',
+                'default'=>'', /* not needed (it's already the default) */
+                'help'=>$this->gT("Enter qcodes and column numbers separated by commas. Ex: QCode1,2,QCode2,3"),
+                'caption'=>$this->gT('Dependent questions'),
+            ),
         );
         if(method_exists($this->getEvent(),'append')) {
           $this->getEvent()->append('questionAttributes', $autoCompleteAttributes);
@@ -449,7 +481,7 @@ class autoComplete extends PluginBase
             return $filename[$qid];
         }
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
-        
+
         if(empty($aAttributes['autoCompleteCsvFile'])){
             $filename[$qid] = false;
             return $filename[$qid];
@@ -481,7 +513,7 @@ class autoComplete extends PluginBase
     private function _removeSpecialCharacter($string)
     {
         if(empty($string)) {
-            return $string; 
+            return $string;
         }
         if(class_exists('Transliterator')) { /* @todo : check if we really need to test */
             /* @see https://www.matthecat.com/supprimer-les-accents-dune-chaine-en-php/ */
@@ -492,19 +524,19 @@ class autoComplete extends PluginBase
         $string = str_replace(
             array(
                 'à', 'â', 'ä', 'á', 'ã', 'å',
-                'î', 'ï', 'ì', 'í', 
-                'ô', 'ö', 'ò', 'ó', 'õ', 'ø', 
-                'ù', 'û', 'ü', 'ú', 
-                'é', 'è', 'ê', 'ë', 
+                'î', 'ï', 'ì', 'í',
+                'ô', 'ö', 'ò', 'ó', 'õ', 'ø',
+                'ù', 'û', 'ü', 'ú',
+                'é', 'è', 'ê', 'ë',
                 'ç', 'ÿ', 'ñ',
                 'œ',
             ),
             array(
-                'a', 'a', 'a', 'a', 'a', 'a', 
-                'i', 'i', 'i', 'i', 
-                'o', 'o', 'o', 'o', 'o', 'o', 
-                'u', 'u', 'u', 'u', 
-                'e', 'e', 'e', 'e', 
+                'a', 'a', 'a', 'a', 'a', 'a',
+                'i', 'i', 'i', 'i',
+                'o', 'o', 'o', 'o', 'o', 'o',
+                'u', 'u', 'u', 'u',
+                'e', 'e', 'e', 'e',
                 'c', 'y', 'n',
                 'oe',
             ),
