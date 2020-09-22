@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: autoComplete\n"
-"POT-Creation-Date: 2019-01-31 13:02+0100\n"
+"POT-Creation-Date: 2020-09-22 10:41+0200\n"
 "PO-Revision-Date: 2018-11-15 20:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -18,84 +18,94 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: locale\n"
 
-#: autoComplete.php:88
+#: autoComplete.php:105
 msgid "Type a caracter"
 msgstr ""
 
-#: autoComplete.php:91
+#: autoComplete.php:108
 #, php-format
 msgid "Type %s characters"
 msgstr ""
 
-#: autoComplete.php:266 autoComplete.php:274 autoComplete.php:283
-#: autoComplete.php:292 autoComplete.php:302 autoComplete.php:313
-#: autoComplete.php:322 autoComplete.php:331
+#: autoComplete.php:300 autoComplete.php:309 autoComplete.php:318
+#: autoComplete.php:327 autoComplete.php:337 autoComplete.php:348
+#: autoComplete.php:357 autoComplete.php:366 autoComplete.php:375
 msgid "AutoComplete"
 msgstr ""
 
-#: autoComplete.php:270
+#: autoComplete.php:304
 msgid "Use autocomplete"
 msgstr ""
 
-#: autoComplete.php:278
+#: autoComplete.php:313
 msgid ""
 "The CSV file must be in this survey files directory, it was readed in UTF8 "
 "with comma."
 msgstr ""
 
-#: autoComplete.php:279
+#: autoComplete.php:314
 msgid "CSV file to be used"
 msgstr ""
 
-#: autoComplete.php:287
+#: autoComplete.php:322
 msgid "Use only the first column in the csv file."
 msgstr ""
 
-#: autoComplete.php:288
+#: autoComplete.php:323
 msgid "Use only one column"
 msgstr ""
 
-#: autoComplete.php:297
+#: autoComplete.php:332
 msgid ""
 "Enter the expression for filtering, filter is done on first column, return "
 "only line where 1st column code start by this current value."
 msgstr ""
 
-#: autoComplete.php:298
+#: autoComplete.php:333
 msgid "Filter by (expression)"
 msgstr ""
 
-#: autoComplete.php:307
+#: autoComplete.php:342
 msgid "Minimum character to start search"
 msgstr ""
 
-#: autoComplete.php:317
+#: autoComplete.php:352
 msgid ""
 "When searching : line search returned was done in lowercase and without any "
 "special character."
 msgstr ""
 
-#: autoComplete.php:318
+#: autoComplete.php:353
 msgid "Do search with lower case and without special character."
 msgstr ""
 
-#: autoComplete.php:326
+#: autoComplete.php:361
 msgid ""
 "If you want to use autocomplete like a dropdown, user can only select value. "
 "Without this option : user can write anything in input."
 msgstr ""
 
-#: autoComplete.php:327
+#: autoComplete.php:362
 msgid "Show autocomplete as dropdown (no user input)."
 msgstr ""
 
-#: autoComplete.php:335
+#: autoComplete.php:370
 #, php-format
 msgid ""
 "For show as dropddow : default is same than limesurvey dropdown. Else can be "
 "translated at %s."
 msgstr ""
 
-#: autoComplete.php:336
+#: autoComplete.php:371
 msgid "Show the default tip."
+msgstr ""
+
+#: autoComplete.php:380
+msgid ""
+"Add this string as placeholder to the input HTML, this placeholder are shown "
+"when input is empty."
+msgstr ""
+
+#: autoComplete.php:381
+msgid "Place holder."
 msgstr ""
