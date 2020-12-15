@@ -5,7 +5,7 @@
  * @author Denis Chenu <denis@sondages.pro>
  * @copyright 2017-2020 Denis Chenu <www.sondages.pro>
  * @license AGPL v3
- * @version 1.5.6
+ * @version 1.5.7
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -40,6 +40,9 @@ class autoComplete extends PluginBase
     */
     public function launchAutoComplete()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         $oEvent=$this->getEvent();
         $qid = $oEvent->get('qid');
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
@@ -142,6 +145,9 @@ class autoComplete extends PluginBase
 
     public function newDirectRequest()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         if($this->getEvent()->get('target') != get_class($this)) {
             return;
         }
@@ -220,6 +226,9 @@ class autoComplete extends PluginBase
      */
     public function beforeSurveyPage()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         $criteria = new CDbCriteria;
         $criteria->compare('sid',$this->getEvent()->get('surveyId'));
         $criteria->addInCondition('type',array('S','M',';'));
@@ -294,6 +303,9 @@ class autoComplete extends PluginBase
     */
     public function addAutoCompleteAttribute()
     {
+        if (!$this->getEvent()) {
+            throw new CHttpException(403);
+        }
         $autoCompleteAttributes = array(
             'autoComplete' => array(
                 'types'     => 'SQ;',//'!S', /* List radio and short text */
@@ -416,7 +428,7 @@ class autoComplete extends PluginBase
         Yii::app()->getClientScript()->registerPackage('limesurvey-autocomplete');
     }
 
-    public function _translate($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
+    private function _translate($string, $sEscapeMode = 'unescaped', $sLanguage = NULL) {
         if(intval(Yii::app()->getConfig('versionnumber')) >= 3) {
             return parent::gT($string, $sEscapeMode, $sLanguage );
         }
