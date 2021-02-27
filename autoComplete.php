@@ -88,6 +88,26 @@ class autoComplete extends PluginBase
             $minChar = intval($aAttributes['autoCompleteMinChar']);
             $minChar = ($minChar >= 0) ? $minChar : 1;
             $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
+
+            $dependentsString = $aAttributes['autoCompleteDependents'];
+            $dependents = [];
+            $depSGQs = [];
+            if (!empty($dependentsString))
+            {
+              $auxD = preg_split ('/(\s*,\s*)*,+(\s*,\s*)*/', $dependentsString);
+              while (count($auxD)) {
+                  list($key,$value) = array_splice($auxD, 0, 2);
+                  $dependents[trim($key)] = trim($value);
+              }
+
+              $LSApi = $this->pluginManager->getApi();
+              foreach ($dependents as $QC => $col)
+              {
+                $SGQ = $LSApi->EMevaluateExpression('{'. $QC . '.sgqa}');
+                $depSGQs[ $SGQ ] = $col;
+              }
+            }
+
             $options = array(
                 "serviceUrl" => Yii::app()->getController()->createUrl('plugins/direct', array('plugin' => get_class($this),'function'=>'getData','qid'=>$oEvent->get('qid'))),
                 "minChar" => $asDropDown ? 0 : intval($minChar),
@@ -97,6 +117,8 @@ class autoComplete extends PluginBase
                 "useCache" => intval(empty($filterBy) || version_compare ( App()->getConfig("versionnumber") , "3" , ">=" )), // For 3 and up version can use html:updated event
                 "filterBy" => !empty($filterBy) ? "AutoCompleteFilter".$qid : false,
                 "placeholder" => $placeholder,
+                // "dependents" => $dependents,
+                "depSGQs" => $depSGQs,
             );
 
             if($aAttributes['autoCompleteShowDefaultTip']) {
@@ -105,7 +127,7 @@ class autoComplete extends PluginBase
                         $tipText = gT("Choose one of the following answers");
                         break;
                     case 1:
-                        $tipText = $this->_translate("Type a caracter");
+                        $tipText = $this->_translate("Type a character");
                         break;
                     default:
                         $tipText = sprintf($this->_translate("Type %s characters"),$minChar);
@@ -205,13 +227,18 @@ class autoComplete extends PluginBase
             if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
                 if($oneColumn) {
                     if(!$search || strpos($searchValue,$search)!==false) {
-                        $suggestion[] = $data;
+                        $suggestion[] = array(
+                            'data'=>$data,
+                            'value'=>$data,
+                            'line'=>$line,
+                        );
                     }
                 } else {
                     if(!$search || strpos($searchValue,$search)!==false) {
                         $suggestion[] = array(
                             'data'=>$data,
                             'value'=>$value,
+                            'line'=>$line,
                         );
                     }
                 }
@@ -322,7 +349,7 @@ class autoComplete extends PluginBase
                 'sortorder'=>100,
                 'inputtype'=>'text',
                 'default'=>'', /* not needed (it's already the default) */
-                'help'=>$this->_translate("The CSV file must be in this survey files directory, it was readed in UTF8 with comma."),
+                'help'=>$this->_translate("The CSV file must be in this survey files directory (ex: upload/surveys/123456). It will be read in UTF8 with comma \",\" as separator."),
                 'caption'=>$this->_translate('CSV file to be used'),
             ),
             'autoCompleteOneColumn'=>array(
@@ -331,7 +358,7 @@ class autoComplete extends PluginBase
                 'sortorder'=>110,
                 'inputtype'=>'switch',
                 'default'=>1,
-                'help'=>$this->_translate("Use only the first column in the csv file."),
+                'help'=>$this->_translate("Complete from first column in the csv file or from the second one."),
                 'caption'=>$this->_translate('Use only one column'),
             ),
             'autoCompleteFilter'=>array(
@@ -380,7 +407,7 @@ class autoComplete extends PluginBase
                 'inputtype' => 'switch',
                 'default' => 0,
                 'help'=>sprintf($this->_translate("For show as dropddow : default is same than limesurvey dropdown. Else can be translated at %s."),"<a href='https://translate.sondages.pro/projects/'>translate.sondages.pro</a>."),
-                'caption'=>$this->_translate('Show the default tip.'),
+                'caption'=>$this->_translate('Show thed efault tip.'),
             ),
             'autoCompletePlaceholder'=>array(
                 'types'=>'SQ;',
@@ -391,6 +418,15 @@ class autoComplete extends PluginBase
                 'default' => "",
                 'help'=>sprintf($this->_translate("Add this string as placeholder to the input HTML, this placeholder are shown when input is empty.")),
                 'caption'=>$this->_translate('Place holder.'),
+            ),
+            'autoCompleteDependents'=>array(
+                'types'=>'S', /* Short text */
+                'category'=>$this->_translate('AutoComplete'),
+                'sortorder'=>305,
+                'inputtype'=>'text',
+                'default'=>'', /* not needed (it's already the default) */
+                'help'=>$this->gT("Enter qcodes and column numbers separated by commas. Ex: QCode1,2,QCode2,3"),
+                'caption'=>$this->gT('Dependent questions'),
             ),
         );
         if(method_exists($this->getEvent(),'append')) {
@@ -461,7 +497,7 @@ class autoComplete extends PluginBase
             return $filename[$qid];
         }
         $aAttributes=QuestionAttribute::model()->getQuestionAttributes($qid);
-        
+
         if(empty($aAttributes['autoCompleteCsvFile'])){
             $filename[$qid] = false;
             return $filename[$qid];
@@ -493,7 +529,7 @@ class autoComplete extends PluginBase
     private function _removeSpecialCharacter($string)
     {
         if(empty($string)) {
-            return $string; 
+            return $string;
         }
         if(class_exists('Transliterator')) { /* @todo : check if we really need to test */
             /* @see https://www.matthecat.com/supprimer-les-accents-dune-chaine-en-php/ */
@@ -504,19 +540,19 @@ class autoComplete extends PluginBase
         $string = str_replace(
             array(
                 'à', 'â', 'ä', 'á', 'ã', 'å',
-                'î', 'ï', 'ì', 'í', 
-                'ô', 'ö', 'ò', 'ó', 'õ', 'ø', 
-                'ù', 'û', 'ü', 'ú', 
-                'é', 'è', 'ê', 'ë', 
+                'î', 'ï', 'ì', 'í',
+                'ô', 'ö', 'ò', 'ó', 'õ', 'ø',
+                'ù', 'û', 'ü', 'ú',
+                'é', 'è', 'ê', 'ë',
                 'ç', 'ÿ', 'ñ',
                 'œ',
             ),
             array(
-                'a', 'a', 'a', 'a', 'a', 'a', 
-                'i', 'i', 'i', 'i', 
-                'o', 'o', 'o', 'o', 'o', 'o', 
-                'u', 'u', 'u', 'u', 
-                'e', 'e', 'e', 'e', 
+                'a', 'a', 'a', 'a', 'a', 'a',
+                'i', 'i', 'i', 'i',
+                'o', 'o', 'o', 'o', 'o', 'o',
+                'u', 'u', 'u', 'u',
+                'e', 'e', 'e', 'e',
                 'c', 'y', 'n',
                 'oe',
             ),

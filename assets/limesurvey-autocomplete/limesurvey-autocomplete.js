@@ -44,12 +44,13 @@ function setAutoCompleteCode(elementid,options) {
             }
         },
         onSelect: function (suggestion) {
-            if(options.oneColumn > 0) {
-                $('#answer'+sgq).val(suggestion.value).trigger("keyup");
-            } else {
-                $('#answer'+sgq).val(suggestion.data).trigger("keyup");
-            }
-            $('#answer'+sgq).data('filtered',$("#"+options.filterBy).text());
+            var $control = $("#answer"+sgq);
+            $control.val( options.oneColumn > 0 ? suggestion.value : suggestion.data);
+            $control.data('filtered',$("#"+options.filterBy).text());
+
+            setAutoComplete_Dependants(suggestion, options);
+
+            $control.trigger("keyup");
         },
         onSearchStart : function () {
             if(options.asDropDown) {
@@ -97,4 +98,22 @@ function setAutoCompleteCodeWholeQuestion(qid,options) {
         setAutoCompleteCode($(this).attr('id'),options);
     });
 
+}
+
+function setAutoComplete_Dependants(suggestion, options) {
+    console.log(suggestion, options);
+
+    // Get depSGQs
+    var depSGQs = options.depSGQs;
+    if(!depSGQs || depSGQs.length == 0) return;
+
+    // Set dependents
+    Object.keys(depSGQs).forEach(function(sgq,index)
+    {
+        // key: the name of the object key
+        // index: the ordinal position of the key within the object
+
+        var col = depSGQs[sgq];
+        $('#answer'+sgq).val(suggestion.line[col-1]);
+    });
 }
