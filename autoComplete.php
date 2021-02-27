@@ -3,9 +3,10 @@
  * autocomplete via csv file for public survey
  *
  * @author Denis Chenu <denis@sondages.pro>
- * @copyright 2017-2020 Denis Chenu <www.sondages.pro>
+ * @author https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete/-/graphs/master
+ * @copyright 2017-2021 Denis Chenu <www.sondages.pro> and contributors
  * @license AGPL v3
- * @version 1.5.7
+ * @version 1.6.1
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -88,8 +89,10 @@ class autoComplete extends PluginBase
             $minChar = intval($aAttributes['autoCompleteMinChar']);
             $minChar = ($minChar >= 0) ? $minChar : 1;
             $asDropDown = (bool) ($aAttributes['autoCompleteAsDropdown']);
-
-            $dependentsString = $aAttributes['autoCompleteDependents'];
+            $dependentsString = null;
+            if($oEvent->get('type') == "S") {
+                $dependentsString = $aAttributes['autoCompleteDependents'];
+            }
             $dependents = [];
             $depSGQs = [];
             if (!empty($dependentsString))
