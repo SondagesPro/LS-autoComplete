@@ -101,8 +101,6 @@ function setAutoCompleteCodeWholeQuestion(qid,options) {
 }
 
 function setAutoComplete_Dependants(suggestion, options) {
-    console.log(suggestion, options);
-
     // Get depSGQs
     var depSGQs = options.depSGQs;
     if(!depSGQs || depSGQs.length == 0) return;
@@ -112,7 +110,6 @@ function setAutoComplete_Dependants(suggestion, options) {
     {
         // key: the name of the object key
         // index: the ordinal position of the key within the object
-
         var col = depSGQs[sgq];
         $('#answer'+sgq).val(suggestion.line[col-1]);
     });

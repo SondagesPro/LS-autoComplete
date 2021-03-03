@@ -6,7 +6,7 @@
  * @author https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete/-/graphs/master
  * @copyright 2017-2021 Denis Chenu <www.sondages.pro> and contributors
  * @license AGPL v3
- * @version 1.6.1
+ * @version 1.7.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -213,7 +213,13 @@ class autoComplete extends PluginBase
             $search = "";
         }
         $search = $this->_removeSpecialCharacter($search);
-
+        $keepCodes = array();
+        if(!empty($aAttributes['autoCompleteKeepCode'])) {
+            $autoCompleteKeepCode = trim($aAttributes['autoCompleteKeepCode']);
+            $keepCodes = explode(",",$autoCompleteKeepCode);
+            $keepCodes = array_map('trim',$keepCodes);
+        }
+        
         $handle = fopen($completeFile, "r");
         $headerDone = false;
         while (($line = fgetcsv($handle, 10000, ",")) !== false) {
@@ -229,21 +235,20 @@ class autoComplete extends PluginBase
             }
             if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
                 if($oneColumn) {
-                    if(!$search || strpos($searchValue,$search)!==false) {
-                        $suggestion[] = array(
-                            'data'=>$data,
-                            'value'=>$data,
-                            'line'=>$line,
-                        );
-                    }
-                } else {
-                    if(!$search || strpos($searchValue,$search)!==false) {
-                        $suggestion[] = array(
-                            'data'=>$data,
-                            'value'=>$value,
-                            'line'=>$line,
-                        );
-                    }
+                    $value = $data;
+                }
+                if(!$search || in_array($data,$keepCodes)) {
+                    $suggestion[] = array(
+                        'data'=>$data,
+                        'value'=>$value,
+                        'line'=>$line,
+                    );
+                } elseif (strpos($searchValue,$search)!==false) {
+                    $suggestion[] = array(
+                        'data'=>$data,
+                        'value'=>$value,
+                        'line'=>$line,
+                    );
                 }
             }
         }
@@ -403,6 +408,15 @@ class autoComplete extends PluginBase
                 'help'=>$this->_translate("If you want to use autocomplete like a dropdown, user can only select value. Without this option : user can write anything in input."),
                 'caption'=>$this->_translate('Show autocomplete as dropdown (no user input).'),
             ),
+            'autoCompleteKeepCode'=>array(
+                'types' => 'SQ;',
+                'category' =>$this->_translate('AutoComplete'),
+                'sortorder'=>160,
+                'inputtype' => 'text',
+                'default' => '',
+                'help'=>$this->_translate("With show as dropdown a list of code to always return, multiple code are separataed by <code>,</code>."),
+                'caption'=>$this->_translate('Code to always return.'),
+            ),
             'autoCompleteShowDefaultTip'=>array(
                 'types'=>'SQ;',
                 'category'=>$this->_translate('AutoComplete'),
@@ -410,7 +424,7 @@ class autoComplete extends PluginBase
                 'inputtype' => 'switch',
                 'default' => 0,
                 'help'=>sprintf($this->_translate("For show as dropddow : default is same than limesurvey dropdown. Else can be translated at %s."),"<a href='https://translate.sondages.pro/projects/'>translate.sondages.pro</a>."),
-                'caption'=>$this->_translate('Show thed efault tip.'),
+                'caption'=>$this->_translate('Show the default tip.'),
             ),
             'autoCompletePlaceholder'=>array(
                 'types'=>'SQ;',
