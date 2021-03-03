@@ -6,7 +6,7 @@
  * @author https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete/-/graphs/master
  * @copyright 2017-2021 Denis Chenu <www.sondages.pro> and contributors
  * @license AGPL v3
- * @version 1.7.0
+ * @version 1.7.1
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -219,7 +219,7 @@ class autoComplete extends PluginBase
             $keepCodes = explode(",",$autoCompleteKeepCode);
             $keepCodes = array_map('trim',$keepCodes);
         }
-        
+
         $handle = fopen($completeFile, "r");
         $headerDone = false;
         while (($line = fgetcsv($handle, 10000, ",")) !== false) {
@@ -233,11 +233,17 @@ class autoComplete extends PluginBase
             if($oneColumn) {
                 $searchValue = $this->_removeSpecialCharacter($data);
             }
-            if(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
-                if($oneColumn) {
-                    $value = $data;
-                }
-                if(!$search || in_array($data,$keepCodes)) {
+            if($oneColumn) {
+                $value = $data;
+            }
+            if (in_array($data,$keepCodes)) {
+                $suggestion[] = array(
+                    'data'=>$data,
+                    'value'=>$value,
+                    'line'=>$line,
+                );
+            } elseif(empty($filter) || substr($data, 0, strlen($filter)) == $filter) {
+                if(!$search) {
                     $suggestion[] = array(
                         'data'=>$data,
                         'value'=>$value,
