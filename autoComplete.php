@@ -4,9 +4,9 @@
  *
  * @author Denis Chenu <denis@sondages.pro>
  * @author https://gitlab.com/SondagesPro/QuestionSettingsType/autoComplete/-/graphs/master
- * @copyright 2017-2021 Denis Chenu <www.sondages.pro> and contributors
+ * @copyright 2017-2022 Denis Chenu <www.sondages.pro> and contributors
  * @license AGPL v3
- * @version 1.7.1
+ * @version 1.8.0
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE as published by
@@ -127,7 +127,7 @@ class autoComplete extends PluginBase
             if($aAttributes['autoCompleteShowDefaultTip']) {
                 switch ($minChar) {
                     case 0:
-                        $tipText = gT("Choose one of the following answers");
+                        $tipText = $this->_translate("Choose one of the following answers");
                         break;
                     case 1:
                         $tipText = $this->_translate("Type a character");
@@ -145,8 +145,15 @@ class autoComplete extends PluginBase
                     'vtip'      =>$tipText,
                     'hideTip'   =>false,
                 );
-                $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
-                $tip = LimeExpressionManager::ProcessString($tip,$qid);
+                if (intval(App()->getConfig('versionnumber') <= 3)) {
+                    $tip = Yii::app()->getController()->renderPartial('/survey/questions/question_help/em-tip', $tipsDatas, true);
+                    $tip = LimeExpressionManager::ProcessString($tip,$qid);
+                } else {
+                    $tip = App()->twigRenderer->renderPartial(
+                        '/survey/questions/question_help/em_tip.twig',
+                        $tipsDatas
+                    );
+                }
                 $validTip = $questionStatus['validTip'] . $tip;
                 $class = empty($aAttributes['hide_tip']) ? "" : " hide-tip";
                 $oEvent->set("valid_message",doRender('/survey/questions/question_help/help', array('message'=>$validTip, 'classes'=>$class, 'id'=>"vmsg_{$qid}"), true));

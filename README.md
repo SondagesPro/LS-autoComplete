@@ -1,8 +1,8 @@
-# autoComplete : allow to use an external XSV for short text question with CSV. #
+# autoComplete : allow to use an external CSV for text question with autocomplete. #
 
 ## Installation
 
-This plugin was tested on LimeSurvey 2.73 and 3.15 version, must work on all version after 2.50.
+This plugin was tested on LimeSurvey 2.73, 3.15 and 5.4.0 version, must work on all version after 2.50.
 
 ### Via GIT
 - Go to your LimeSurvey Directory
@@ -40,5 +40,5 @@ If you language is not available, open a issue on [gitlab](https://gitlab.com/So
 ## Home page & Copyright
 
 - HomePage <http://extensions.sondages.pro/>
-- Copyright © 2017-2018 Denis Chenu <http://sondages.pro>
+- Copyright © 2017-2022 Denis Chenu <http://sondages.pro>
 - Licence : GNU Affero General Public License <https://www.gnu.org/licenses/agpl-3.0.html>
